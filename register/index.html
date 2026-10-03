@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Programme Registration — Rural Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/shared.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#003b1b",
+            "primary-container": "#14532d",
+            "primary-fixed": "#b1f2be",
+            "secondary": "#855300",
+            "secondary-container": "#fea619",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#404941",
+            "outline-variant": "#c0c9be"
+          },
+          fontFamily: {
+            sans: ["Inter", "Noto Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased flex flex-col min-h-screen">
+  <!-- Desktop Header -->
+  <header class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-primary-container text-white flex items-center justify-center font-bold shadow-sm">
+          <span class="material-symbols-outlined text-[24px]">agriculture</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold text-primary-container tracking-tight leading-none" data-i18n="brand.title">Rural Rise</span>
+          <span class="text-xs font-semibold text-on-surface-variant leading-none mt-1">Programme Registration • नामांकन</span>
+        </div>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold">
+        <a href="/" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">Home</a>
+        <a href="/register" class="px-3.5 py-2 rounded-lg text-primary font-bold bg-primary-fixed/40 transition-colors">Register</a>
+        <a href="/verify" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">Verify Certificate</a>
+        <a href="/trainee" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">Trainee Portal</a>
+        <a href="/employer" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">Employer Hub</a>
+        <a href="/admin" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors">Admin Deck</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <div class="flex items-center bg-surface-container-low p-1 rounded-full border border-outline-variant/40">
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold bg-primary text-white" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface" onclick="setLanguage('hi')">हिं</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface" onclick="setLanguage('mr')">मराठी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Registration Workspace -->
+  <main class="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
+    <div class="space-y-6">
+      <!-- Title Header -->
+      <div class="text-center space-y-1">
+        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">100% Free Govt Skilling Registration</span>
+        <h1 class="text-3xl font-extrabold text-primary">Trainee Programme Registration Form</h1>
+        <p class="text-sm text-on-surface-variant">ग्रामीण कौशल्य प्रशिक्षण नामांकन फॉर्म • Complete the 4-step verified enrolment</p>
+      </div>
+
+      <!-- 4-Step Progress Stepper -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/30">
+        <div class="flex items-center justify-between mb-3 text-xs font-bold">
+          <span class="text-primary uppercase" id="stepIndicatorLabel">Step 1 of 4: Personal Details</span>
+          <span class="text-on-surface-variant" id="stepPercentLabel">25% Completed</span>
+        </div>
+        <div class="relative flex items-center justify-between w-full">
+          <div class="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-1.5 bg-surface-container rounded-full -z-0">
+            <div id="stepProgressBar" class="h-full bg-primary-container rounded-full w-[25%] transition-all duration-300"></div>
+          </div>
+          <!-- Node 1 -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div id="stepNode1" class="w-10 h-10 rounded-full bg-primary-container text-white font-bold flex items-center justify-center text-sm shadow-md">1</div>
+            <span class="text-xs font-bold text-primary mt-1.5">Personal</span>
+          </div>
+          <!-- Node 2 -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div id="stepNode2" class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant font-bold flex items-center justify-center text-sm">2</div>
+            <span class="text-xs font-medium text-on-surface-variant mt-1.5">Location</span>
+          </div>
+          <!-- Node 3 -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div id="stepNode3" class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant font-bold flex items-center justify-center text-sm">3</div>
+            <span class="text-xs font-medium text-on-surface-variant mt-1.5">Documents</span>
+          </div>
+          <!-- Node 4 -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div id="stepNode4" class="w-10 h-10 rounded-full bg-surface-container text-on-surface-variant font-bold flex items-center justify-center text-sm">4</div>
+            <span class="text-xs font-medium text-on-surface-variant mt-1.5">Review</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selected Programme Card -->
+      <div class="bg-white p-4 rounded-xl border border-outline-variant/30 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-[24px]">solar_power</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-bold text-sm text-primary">Solar Pump & Micro-Grid Technician (Batch #4)</h3>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">PMKVY 4.0</span>
+            </div>
+            <p class="text-xs text-on-surface-variant">Nagpur ITI Complex • 3 Months Free Training + Free Toolkit & Hostel</p>
+          </div>
+        </div>
+        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full shrink-0">₹0 Tuition Fee</span>
+      </div>
+
+      <!-- FORM STEP 1: Personal Details -->
+      <div id="stepContent1" class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 space-y-5">
+        <h3 class="text-base font-bold text-on-surface flex items-center gap-2 border-b border-outline-variant/20 pb-3">
+          <span class="material-symbols-outlined text-primary">person</span>
+          Step 1: Personal Details / व्यक्तिगत विवरण
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="md:col-span-2">
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Full Name (as per Aadhaar Card) / पूरा नाम *</label>
+            <input type="text" id="regName" class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm focus:outline-none focus:border-primary" placeholder="उदा. सुनीता सुरेश शर्मा" value="सुनीता शर्मा">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Mobile Number / मोबाइल नंबर *</label>
+            <input type="tel" id="regPhone" class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm focus:outline-none focus:border-primary" value="9876543210">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Age / आयु (18-35 Yrs) *</label>
+            <input type="number" id="regAge" class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm focus:outline-none focus:border-primary" value="23">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Gender / लिंग *</label>
+            <div class="grid grid-cols-3 gap-3">
+              <button type="button" class="gender-btn h-11 rounded-xl bg-primary text-white text-xs font-bold" onclick="selectGender(this)">महिला / Female</button>
+              <button type="button" class="gender-btn h-11 rounded-xl bg-surface-container-low text-on-surface text-xs font-medium" onclick="selectGender(this)">पुरुष / Male</button>
+              <button type="button" class="gender-btn h-11 rounded-xl bg-surface-container-low text-on-surface text-xs font-medium" onclick="selectGender(this)">अन्य / Other</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM STEP 2: Location & Education -->
+      <div id="stepContent2" class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 space-y-5 hidden">
+        <h3 class="text-base font-bold text-on-surface flex items-center gap-2 border-b border-outline-variant/20 pb-3">
+          <span class="material-symbols-outlined text-primary">home_pin</span>
+          Step 2: Location & Education / निवास व शैक्षणिक योग्यता
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">District / जिला *</label>
+            <select class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm">
+              <option selected>Nagpur (नागपुर)</option>
+              <option>Wardha (वर्धा)</option>
+              <option>Chandrapur (चंद्रपूर)</option>
+              <option>Amravati (अमरावती)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Taluka / तहसील *</label>
+            <input type="text" class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm" value="Katol (काटोल)">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Village / Gram Panchayat *</label>
+            <input type="text" class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm" value="Kondhali (कोंढाळी)">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Highest Education / शैक्षणिक योग्यता *</label>
+            <select class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm">
+              <option>10th Standard (१०वीं)</option>
+              <option selected>12th Standard (१२वीं)</option>
+              <option>ITI / Diploma</option>
+              <option>Graduate (स्नातक)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM STEP 3: Documents & Logistics -->
+      <div id="stepContent3" class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 space-y-5 hidden">
+        <h3 class="text-base font-bold text-on-surface flex items-center gap-2 border-b border-outline-variant/20 pb-3">
+          <span class="material-symbols-outlined text-primary">badge</span>
+          Step 3: Identity Documents & Hostel Logistics / दस्तावेज़ व हॉस्टल
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="md:col-span-2">
+            <label class="block text-xs font-bold text-on-surface-variant mb-1">Aadhaar Card Number / आधार संख्या *</label>
+            <input type="text" class="w-full h-12 px-4 rounded-xl bg-surface-container-low border border-outline-variant/40 text-sm font-mono" value="7823-9012-4418">
+          </div>
+          <div class="md:col-span-2 border-2 border-dashed border-outline-variant/60 rounded-2xl p-6 text-center bg-surface-container-low/50">
+            <span class="material-symbols-outlined text-[36px] text-primary">upload_file</span>
+            <p class="text-xs font-bold text-on-surface mt-1">Upload Aadhaar / Residential Proof (फोटो अपलोड करें)</p>
+            <span class="inline-block mt-2 text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">✓ Verified with UIDAI eKYC OCR</span>
+          </div>
+          <div class="md:col-span-2 bg-surface-container-low p-4 rounded-xl flex items-center justify-between">
+            <div>
+              <span class="text-xs font-bold text-on-surface block">Do you require Hostel & Mess Accommodation?</span>
+              <span class="text-[11px] text-on-surface-variant">Free boarding for candidates residing >15km away</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs font-bold">
+              <label class="flex items-center gap-1.5 cursor-pointer">
+                <input type="radio" name="hostel" checked class="text-primary">
+                <span>Yes (हाँ)</span>
+              </label>
+              <label class="flex items-center gap-1.5 cursor-pointer">
+                <input type="radio" name="hostel" class="text-primary">
+                <span>No (नहीं)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM STEP 4: Review & Final Submission -->
+      <div id="stepContent4" class="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/30 space-y-6 hidden">
+        <h3 class="text-base font-bold text-on-surface flex items-center gap-2 border-b border-outline-variant/20 pb-3">
+          <span class="material-symbols-outlined text-primary">fact_check</span>
+          Step 4: Review Application / समीक्षा व अंतिम पुष्टि
+        </h3>
+        <div class="bg-surface-container-low p-6 rounded-2xl space-y-3 text-xs">
+          <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+            <span class="text-on-surface-variant">Candidate Name:</span>
+            <span class="font-bold text-on-surface text-sm" id="reviewName">सुनीता शर्मा</span>
+          </div>
+          <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+            <span class="text-on-surface-variant">Trade Selected:</span>
+            <span class="font-bold text-primary text-sm">Solar Pump & Micro-Grid Technician</span>
+          </div>
+          <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+            <span class="text-on-surface-variant">District Center:</span>
+            <span class="font-bold text-on-surface">Nagpur Rural (Katol ITI Complex)</span>
+          </div>
+          <div class="flex justify-between border-b border-outline-variant/20 pb-2">
+            <span class="text-on-surface-variant">Hostel Facility:</span>
+            <span class="font-bold text-emerald-700">Allocated (Block A Women's Hostel)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-on-surface-variant">Total Fee:</span>
+            <span class="font-extrabold text-emerald-800 text-sm">₹0 (100% Free Govt Sponsored Scheme)</span>
+          </div>
+        </div>
+
+        <div id="successCard" class="hidden bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-6 text-center space-y-3">
+          <div class="w-14 h-14 rounded-full bg-emerald-600 text-white flex items-center justify-center mx-auto shadow-md">
+            <span class="material-symbols-outlined text-[32px]">check</span>
+          </div>
+          <h2 class="text-xl font-extrabold text-emerald-900">नामांकन सफल हुआ! (Registration Confirmed)</h2>
+          <p class="text-xs text-emerald-800">Your application has been registered in the National Skilling Registry with instant allocation.</p>
+          <div class="inline-block bg-white px-4 py-2 rounded-xl border border-emerald-300 font-mono text-base font-bold text-emerald-900 shadow-sm">
+            Application ID: RR-2026-REG-8492
+          </div>
+          <div class="pt-3 flex flex-wrap items-center justify-center gap-3">
+            <a href="/trainee" class="px-6 py-2.5 rounded-xl bg-primary-container hover:bg-primary text-white text-xs font-bold shadow-md">
+              Go to Trainee Portal →
+            </a>
+            <button onclick="window.print()" class="px-5 py-2.5 rounded-xl bg-white border border-emerald-300 text-emerald-800 text-xs font-bold hover:bg-emerald-50">
+              Download Acknowledgement Slip (PDF)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Actions -->
+      <div class="flex items-center justify-between gap-4 pt-2">
+        <button id="stepBackBtn" type="button" class="hidden px-6 py-3 rounded-xl bg-surface-container text-on-surface font-bold text-xs flex items-center gap-1.5 active:scale-95 hover:bg-surface-container-high" onclick="prevStep()">
+          <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+          <span>Back / वापस</span>
+        </button>
+        <button id="stepNextBtn" type="button" class="ml-auto px-8 py-3.5 rounded-xl bg-primary-container hover:bg-primary text-white font-bold text-sm flex items-center gap-2 shadow-md active:scale-95 transition-all" onclick="nextStep()">
+          <span id="stepNextText">Save & Continue / सुरक्षित करें & आगे बढ़ें</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="/assets/shared.js"></script>
+  <script>
+    let currentStep = 1;
+    const totalSteps = 4;
+
+    function selectGender(btn) {
+      document.querySelectorAll('.gender-btn').forEach(b => {
+        b.className = 'gender-btn h-11 rounded-xl bg-surface-container-low text-on-surface text-xs font-medium';
+      });
+      btn.className = 'gender-btn h-11 rounded-xl bg-primary text-white text-xs font-bold';
+    }
+
+    function updateStepUI() {
+      for (let i = 1; i <= totalSteps; i++) {
+        const el = document.getElementById('stepContent' + i);
+        if (el) el.classList.toggle('hidden', i !== currentStep);
+      }
+
+      const pct = Math.round((currentStep / totalSteps) * 100);
+      document.getElementById('stepProgressBar').style.width = pct + '%';
+      document.getElementById('stepIndicatorLabel').textContent = `Step ${currentStep} of ${totalSteps}`;
+      document.getElementById('stepPercentLabel').textContent = `${pct}% Completed`;
+
+      for (let i = 1; i <= totalSteps; i++) {
+        const node = document.getElementById('stepNode' + i);
+        if (i < currentStep) {
+          node.className = 'w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shadow-md';
+          node.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span>';
+        } else if (i === currentStep) {
+          node.className = 'w-10 h-10 rounded-full bg-primary-container text-white font-bold flex items-center justify-center text-sm shadow-md';
+          node.textContent = i;
+        } else {
+          node.className = 'w-10 h-10 rounded-full bg-surface-container text-on-surface-variant font-bold flex items-center justify-center text-sm';
+          node.textContent = i;
+        }
+      }
+
+      const backBtn = document.getElementById('stepBackBtn');
+      if (currentStep > 1 && currentStep <= totalSteps) {
+        backBtn.classList.remove('hidden');
+      } else {
+        backBtn.classList.add('hidden');
+      }
+
+      const nextText = document.getElementById('stepNextText');
+      if (currentStep === totalSteps) {
+        nextText.textContent = 'Confirm & Submit Application / अंतिम जमा करें';
+      } else {
+        nextText.textContent = 'Save & Continue / सुरक्षित करें & आगे बढ़ें';
+      }
+    }
+
+    function nextStep() {
+      if (currentStep === 1) {
+        const nameVal = document.getElementById('regName').value.trim();
+        if (nameVal) document.getElementById('reviewName').textContent = nameVal;
+      }
+
+      if (currentStep < totalSteps) {
+        currentStep++;
+        updateStepUI();
+        showToast(`Step ${currentStep} Active`);
+      } else if (currentStep === totalSteps) {
+        document.getElementById('stepNextBtn').classList.add('hidden');
+        document.getElementById('stepBackBtn').classList.add('hidden');
+        document.getElementById('successCard').classList.remove('hidden');
+        showToast('Application successfully registered! 🎉');
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep--;
+        updateStepUI();
+      }
+    }
+  </script>
+</body>
+</html>

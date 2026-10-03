@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Timetable, Hostel & Logistics - Rural Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/shared.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary": "#003935",
+            "on-primary-fixed": "#00210d",
+            "on-secondary-fixed-variant": "#653e00",
+            "tertiary-container": "#00524c",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#dae2fd",
+            "on-tertiary-fixed": "#00201d",
+            "inverse-primary": "#96d5a3",
+            "surface-container-low": "#f2f3ff",
+            "inverse-on-surface": "#eef0ff",
+            "inverse-surface": "#283044",
+            "tertiary-fixed": "#9cf2e8",
+            "on-secondary-container": "#684000",
+            "outline-variant": "#c0c9be",
+            "surface-dim": "#d2d9f4",
+            "secondary": "#855300",
+            "on-surface-variant": "#404941",
+            "surface-container-highest": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#12512c",
+            "primary-fixed-dim": "#96d5a3",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#b1f2be",
+            "on-error-container": "#93000a",
+            "on-surface": "#131b2e",
+            "surface": "#faf8ff",
+            "on-tertiary-fixed-variant": "#00504a",
+            "secondary-container": "#fea619",
+            "surface-tint": "#2e6a41",
+            "surface-bright": "#faf8ff",
+            "tertiary-fixed-dim": "#80d5cb",
+            "primary": "#003b1b",
+            "on-secondary-fixed": "#2a1700",
+            "error-container": "#ffdad6",
+            "on-primary-container": "#87c695",
+            "on-background": "#131b2e",
+            "surface-container": "#eaedff",
+            "on-tertiary-container": "#71c6bd",
+            "surface-container-high": "#e2e7ff",
+            "on-error": "#ffffff",
+            "secondary-fixed": "#ffddb8",
+            "secondary-fixed-dim": "#ffb95f",
+            "error": "#ba1a1a",
+            "primary-container": "#14532d",
+            "background": "#faf8ff",
+            "outline": "#717970",
+            "surface-container-lowest": "#ffffff"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "space-lg": "1.5rem",
+            "space-sm": "0.75rem",
+            "space-xs": "0.5rem",
+            "space-md": "1rem",
+            "gutter-md": "1.5rem",
+            "space-xl": "2rem",
+            "space-2xl": "3rem",
+            gutter: "1rem",
+            "gutter-lg": "2rem",
+            margin: "1rem"
+          },
+          fontFamily: {
+            "body-md": ["Noto Sans"],
+            "headline-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "label-lg": ["Inter"],
+            "body-lg": ["Noto Sans"],
+            "label-sm": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-xl": ["Noto Sans"],
+            "label-md": ["Inter"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+  <!-- Shared Admin Sidebar -->
+  <aside class="fixed left-0 top-0 h-full w-72 bg-primary-container text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]">
+    <div class="flex flex-col flex-1 overflow-y-auto">
+      <div class="h-20 px-space-lg flex items-center gap-space-sm bg-primary/40">
+        <div class="w-9 h-9 rounded-lg bg-primary-fixed text-primary flex items-center justify-center font-bold">
+          <span class="material-symbols-outlined text-[22px]">agriculture</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-lg text-white font-bold leading-tight">Rural Rise</span>
+          <span class="font-label-sm text-xs text-primary-fixed uppercase tracking-wider">Timetable & Hostel</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-space-sm py-space-md space-y-1">
+        <a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/admin">
+          <span class="material-symbols-outlined text-[20px]">space_dashboard</span>
+          <span data-i18n="nav.dashboard">Dashboard</span>
+        </a>
+        <a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg bg-primary text-primary-fixed font-bold shadow-sm text-sm" href="/admin/timetable">
+          <span class="material-symbols-outlined text-[20px]">hotel</span>
+          <span data-i18n="nav.timetable">Timetable & Hostel</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/admin/readiness">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span data-i18n="nav.readiness">AI Readiness</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/verify">
+          <span class="material-symbols-outlined text-[20px]">verified</span>
+          <span data-i18n="nav.verify">Verify Certificate</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/employer">
+          <span class="material-symbols-outlined text-[20px]">apartment</span>
+          <span data-i18n="nav.employers">Employers</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/trainer/session">
+          <span class="material-symbols-outlined text-[20px]">co_present</span>
+          <span data-i18n="nav.sessions">Trainer Sessions</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/trainee">
+          <span class="material-symbols-outlined text-[20px]">person_celebrate</span>
+          <span>Trainee View</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/">
+          <span class="material-symbols-outlined text-[20px]">home</span>
+          <span>Home / Landing</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Center Footer -->
+    <div class="p-space-md bg-primary/60 m-space-md rounded-xl flex items-center justify-between text-xs text-white">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">RR</div>
+        <div class="flex flex-col">
+          <span class="font-bold">Katol Center Hub</span>
+          <span class="text-primary-fixed text-[11px]">460 Residents</span>
+        </div>
+      </div>
+      <a href="/admin" class="hover:underline text-primary-fixed">Back</a>
+    </div>
+  </aside>
+
+  <!-- Main View -->
+  <div class="pl-72">
+    <header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg">
+      <div class="flex items-center gap-space-lg">
+        <div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-2 rounded-lg text-on-surface">
+          <span class="material-symbols-outlined text-secondary text-[20px]">grid_view</span>
+          <div class="flex flex-col">
+            <span class="text-[10px] font-label-sm text-outline uppercase tracking-wider leading-none">Active Facility</span>
+            <span class="font-label-md text-xs font-bold text-on-surface flex items-center gap-1 cursor-pointer">Nagpur Rural Skilling Complex • Batch 4</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-space-md">
+        <div class="inline-flex items-center bg-surface-container p-1 rounded-full text-on-surface-variant border border-outline-variant/30">
+          <button class="lang-btn px-2.5 py-1 rounded-full font-label-sm text-xs bg-primary text-white font-bold" type="button" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full font-label-sm text-xs text-on-surface-variant hover:text-on-surface" type="button" onclick="setLanguage('hi')">हिं</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full font-label-sm text-xs text-on-surface-variant hover:text-on-surface" type="button" onclick="setLanguage('mr')">मराठी</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+            <span class="material-symbols-outlined text-[18px]">person</span>
+          </div>
+          <span class="text-xs font-bold">Admin Deck</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative pt-24 bg-background min-h-screen px-space-lg py-space-xl pb-24">
+      <div class="max-w-7xl mx-auto space-y-space-xl">
+        <!-- Tab Selector: Timetable vs Hostel vs Logistics -->
+        <div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest p-2 rounded-xl shadow-sm border border-outline-variant/30">
+          <div class="flex flex-wrap items-center gap-2">
+            <button id="tabBtnTimetable" class="facility-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-white font-bold text-xs shadow-sm" onclick="switchFacilityTab('timetable')">
+              <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+              <span>Timetable / वेळापत्रक</span>
+              <span class="px-2 py-0.5 rounded-full bg-primary text-primary-fixed text-[10px]">Batch 4</span>
+            </button>
+            <button id="tabBtnHostel" class="facility-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-semibold text-xs" onclick="switchFacilityTab('hostel')">
+              <span class="material-symbols-outlined text-[18px]">bed</span>
+              <span>Hostel & Accommodation / वसतिगृह</span>
+              <span class="px-2 py-0.5 rounded-full bg-secondary-container/20 text-on-secondary-container text-[10px] font-bold">92% Full</span>
+            </button>
+            <button id="tabBtnLogistics" class="facility-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-semibold text-xs" onclick="switchFacilityTab('logistics')">
+              <span class="material-symbols-outlined text-[18px]">local_shipping</span>
+              <span>Logistics & Supplies / रसद</span>
+              <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Dispatched</span>
+            </button>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="px-3 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-xs font-bold flex items-center gap-1" onclick="showToast('Schedule exported as PDF')">
+              <span class="material-symbols-outlined text-[16px]">download</span>
+              <span>Export PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: TIMETABLE SCHEDULE -->
+        <div id="tabContentTimetable" class="space-y-space-md">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+            <!-- Slot 1 -->
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border-l-4 border-primary">
+              <div class="flex items-center justify-between text-xs text-on-surface-variant font-bold mb-1">
+                <span>09:00 AM - 11:00 AM</span>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">Workshop A</span>
+              </div>
+              <h3 class="font-bold text-on-surface text-base">Basic Tailoring: Measuring & Machine Setup</h3>
+              <p class="text-xs text-on-surface-variant mt-1">Trainer: Er. Sunita Devi • 32 Trainees Registered</p>
+              <div class="mt-3 flex items-center justify-between text-xs">
+                <span class="text-emerald-700 font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">verified</span>Attendance: 96%</span>
+                <a href="/trainer/session" class="text-primary font-bold hover:underline">View Live Session →</a>
+              </div>
+            </div>
+
+            <!-- Slot 2 -->
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border-l-4 border-amber-500">
+              <div class="flex items-center justify-between text-xs text-on-surface-variant font-bold mb-1">
+                <span>11:30 AM - 01:30 PM</span>
+                <span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800">Solar Lab 2</span>
+              </div>
+              <h3 class="font-bold text-on-surface text-base">Solar Pump Inverter Wiring & Grid Sync</h3>
+              <p class="text-xs text-on-surface-variant mt-1">Trainer: Vikas Deshmukh • 28 Trainees Registered</p>
+              <div class="mt-3 flex items-center justify-between text-xs">
+                <span class="text-emerald-700 font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">verified</span>Attendance: 92%</span>
+                <span class="text-on-surface-variant">Lab Setup Ready</span>
+              </div>
+            </div>
+
+            <!-- Slot 3 -->
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border-l-4 border-teal-600">
+              <div class="flex items-center justify-between text-xs text-on-surface-variant font-bold mb-1">
+                <span>02:30 PM - 04:30 PM</span>
+                <span class="px-2 py-0.5 rounded-full bg-teal-100 text-teal-800">IT Lab 1</span>
+              </div>
+              <h3 class="font-bold text-on-surface text-base">Digital Commerce & Self-Employment Skills</h3>
+              <p class="text-xs text-on-surface-variant mt-1">Guest Faculty: Dr. Rekha Rao • Batch #4 Combined</p>
+              <div class="mt-3 flex items-center justify-between text-xs">
+                <span class="text-emerald-700 font-bold flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">computer</span>Computer Lab</span>
+                <span class="text-on-surface-variant">Scheduled</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: HOSTEL & ACCOMMODATION -->
+        <div id="tabContentHostel" class="space-y-space-md hidden">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+            <!-- Hostel Block A -->
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-bold text-base text-on-surface">Block A: Women's Skilling Hostel (महिला वसतिगृह)</h3>
+                  <p class="text-xs text-on-surface-variant">250 Capacity • 240 Occupied (96%)</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">10 Beds Left</span>
+              </div>
+              <div class="w-full bg-surface-container rounded-full h-2.5 mt-3 overflow-hidden">
+                <div class="bg-emerald-600 h-2.5 rounded-full" style="width: 96%"></div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 mt-4 text-center text-xs">
+                <div class="p-2 bg-surface-container-low rounded-lg">
+                  <span class="block text-on-surface-variant">Warden:</span>
+                  <strong class="text-on-surface">Anita Tai</strong>
+                </div>
+                <div class="p-2 bg-surface-container-low rounded-lg">
+                  <span class="block text-on-surface-variant">Mess Food:</span>
+                  <strong class="text-emerald-700">FSSAI Graded</strong>
+                </div>
+                <div class="p-2 bg-surface-container-low rounded-lg">
+                  <span class="block text-on-surface-variant">CCTV Live:</span>
+                  <strong class="text-emerald-700">Active</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hostel Block B -->
+            <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30">
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3 class="font-bold text-base text-on-surface">Block B: Men's Skilling Hostel (पुरुष वसतिगृह)</h3>
+                  <p class="text-xs text-on-surface-variant">250 Capacity • 220 Occupied (88%)</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">30 Beds Left</span>
+              </div>
+              <div class="w-full bg-surface-container rounded-full h-2.5 mt-3 overflow-hidden">
+                <div class="bg-primary h-2.5 rounded-full" style="width: 88%"></div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 mt-4 text-center text-xs">
+                <div class="p-2 bg-surface-container-low rounded-lg">
+                  <span class="block text-on-surface-variant">Warden:</span>
+                  <strong class="text-on-surface">S. Shinde</strong>
+                </div>
+                <div class="p-2 bg-surface-container-low rounded-lg">
+                  <span class="block text-on-surface-variant">Mess Food:</span>
+                  <strong class="text-emerald-700">FSSAI Graded</strong>
+                </div>
+                <div class="p-2 bg-surface-container-low rounded-lg">
+                  <span class="block text-on-surface-variant">Solar Hot Water:</span>
+                  <strong class="text-emerald-700">Online</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: LOGISTICS & SUPPLIES -->
+        <div id="tabContentLogistics" class="space-y-space-md hidden">
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30">
+            <h3 class="font-bold text-base text-on-surface mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary">inventory_2</span>
+              Tool Kits & Workshop Supplies Inventory
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md text-xs">
+              <div class="p-3 bg-surface-container-low rounded-xl">
+                <span class="font-bold text-on-surface block text-sm">Tailoring Sewing Kits</span>
+                <span class="text-on-surface-variant">Scissors, measuring tapes, chalks</span>
+                <div class="mt-2 text-emerald-700 font-bold">✓ 350 Units in stock (Adequate)</div>
+              </div>
+              <div class="p-3 bg-surface-container-low rounded-xl">
+                <span class="font-bold text-on-surface block text-sm">Solar Technician Toolboxes</span>
+                <span class="text-on-surface-variant">Multimeters, wire strippers, safety gloves</span>
+                <div class="mt-2 text-emerald-700 font-bold">✓ 200 Toolboxes allocated</div>
+              </div>
+              <div class="p-3 bg-surface-container-low rounded-xl">
+                <span class="font-bold text-on-surface block text-sm">Uniforms & ID Cards</span>
+                <span class="text-on-surface-variant">RFID Smart Badges & safety aprons</span>
+                <div class="mt-2 text-emerald-700 font-bold">✓ 100% Dispatched to Batch 4</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/shared.js"></script>
+  <script>
+    function switchFacilityTab(tab) {
+      document.getElementById('tabContentTimetable').classList.toggle('hidden', tab !== 'timetable');
+      document.getElementById('tabContentHostel').classList.toggle('hidden', tab !== 'hostel');
+      document.getElementById('tabContentLogistics').classList.toggle('hidden', tab !== 'logistics');
+
+      document.querySelectorAll('.facility-tab-btn').forEach(btn => {
+        btn.className = 'facility-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-semibold text-xs';
+      });
+
+      if (tab === 'timetable') {
+        document.getElementById('tabBtnTimetable').className = 'facility-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-white font-bold text-xs shadow-sm';
+      } else if (tab === 'hostel') {
+        document.getElementById('tabBtnHostel').className = 'facility-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-white font-bold text-xs shadow-sm';
+      } else if (tab === 'logistics') {
+        document.getElementById('tabBtnLogistics').className = 'facility-tab-btn flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-white font-bold text-xs shadow-sm';
+      }
+
+      showToast(`Showing ${tab.toUpperCase()} section`);
+    }
+  </script>
+</body>
+</html>

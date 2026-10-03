@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary":"#003b1b","on-tertiary-fixed":"#00201d","surface-container-highest":"#dae2fd","on-tertiary-container":"#71c6bd","error-container":"#ffdad6","on-tertiary":"#ffffff","secondary-fixed":"#ffddb8","on-secondary":"#ffffff","surface-container":"#eaedff","surface-container-high":"#e2e7ff","tertiary":"#003935","surface-container-low":"#f2f3ff","secondary-fixed-dim":"#ffb95f","on-primary-container":"#87c695","secondary-container":"#fea619","tertiary-container":"#00524c","on-secondary-fixed-variant":"#653e00","error":"#ba1a1a","primary-fixed":"#b1f2be","surface-container-lowest":"#ffffff","tertiary-fixed":"#9cf2e8","on-secondary-container":"#684000","surface-dim":"#d2d9f4","on-primary-fixed-variant":"#12512c","inverse-surface":"#283044","background":"#faf8ff","outline-variant":"#c0c9be","on-surface-variant":"#404941","primary-fixed-dim":"#96d5a3","primary-container":"#14532d","surface-tint":"#2e6a41","on-primary-fixed":"#00210d","on-surface":"#131b2e","surface":"#faf8ff","surface-bright":"#faf8ff","inverse-on-surface":"#eef0ff","on-secondary-fixed":"#2a1700","on-background":"#131b2e","tertiary-fixed-dim":"#80d5cb","surface-variant":"#dae2fd","on-tertiary-fixed-variant":"#00504a","secondary":"#855300","inverse-primary":"#96d5a3","on-primary":"#ffffff","outline":"#717970","on-error":"#ffffff","on-error-container":"#93000a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.75rem","margin-md":"2rem","space-xs":"0.5rem","gutter":"1rem","gutter-lg":"2rem","space-xl":"2rem","space-lg":"1.5rem","space-md":"1rem","space-2xl":"3rem","margin":"1rem","margin-lg":"3rem","gutter-md":"1.5rem"},"fontFamily":{"body-lg":["Noto Sans"],"display-lg":["Inter"],"body-md":["Noto Sans"],"label-lg":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"body-xl":["Noto Sans"],"headline-md":["Inter"],"label-md":["Inter"],"headline-sm":["Inter"],"display-lg-mobile":["Inter"],"label-sm":["Inter"]},"fontSize":{"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"display-lg":["40px",{"lineHeight":"48px","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-lg":["16px",{"lineHeight":"24px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-xl":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-md":["15px",{"lineHeight":"20px","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"display-lg-mobile":["30px",{"lineHeight":"38px","fontWeight":"700"}],"label-sm":["14px",{"lineHeight":"18px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-primary-container text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="p-space-lg flex items-center gap-space-sm bg-primary/40"><img alt="Brand logo. - Primary color: #14532d
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgoNBJy4t04MJXvSwYhlGfBjRKLF1WfkiBLnqK2qLOcCsKkCbcoYBZDkZ4cJUVtBBAVu5L3R5pi3KkQ6Of3NkddWrXxFq7XjXG38aJMnoJHMBANasi8OmxJEqjDMEvyzhwWGl3LXBWuK7Yd7VsVbuLFs_AUhmYKf_Rgmm-_e9u30GvqwKWuKQnbvYGR0SV87bqMIueTM5r5iSTHnRsSiyCs-_-FikOnsHkePchs-A8k3_BtiUCjdf42kJi"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-primary leading-tight">Rural Rise</span><span class="font-label-sm text-label-sm text-on-primary-container leading-tight">रोजगार मंच / Employer</span></div></div><div class="px-space-md py-space-sm"><p class="font-label-sm text-label-sm text-on-primary-container px-space-xs uppercase tracking-wider">Navigation</p></div><nav class="flex flex-col gap-space-xs px-space-md" data-active-classes="bg-surface-container-lowest text-primary font-bold shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg transition-colors min-h-[48px] bg-surface-container-lowest text-primary font-bold shadow-sm" data-path="find-candidates" href="#"><span class="material-symbols-outlined text-[22px]">person_search</span><span class="font-label-md text-label-md">Find Candidates</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-primary hover:bg-primary hover:text-on-primary transition-colors min-h-[48px]" data-path="shortlisted" href="#"><span class="material-symbols-outlined text-[22px]">bookmark</span><span class="font-label-md text-label-md">Shortlisted</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-primary hover:bg-primary hover:text-on-primary transition-colors min-h-[48px]" data-path="job-openings" href="#"><span class="material-symbols-outlined text-[22px]">work</span><span class="font-label-md text-label-md">Job Openings</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-primary hover:bg-primary hover:text-on-primary transition-colors min-h-[48px]" data-path="interest-requests" href="#"><span class="material-symbols-outlined text-[22px]">send</span><span class="font-label-md text-label-md">Interest Requests</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-primary hover:bg-primary hover:text-on-primary transition-colors min-h-[48px]" data-path="company-profile" href="#"><span class="material-symbols-outlined text-[22px]">domain</span><span class="font-label-md text-label-md">Company Profile</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm bg-primary/30"><div class="p-space-sm rounded-xl bg-primary flex items-center gap-space-sm"><div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm text-headline-sm shrink-0 font-bold">MT</div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-primary truncate">Mahati Agro &amp; Textiles</span><span class="flex items-center gap-1 font-label-sm text-label-sm text-primary-fixed"><span class="material-symbols-outlined text-[16px]">verified</span>Verified Employer</span></div></div><div class="flex flex-col gap-1 pt-space-xs"><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-primary hover:bg-primary hover:text-on-primary transition-colors text-label-sm" data-path="helpdesk" href="#"><span class="material-symbols-outlined text-[20px]">contact_support</span><span>Helpdesk &amp; Support</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-on-primary hover:bg-primary hover:text-on-primary transition-colors text-label-sm" data-path="login" href="#"><span class="material-symbols-outlined text-[20px]">logout</span><span>Logout</span></a></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-gutter-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-2xl"><img alt="Brand logo. - Primary color: #14532d
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgoNBJy4t04MJXvSwYhlGfBjRKLF1WfkiBLnqK2qLOcCsKkCbcoYBZDkZ4cJUVtBBAVu5L3R5pi3KkQ6Of3NkddWrXxFq7XjXG38aJMnoJHMBANasi8OmxJEqjDMEvyzhwWGl3LXBWuK7Yd7VsVbuLFs_AUhmYKf_Rgmm-_e9u30GvqwKWuKQnbvYGR0SV87bqMIueTM5r5iSTHnRsSiyCs-_-FikOnsHkePchs-A8k3_BtiUCjdf42kJi"/><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[22px]">search</span><input class="w-full pl-10 pr-space-md py-space-xs h-[48px] rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-outline outline-none ring-1 ring-outline-variant focus:ring-2 focus:ring-primary font-body-md text-body-md transition-all" placeholder="Search candidates by name, trade ID, or skill..." type="search"/></div></div><div class="flex items-center gap-space-md shrink-0"><div class="inline-flex items-center p-1 bg-surface-container rounded-full"><button class="px-3 py-1 text-label-sm font-label-sm rounded-full bg-primary text-on-primary shadow-sm" type="button">EN</button><button class="px-3 py-1 text-label-sm font-label-sm rounded-full text-on-surface-variant hover:text-on-surface" type="button">हिं</button><button class="px-3 py-1 text-label-sm font-label-sm rounded-full text-on-surface-variant hover:text-on-surface" type="button">मराठी</button></div><button class="w-12 h-12 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface flex items-center justify-center transition-colors" title="Audio Guide Support" type="button"><span class="material-symbols-outlined text-[22px]">volume_up</span></button><button class="w-12 h-12 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface flex items-center justify-center relative transition-colors" title="Notifications" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 bg-secondary-container rounded-full"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Mahati Textiles Pvt Ltd</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Recruiter Admin</span></div></div></div></header><main class="w-full pt-20 px-gutter-lg pb-margin-lg flex-1 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Banner & Quick Stat Strip -->
+<section class="mb-space-lg flex flex-col gap-space-md">
+<!-- Breadcrumb & Direct Action Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px] text-primary">hub</span>
+<span>Talent Exchange Hub</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-semibold">Vidarbha Vocational Network</span>
+</div>
+<div class="flex items-baseline gap-space-sm flex-wrap">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            128 Certified Candidates Found
+          </h1>
+<span class="font-headline-md text-headline-md text-on-surface-variant font-normal">
+            (१२८ प्रमाणित उमेदवार उपलब्ध)
+          </span>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/10 text-primary-container font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Live Skill-Registry Sync Active</span>
+</div>
+</div>
+</div>
+<!-- Sorting Pill Box -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-lg">
+<span class="material-symbols-outlined text-[22px] text-on-surface-variant">swap_vert</span>
+<label class="font-label-md text-label-md text-on-surface-variant shrink-0" for="candidate-sort">Sort By:</label>
+<select class="bg-transparent text-primary font-label-lg text-label-lg outline-none cursor-pointer pr-space-xs" id="candidate-sort">
+<option value="score">Highest Assessment Score (गुणवत्तेनुसार)</option>
+<option value="recent">Most Recent Batch (नवीनतम तुकडी)</option>
+<option value="attendance">Highest Attendance (उपस्थिती %)</option>
+<option value="location">Nearest District (जवळचे स्थान)</option>
+</select>
+</div>
+</div>
+<!-- Quick Stats Cards Row -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/15 text-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">100%</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm">Govt Assessed</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">NCVT &amp; NSDC Certified Talent Pool</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">flash_on</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">84 Ready</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">&lt; 48 Hrs</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Immediate Local Joiners (तत्काळ रुजू)</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/15 text-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">factory</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Top Trades</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">Vidarbha Hub</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant">Tailoring, Industrial Solar &amp; Drones</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2-Column Main Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANEL: Filter Candidate Drawer (Sticky Desktop) -->
+<aside class="lg:col-span-4 xl:col-span-3 lg:sticky lg:top-24 flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Filters</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">3 Active</span>
+</div>
+<button class="font-label-md text-label-md text-secondary hover:text-on-secondary-container transition-colors underline cursor-pointer" type="button">
+          Clear All
+        </button>
+</div>
+<!-- Trade Selection -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-primary">handyman</span>
+<span>Skill / Trade (व्यवसाय)</span>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 rounded accent-primary text-on-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-lg text-body-lg text-on-surface font-medium">Garment &amp; Tailoring</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">48</span>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-3">
+<input checked="" class="w-5 h-5 rounded accent-primary text-on-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-lg text-body-lg text-on-surface font-medium">Rural Electrician &amp; Solar</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">36</span>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary text-on-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-lg text-body-lg text-on-surface">Data Entry &amp; Office MS</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">28</span>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<span class="flex items-center gap-3">
+<input class="w-5 h-5 rounded accent-primary text-on-primary cursor-pointer" type="checkbox"/>
+<span class="font-body-lg text-body-lg text-on-surface">Plumbing &amp; Irrigation</span>
+</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">16</span>
+</label>
+</div>
+</div>
+<!-- District Selector -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<label class="flex items-center gap-2 text-on-surface font-label-lg text-label-lg" for="district-selector">
+<span class="material-symbols-outlined text-[20px] text-primary">location_on</span>
+<span>District / Center (जिल्हा)</span>
+</label>
+<div class="relative">
+<select class="w-full h-[52px] px-space-md bg-surface-container-low rounded-lg text-on-surface font-body-lg text-body-lg outline-none cursor-pointer appearance-none" id="district-selector">
+<option selected="" value="nagpur">Nagpur (नागपूर - Hingna/Saoner)</option>
+<option value="wardha">Wardha (वर्धा - Deoli Hub)</option>
+<option value="amravati">Amravati (अमरावती - Industrial)</option>
+<option value="chandrapur">Chandrapur (चंद्रपूर - Tech ITI)</option>
+<option value="all">All Eastern Vidarbha (समग्र विदर्भ)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+<!-- Certificate Tier Level -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface font-label-lg text-label-lg">
+<span class="material-symbols-outlined text-[20px] text-primary">workspace_premium</span>
+<span>NCVT Level (प्रमाणपत्र स्तर)</span>
+</div>
+<div class="grid grid-cols-3 gap-1.5 p-1 bg-surface-container-low rounded-lg">
+<button class="py-2 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface text-center" type="button">Basic (प्रारंभिक)</button>
+<button class="py-2 rounded font-label-sm text-label-sm bg-primary-container text-on-primary font-semibold shadow-sm text-center" type="button">Inter (मध्यम)</button>
+<button class="py-2 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface text-center" type="button">Master (प्रगत)</button>
+</div>
+</div>
+<!-- Immediate Availability Toggle -->
+<div class="p-space-sm rounded-xl bg-primary-fixed/30 flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-[24px]">schedule_send</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface leading-snug">Ready Immediately</span>
+<span class="font-body-md text-[13px] text-on-surface-variant leading-none">तत्काळ रुजू होण्यास तयार</span>
+</div>
+</div>
+<!-- High tactile toggle representation -->
+<button aria-label="Toggle availability" class="w-14 h-8 rounded-full bg-primary-container p-1 flex items-center justify-end shadow-inner cursor-pointer" type="button">
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary-container font-bold shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</button>
+</div>
+<!-- Attendance Threshold Meter -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[20px] text-primary">fact_check</span>
+            Min Attendance / हजेरी
+          </span>
+<span class="text-primary font-bold">85%+</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[85%] rounded-full"></div>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant pt-1">
+<span>70% Required</span>
+<span>85% Benchmark</span>
+<span>100%</span>
+</div>
+</div>
+<!-- Apply Action -->
+<button class="mt-space-xs w-full min-h-[52px] bg-primary-container hover:bg-primary text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[22px]">filter_alt</span>
+<span>Apply Filters / फिल्टर लागू करा</span>
+</button>
+</aside>
+<!-- RIGHT WORKSPACE: Cards Grid & Job Posting Module -->
+<div class="lg:col-span-8 xl:col-span-9 flex flex-col gap-space-xl">
+<!-- Candidate Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-space-lg">
+<!-- CANDIDATE CARD 1 -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md transition-all hover:shadow-md">
+<div class="flex flex-col gap-space-md">
+<!-- Header Row with Avatar & Badges -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-primary-fixed text-primary flex items-center justify-center font-headline-md text-headline-md font-bold">
+                    SB
+                  </div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow" title="Verified Biometric Attendance">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Sunita Bai Borkar</h2>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-outline">location_on</span>
+                    Nagpur Rural (Hingna Center)
+                  </span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Ready to relocate within 30km</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary-container">verified</span>
+                NCVT Grade A
+              </span>
+</div>
+<!-- Skill Tags -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Industrial Garment Assembly</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Lockstitch Machine Spec</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Export Quality QC</span>
+</div>
+<!-- Visual Progress & Metric Matrix -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+                  Cumulative Trade Score
+                </span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">88 / 100</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[88%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-md text-body-md pt-1">
+<span>Batch #4 (Oct 2024 Passed)</span>
+<span class="font-semibold text-on-surface">Attendance: 94%</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Buttons -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 min-h-[48px] px-space-md rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_add</span>
+<span>Shortlist / निवड करा</span>
+</button>
+<button class="min-h-[48px] px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">person</span>
+<span>View Profile</span>
+</button>
+</div>
+</article>
+<!-- CANDIDATE CARD 2 -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md transition-all hover:shadow-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-secondary-fixed text-secondary flex items-center justify-center font-headline-md text-headline-md font-bold">
+                    RP
+                  </div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow" title="Certified Wireman License">
+<span class="material-symbols-outlined text-[15px]">electric_bolt</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Ramesh Patil</h2>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-outline">location_on</span>
+                    Wardha Rural (Deoli Center)
+                  </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Immediate Joining (Own 2-Wheeler)</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary-container">format_image_left</span>
+                Kusum Solar Cert
+              </span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Solar Microgrid Inverters</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Submersible Pump Wiring</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">3-Phase Line Maintenance</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+                  Cumulative Trade Score
+                </span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">86 / 100</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[86%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-md text-body-md pt-1">
+<span>Batch #3 (Nov 2024 Passed)</span>
+<span class="font-semibold text-on-surface">Attendance: 92%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 min-h-[48px] px-space-md rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_add</span>
+<span>Shortlist / निवड करा</span>
+</button>
+<button class="min-h-[48px] px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">person</span>
+<span>View Profile</span>
+</button>
+</div>
+</article>
+<!-- CANDIDATE CARD 3 -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md transition-all hover:shadow-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center font-headline-md text-headline-md font-bold">
+                    AG
+                  </div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow" title="DGCA Certified Drone Operator">
+<span class="material-symbols-outlined text-[15px]">flight</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Amit Rajesh Gawande</h2>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-outline">location_on</span>
+                    Nagpur Rural (Saoner ITI Hub)
+                  </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">DGCA Drone Pilot License #741</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary-container">military_tech</span>
+                Distinction (92%)
+              </span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Agri-Drone Crop Spraying</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">LiPo Battery Diagnostic</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Field Mapping GPS</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+                  Cumulative Trade Score
+                </span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">92 / 100</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[92%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-md text-body-md pt-1">
+<span>Batch #5 (Dec 2024 Passed)</span>
+<span class="font-semibold text-on-surface">Attendance: 96%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 min-h-[48px] px-space-md rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_add</span>
+<span>Shortlist / निवड करा</span>
+</button>
+<button class="min-h-[48px] px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">person</span>
+<span>View Profile</span>
+</button>
+</div>
+</article>
+<!-- CANDIDATE CARD 4 -->
+<article class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md transition-all hover:shadow-md">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="relative shrink-0">
+<div class="w-16 h-16 rounded-xl bg-surface-variant text-on-surface flex items-center justify-center font-headline-md text-headline-md font-bold">
+                    KS
+                  </div>
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow" title="Verified Digital India Assessed">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Kavita Dinesh Shinde</h2>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-outline">location_on</span>
+                    Amravati Block 2 (City IT Hub)
+                  </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Tally Prime Certified</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary-container">verified</span>
+                NCVT Grade A
+              </span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">MS Excel &amp; Data Validation</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Tally Prime GST Invoicing</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg">Warehouse Stock Entry</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">task_alt</span>
+                  Cumulative Trade Score
+                </span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">84 / 100</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-[84%] rounded-full"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-body-md text-body-md pt-1">
+<span>Batch #4 (Oct 2024 Passed)</span>
+<span class="font-semibold text-on-surface">Attendance: 90%</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 min-h-[48px] px-space-md rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">bookmark_add</span>
+<span>Shortlist / निवड करा</span>
+</button>
+<button class="min-h-[48px] px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">person</span>
+<span>View Profile</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Pagination Control Strip -->
+<div class="flex flex-wrap items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-lg text-body-lg">
+<span class="material-symbols-outlined text-[20px] text-primary">view_list</span>
+<span>Showing <strong>1 – 4</strong> of <strong>128</strong> Verified Trainees</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="min-h-[48px] px-space-md rounded-lg bg-surface-container-low text-outline flex items-center gap-2 font-label-md text-label-md cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Previous</span>
+</button>
+<div class="hidden sm:flex items-center gap-1 px-1">
+<button class="w-10 h-10 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center font-bold" type="button">1</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center" type="button">2</button>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center" type="button">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center" type="button">32</button>
+</div>
+<button class="min-h-[48px] px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-2 font-label-md text-label-md transition-colors cursor-pointer" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- FEATURED ACTION PANEL: Post a Job Opening (Direct Match Engine) -->
+<section class="bg-surface-container-lowest p-space-xl rounded-xl shadow-sm flex flex-col gap-space-lg relative overflow-hidden">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1 max-w-2xl">
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">add_business</span>
+<span class="uppercase tracking-wider font-bold">Fast Deployment Hub</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">
+              Post a Job Opening / नवीन रोजगार नोंदणी करा
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+              Connect directly with verified rural graduates ready for immediate deployment in your district. Automated profile routing notifies top scorers instantly.
+            </p>
+</div>
+<div class="shrink-0 p-space-sm rounded-xl bg-primary-fixed/30 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[32px]">handshake</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">Zero Commission</span>
+<span class="font-body-md text-[13px] text-on-surface-variant">Public Skill Grid Initiative</span>
+</div>
+</div>
+</div>
+<!-- 4-Field Grid Form -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Field 1: Job Title -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="job-title">
+<span class="material-symbols-outlined text-[18px] text-primary">badge</span>
+<span>Job Title (पदाचे नाव)</span>
+</label>
+<input class="w-full h-[52px] px-space-md bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-lg text-body-lg outline-none focus:bg-surface-container transition-all" id="job-title" placeholder="e.g. Garment Assembly Operator" type="text"/>
+</div>
+<!-- Field 2: Skill Required -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="required-skill">
+<span class="material-symbols-outlined text-[18px] text-primary">construction</span>
+<span>Primary Trade (कौशल्य)</span>
+</label>
+<div class="relative">
+<select class="w-full h-[52px] px-space-md bg-surface-container-low rounded-lg text-on-surface font-body-lg text-body-lg outline-none cursor-pointer appearance-none" id="required-skill">
+<option value="tailor">Tailoring &amp; Apparel (शिलाई)</option>
+<option value="solar">Solar &amp; Rural Electrician</option>
+<option value="drone">Agri-Drone Spraying</option>
+<option value="data">Data Entry / Office Admin</option>
+<option value="plumbing">Plumbing &amp; Micro-Irrigation</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">arrow_drop_down</span>
+</div>
+</div>
+<!-- Field 3: Location / Block -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="job-location">
+<span class="material-symbols-outlined text-[18px] text-primary">pin_drop</span>
+<span>Work Center (कामाचे ठिकाण)</span>
+</label>
+<input class="w-full h-[52px] px-space-md bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-lg text-body-lg outline-none focus:bg-surface-container transition-all" id="job-location" placeholder="e.g. Butibori MIDC, Nagpur" type="text"/>
+</div>
+<!-- Field 4: Openings Quantity -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="job-vacancies">
+<span class="material-symbols-outlined text-[18px] text-primary">group_add</span>
+<span>Vacancies (जागा)</span>
+</label>
+<div class="relative">
+<input class="w-full h-[52px] px-space-md bg-surface-container-low rounded-lg text-on-surface placeholder:text-outline font-body-lg text-body-lg outline-none focus:bg-surface-container transition-all" id="job-vacancies" placeholder="e.g. 15" type="number"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 font-label-sm text-label-sm text-on-surface-variant pointer-events-none">Posts</span>
+</div>
+</div>
+</div>
+<!-- Form Submission & Trust Strip -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md">
+<span class="material-symbols-outlined text-primary text-[22px]">policy</span>
+<span>All postings automatically broadcast via Rural Rise SMS &amp; WhatsApp alerts to verified batch graduates.</span>
+</div>
+<button class="w-full sm:w-auto min-h-[52px] px-space-xl bg-primary-container hover:bg-primary text-on-primary rounded-xl font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.98] cursor-pointer shrink-0" type="button">
+<span class="material-symbols-outlined text-[22px]">send</span>
+<span>Post Job &amp; Match Candidates / नोकरी पोस्ट करा</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  // Quick micro-interactions for shortlist buttons
+  document.querySelectorAll('article button').forEach(button => {
+    button.addEventListener('click', function(e) {
+      if (this.textContent.includes('Shortlist')) {
+        const icon = this.querySelector('.material-symbols-outlined');
+        const textSpan = this.querySelector('span:not(.material-symbols-outlined)');
+        if (this.dataset.shortlisted === 'true') {
+          this.dataset.shortlisted = 'false';
+          this.className = 'flex-1 min-h-[48px] px-space-md rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm';
+          icon.textContent = 'bookmark_add';
+          textSpan.textContent = 'Shortlist / निवड करा';
+        } else {
+          this.dataset.shortlisted = 'true';
+          this.className = 'flex-1 min-h-[48px] px-space-md rounded-lg bg-primary-container text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm';
+          icon.textContent = 'bookmark_added';
+          textSpan.textContent = 'Shortlisted / निवडले गेले';
+        }
+      }
+    });
+  });
+</script></main></div></body></html>

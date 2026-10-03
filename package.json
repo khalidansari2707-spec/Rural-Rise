@@ -1,0 +1,13 @@
+{
+  "name": "rural-rise",
+  "version": "1.0.0",
+  "description": "Rural Rise - Centralized AI-powered ERP + LMS + Employment ecosystem",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["rural-rise", "lms", "erp", "skilling"],
+  "author": "Salman Ansari",
+  "license": "ISC"
+}

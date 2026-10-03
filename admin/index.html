@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Admin & Coordinator Analytics Dashboard - Rural Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/shared.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#b1f2be",
+            "surface-container-high": "#e2e7ff",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#12512c",
+            "inverse-primary": "#96d5a3",
+            "surface-tint": "#2e6a41",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-variant": "#dae2fd",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#9cf2e8",
+            "on-primary-fixed": "#00210d",
+            "error-container": "#ffdad6",
+            "outline-variant": "#c0c9be",
+            "secondary-fixed-dim": "#ffb95f",
+            "primary-container": "#14532d",
+            "inverse-on-surface": "#eef0ff",
+            "surface-bright": "#faf8ff",
+            "on-secondary-fixed": "#2a1700",
+            "on-surface-variant": "#404941",
+            "outline": "#717970",
+            "tertiary": "#003935",
+            "primary": "#003b1b",
+            "on-tertiary-fixed": "#00201d",
+            "on-tertiary-container": "#71c6bd",
+            "on-tertiary-fixed-variant": "#00504a",
+            "tertiary-container": "#00524c",
+            "inverse-surface": "#283044",
+            "background": "#faf8ff",
+            "on-secondary-fixed-variant": "#653e00",
+            "surface-container": "#eaedff",
+            "on-surface": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "on-secondary-container": "#684000",
+            "on-error-container": "#93000a",
+            "tertiary-fixed-dim": "#80d5cb",
+            "secondary-fixed": "#ffddb8",
+            "surface": "#faf8ff",
+            "primary-fixed-dim": "#96d5a3",
+            "on-primary-container": "#87c695",
+            "on-background": "#131b2e",
+            "surface-container-low": "#f2f3ff",
+            "on-primary": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "secondary-container": "#fea619",
+            "secondary": "#855300"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "space-sm": "0.75rem",
+            gutter: "1rem",
+            "space-xs": "0.5rem",
+            "margin-lg": "3rem",
+            "space-xl": "2rem",
+            margin: "1rem",
+            "margin-md": "2rem",
+            "gutter-lg": "2rem",
+            "gutter-md": "1.5rem",
+            "space-2xl": "3rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem"
+          },
+          fontFamily: {
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-md": ["Noto Sans"],
+            "label-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "label-lg": ["Inter"],
+            "display-lg-mobile": ["Inter"],
+            "display-lg": ["Inter"],
+            "body-lg": ["Noto Sans"],
+            "headline-sm": ["Inter"],
+            "body-xl": ["Noto Sans"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+  <!-- Shared Admin Sidebar -->
+  <aside class="fixed left-0 top-0 h-full w-72 bg-primary-container text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]">
+    <div class="flex flex-col">
+      <div class="p-space-lg flex items-start gap-space-sm bg-primary/40">
+        <div class="w-9 h-9 rounded-lg bg-primary-fixed text-primary flex items-center justify-center font-bold">
+          <span class="material-symbols-outlined text-[22px]">agriculture</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-label-lg text-label-lg text-white font-bold leading-tight" data-i18n="brand.title">Rural Rise</span>
+          <span class="font-label-sm text-xs text-primary-fixed opacity-90 leading-tight mt-0.5" data-i18n="brand.subtitle">ग्रामीण कौशल्य पोर्टल</span>
+          <span class="font-label-sm text-[11px] uppercase tracking-wider text-primary-fixed-dim font-bold mt-1">Admin Portal</span>
+        </div>
+      </div>
+      <nav class="flex flex-col gap-1 px-space-sm py-space-md">
+        <a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg transition-all bg-primary text-primary-fixed font-label-md font-bold shadow-[0_2px_4px_-1px_rgba(0,0,0,0.2)]" href="/admin">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span>
+          <span class="font-label-md text-sm" data-i18n="nav.dashboard">Dashboard</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all font-label-md text-sm" href="/admin/timetable">
+          <span class="material-symbols-outlined text-[20px]">hotel</span>
+          <span data-i18n="nav.timetable">Timetable & Hostel</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all font-label-md text-sm" href="/admin/readiness">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span data-i18n="nav.readiness">AI Readiness</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all font-label-md text-sm" href="/verify">
+          <span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+          <span data-i18n="nav.verify">Verify Certificate</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all font-label-md text-sm" href="/employer">
+          <span class="material-symbols-outlined text-[20px]">apartment</span>
+          <span data-i18n="nav.employers">Employers Portal</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all font-label-md text-sm" href="/trainer/session">
+          <span class="material-symbols-outlined text-[20px]">co_present</span>
+          <span data-i18n="nav.sessions">Trainer Live Session</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all font-label-md text-sm" href="/trainee">
+          <span class="material-symbols-outlined text-[20px]">person_celebrate</span>
+          <span>Trainee Portal</span>
+        </a>
+        <a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-white/80 hover:bg-primary/50 hover:text-white transition-all font-label-md text-sm" href="/">
+          <span class="material-symbols-outlined text-[20px]">home</span>
+          <span>Home / Landing</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Coordinator Profile Block -->
+    <div class="p-space-md m-space-sm rounded-xl bg-primary/60 flex flex-col gap-space-xs">
+      <div class="flex items-center gap-space-sm">
+        <div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary text-xs">
+          DP
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-sm text-white truncate font-bold">Dr. S. Patil</span>
+          <span class="font-body-md text-xs text-primary-fixed truncate">District Coordinator • Nagpur</span>
+        </div>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-white/20 text-xs">
+        <a class="text-primary-fixed hover:text-white flex items-center gap-1" href="/"><span class="material-symbols-outlined text-[14px]">home</span>Home</a>
+        <a class="text-rose-200 hover:text-white flex items-center gap-1" href="/" onclick="showToast('Logged out of Admin Portal')"><span class="material-symbols-outlined text-[14px]">logout</span>Exit</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  <div class="pl-72">
+    <!-- Top Nav Header -->
+    <header class="fixed top-0 left-72 right-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+      <div class="h-20 w-full px-space-lg flex items-center justify-between gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant text-xs">
+            <span class="material-symbols-outlined text-[18px]">filter_alt</span>
+            <span class="font-label-sm font-semibold">Programme: All (PMKVY & State)</span>
+          </div>
+          <div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant text-xs">
+            <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+            <span class="font-label-sm font-semibold">Current Quarter (Q3)</span>
+          </div>
+          <div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant text-xs">
+            <span class="material-symbols-outlined text-[18px]">location_on</span>
+            <span class="font-label-sm font-semibold">Nagpur Jurisdiction</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <div class="flex items-center bg-surface-container-low p-1 rounded-full border border-outline-variant/30">
+            <button class="lang-btn px-2.5 py-1 rounded-full bg-primary text-white font-label-sm text-xs font-bold" type="button" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn px-2.5 py-1 rounded-full text-on-surface-variant font-label-sm text-xs hover:text-on-surface" type="button" onclick="setLanguage('hi')">हिं</button>
+            <button class="lang-btn px-2.5 py-1 rounded-full text-on-surface-variant font-label-sm text-xs hover:text-on-surface" type="button" onclick="setLanguage('mr')">मराठी</button>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white">
+              <span class="material-symbols-outlined text-[18px]">person</span>
+            </div>
+            <div class="hidden xl:flex flex-col text-left">
+              <span class="font-label-sm text-xs text-on-surface leading-tight font-bold">Dr. S. Patil</span>
+              <span class="font-body-md text-[11px] text-on-surface-variant leading-tight">Admin Lead</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative pt-24 bg-surface min-h-screen px-space-lg py-space-xl pb-24">
+      <div class="flex flex-col w-full gap-space-xl">
+        <!-- Top Telemetry Header -->
+        <section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/30">
+          <div class="flex flex-col gap-1 min-w-0">
+            <div class="flex items-center gap-space-xs flex-wrap">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-bold text-xs">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span data-i18n="admin.live_monitoring">Live Telemetry & Monitoring</span>
+              </span>
+              <span class="text-xs text-on-surface-variant font-semibold">District Coordinator Control Deck</span>
+            </div>
+            <p class="font-body-md text-xs text-on-surface-variant mt-1 max-w-3xl">
+              Real-time rural skilling telemetry, cohort progress, attendance metrics, and nomination workflows across Vidarbha districts.
+            </p>
+          </div>
+          <div class="flex items-center gap-2 flex-wrap shrink-0">
+            <button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-bold text-xs shadow-sm" type="button" onclick="showToast('Live telemetry refreshed with latest center data')">
+              <span class="material-symbols-outlined text-[18px] text-primary">sync</span>
+              <span>Live Refresh</span>
+            </button>
+            <a href="/admin/timetable" class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary-container text-white font-bold text-xs shadow-sm hover:bg-primary">
+              <span class="material-symbols-outlined text-[18px]">hotel</span>
+              <span>Timetable & Hostel</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 5 Key Performance Indicators -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+          <!-- Card 1: Total Enrolments -->
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md border border-outline-variant/30">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col">
+                <span class="font-label-sm text-xs text-on-surface-variant font-bold" data-i18n="admin.enrolments">Total Enrolments</span>
+                <span class="text-xs text-on-surface-variant/80">एकूण नोंदणी</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">school</span>
+              </div>
+            </div>
+            <div>
+              <div class="font-headline-lg text-2xl font-bold text-on-surface">1,248</div>
+              <div class="text-xs text-on-surface-variant mt-0.5">Trainees active in batches</div>
+            </div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full w-fit">
+              <span class="material-symbols-outlined text-[14px]">trending_up</span>
+              <span>+12.4% this month</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Attendance Rate -->
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md border border-outline-variant/30">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col">
+                <span class="font-label-sm text-xs text-on-surface-variant font-bold" data-i18n="admin.attendance_rate">Attendance Rate</span>
+                <span class="text-xs text-on-surface-variant/80">सरासरी उपस्थिती</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">event_available</span>
+              </div>
+            </div>
+            <div>
+              <div class="font-headline-lg text-2xl font-bold text-on-surface">87.4%</div>
+              <div class="text-xs text-on-surface-variant mt-0.5">Daily biometric check-in</div>
+            </div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full w-fit">
+              <span class="material-symbols-outlined text-[14px]">trending_up</span>
+              <span>+3.2% vs target</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Hostels Occupancy -->
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md border border-outline-variant/30">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col">
+                <span class="font-label-sm text-xs text-on-surface-variant font-bold">Hostel Beds</span>
+                <span class="text-xs text-on-surface-variant/80">वसतिगृह जागा</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">hotel</span>
+              </div>
+            </div>
+            <div>
+              <div class="font-headline-lg text-2xl font-bold text-on-surface">92%</div>
+              <div class="text-xs text-on-surface-variant mt-0.5">460 of 500 beds filled</div>
+            </div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full w-fit">
+              <span class="material-symbols-outlined text-[14px]">bed</span>
+              <span>40 beds available</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Certified Outcomes -->
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md border border-outline-variant/30">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col">
+                <span class="font-label-sm text-xs text-on-surface-variant font-bold">Certified</span>
+                <span class="text-xs text-on-surface-variant/80">प्रमाणित युवा</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-teal-100 text-teal-800 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">verified</span>
+              </div>
+            </div>
+            <div>
+              <div class="font-headline-lg text-2xl font-bold text-on-surface">896</div>
+              <div class="text-xs text-on-surface-variant mt-0.5">NCVT Digital Badges</div>
+            </div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-teal-800 bg-teal-100 px-2 py-0.5 rounded-full w-fit">
+              <span class="material-symbols-outlined text-[14px]">done_all</span>
+              <span>100% QR Verified</span>
+            </div>
+          </div>
+
+          <!-- Card 5: Placement Rate -->
+          <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md border border-outline-variant/30">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-col">
+                <span class="font-label-sm text-xs text-on-surface-variant font-bold">Placed / Jobs</span>
+                <span class="text-xs text-on-surface-variant/80">रोजगार जोडणी</span>
+              </div>
+              <div class="w-9 h-9 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]">handshake</span>
+              </div>
+            </div>
+            <div>
+              <div class="font-headline-lg text-2xl font-bold text-on-surface">74%</div>
+              <div class="text-xs text-on-surface-variant mt-0.5">Placed in MSMEs & Solar</div>
+            </div>
+            <div class="flex items-center gap-1 text-[11px] font-bold text-purple-800 bg-purple-100 px-2 py-0.5 rounded-full w-fit">
+              <span class="material-symbols-outlined text-[14px]">work</span>
+              <span>128 Companies Hiring</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Nominations Table Section with Working Approve/Reject Buttons -->
+        <section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col border border-outline-variant/30">
+          <div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-low/50">
+            <div class="flex flex-col">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[22px]">how_to_reg</span>
+                <h2 class="font-headline-sm text-lg font-bold text-on-surface" data-i18n="nav.nominations">Recent Candidate Nominations</h2>
+              </div>
+              <span class="font-body-md text-xs text-on-surface-variant">ग्रामपंचायत व संस्थांकडून प्राप्त अलीकडील अर्ज व थेट मंजुरी</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-on-surface-variant font-semibold">Filter:</span>
+              <button class="px-2.5 py-1 rounded-lg bg-surface-container text-xs font-bold hover:bg-surface-container-high" onclick="filterNominations('all')">All</button>
+              <button class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-800 text-xs font-bold" onclick="filterNominations('pending')">Pending (2)</button>
+              <button class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-xs font-bold" onclick="filterNominations('approved')">Approved</button>
+            </div>
+          </div>
+
+          <div class="w-full overflow-x-auto">
+            <table class="w-full text-left border-collapse min-w-[760px]">
+              <thead>
+                <tr class="bg-surface-container-low text-on-surface-variant text-xs font-bold uppercase tracking-wider">
+                  <th class="py-3 px-space-lg">Candidate Name</th>
+                  <th class="py-3 px-space-md">Sponsoring Panchayat</th>
+                  <th class="py-3 px-space-md">Programme</th>
+                  <th class="py-3 px-space-md">Status</th>
+                  <th class="py-3 px-space-lg text-right">Approval Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-outline-variant/20 text-xs" id="nominationsTableBody">
+                <!-- Row 1 -->
+                <tr class="hover:bg-surface-container-low/40 transition-colors" id="nomRow1">
+                  <td class="py-3 px-space-lg">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0">RP</div>
+                      <div>
+                        <span class="font-bold text-on-surface block">Ramesh Patil</span>
+                        <span class="text-[11px] text-on-surface-variant font-mono">RR-2024-8841</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-space-md">
+                    <span class="font-semibold text-on-surface">Gram Panchayat Hingna</span>
+                    <span class="block text-[11px] text-on-surface-variant">Nagpur Rural</span>
+                  </td>
+                  <td class="py-3 px-space-md font-semibold text-primary">
+                    Solar Pump & Micro-Grid
+                  </td>
+                  <td class="py-3 px-space-md" id="statusCol1">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[11px]">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                      Approved / स्वीकृत
+                    </span>
+                  </td>
+                  <td class="py-3 px-space-lg text-right">
+                    <div class="inline-flex items-center gap-1.5" id="actionsCol1">
+                      <button class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 active:scale-95 shadow-sm" onclick="setNominationStatus(1, 'Approved')">Approve</button>
+                      <button class="px-2.5 py-1 rounded-md bg-rose-100 text-rose-800 font-bold text-xs hover:bg-rose-200 active:scale-95" onclick="setNominationStatus(1, 'Rejected')">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="hover:bg-surface-container-low/40 transition-colors" id="nomRow2">
+                  <td class="py-3 px-space-lg">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs shrink-0">SB</div>
+                      <div>
+                        <span class="font-bold text-on-surface block">Sunita Bai Borkar</span>
+                        <span class="text-[11px] text-on-surface-variant font-mono">RR-2024-8890</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-space-md">
+                    <span class="font-semibold text-on-surface">Vidarbha Mahila Mandal</span>
+                    <span class="block text-[11px] text-on-surface-variant">Wardha SHG Federation</span>
+                  </td>
+                  <td class="py-3 px-space-md font-semibold text-primary">
+                    Basic Tailoring & Apparel
+                  </td>
+                  <td class="py-3 px-space-md" id="statusCol2">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-[11px]">
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                      Pending / विचाराधीन
+                    </span>
+                  </td>
+                  <td class="py-3 px-space-lg text-right">
+                    <div class="inline-flex items-center gap-1.5" id="actionsCol2">
+                      <button class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 active:scale-95 shadow-sm" onclick="setNominationStatus(2, 'Approved')">Approve</button>
+                      <button class="px-2.5 py-1 rounded-md bg-rose-100 text-rose-800 font-bold text-xs hover:bg-rose-200 active:scale-95" onclick="setNominationStatus(2, 'Rejected')">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="hover:bg-surface-container-low/40 transition-colors" id="nomRow3">
+                  <td class="py-3 px-space-lg">
+                    <div class="flex items-center gap-2.5">
+                      <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs shrink-0">AG</div>
+                      <div>
+                        <span class="font-bold text-on-surface block">Amit Rajesh Gawande</span>
+                        <span class="text-[11px] text-on-surface-variant font-mono">RR-2024-8895</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-space-md">
+                    <span class="font-semibold text-on-surface">Gram Panchayat Saoner</span>
+                    <span class="block text-[11px] text-on-surface-variant">Nagpur North</span>
+                  </td>
+                  <td class="py-3 px-space-md font-semibold text-primary">
+                    Micro-Irrigation & Agri-Tech
+                  </td>
+                  <td class="py-3 px-space-md" id="statusCol3">
+                    <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bold text-[11px]">
+                      <span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                      Pending / विचाराधीन
+                    </span>
+                  </td>
+                  <td class="py-3 px-space-lg text-right">
+                    <div class="inline-flex items-center gap-1.5" id="actionsCol3">
+                      <button class="px-2.5 py-1 rounded-md bg-emerald-600 text-white font-bold text-xs hover:bg-emerald-700 active:scale-95 shadow-sm" onclick="setNominationStatus(3, 'Approved')">Approve</button>
+                      <button class="px-2.5 py-1 rounded-md bg-rose-100 text-rose-800 font-bold text-xs hover:bg-rose-200 active:scale-95" onclick="setNominationStatus(3, 'Rejected')">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/shared.js"></script>
+  <script>
+    function setNominationStatus(rowId, status) {
+      const statusCol = document.getElementById('statusCol' + rowId);
+      if (status === 'Approved') {
+        statusCol.innerHTML = `
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[11px]">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+            Approved / स्वीकृत
+          </span>
+        `;
+        showToast(`Candidate #${rowId} nomination Approved!`);
+      } else if (status === 'Rejected') {
+        statusCol.innerHTML = `
+          <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800 font-bold text-[11px]">
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+            Rejected / अस्वीकृत
+          </span>
+        `;
+        showToast(`Candidate #${rowId} nomination Rejected.`, true);
+      }
+    }
+
+    function filterNominations(filter) {
+      showToast(`Showing ${filter} nominations`);
+    }
+  </script>
+</body>
+</html>

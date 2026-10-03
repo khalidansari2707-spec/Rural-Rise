@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#00524c","surface-variant":"#dae2fd","on-secondary":"#ffffff","secondary":"#855300","error":"#ba1a1a","on-tertiary":"#ffffff","surface-bright":"#faf8ff","on-background":"#131b2e","inverse-surface":"#283044","tertiary-fixed-dim":"#80d5cb","on-primary-fixed-variant":"#12512c","inverse-on-surface":"#eef0ff","primary-fixed-dim":"#96d5a3","outline-variant":"#c0c9be","on-secondary-fixed":"#2a1700","secondary-fixed-dim":"#ffb95f","tertiary-fixed":"#9cf2e8","outline":"#717970","secondary-fixed":"#ffddb8","on-surface-variant":"#404941","on-secondary-container":"#684000","surface-container-highest":"#dae2fd","tertiary":"#003935","inverse-primary":"#96d5a3","on-primary":"#ffffff","surface":"#faf8ff","on-primary-fixed":"#00210d","background":"#faf8ff","on-surface":"#131b2e","error-container":"#ffdad6","surface-dim":"#d2d9f4","surface-container":"#eaedff","on-tertiary-container":"#71c6bd","on-error":"#ffffff","primary-container":"#14532d","surface-container-low":"#f2f3ff","on-error-container":"#93000a","primary":"#003b1b","secondary-container":"#fea619","surface-tint":"#2e6a41","on-secondary-fixed-variant":"#653e00","surface-container-lowest":"#ffffff","surface-container-high":"#e2e7ff","on-tertiary-fixed":"#00201d","primary-fixed":"#b1f2be","on-primary-container":"#87c695","on-tertiary-fixed-variant":"#00504a"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-lg":"1.5rem","space-xl":"2rem","margin":"1rem","space-md":"1rem","margin-lg":"3rem","gutter-lg":"2rem","gutter":"1rem","space-sm":"0.75rem","space-2xl":"3rem","gutter-md":"1.5rem","space-xs":"0.5rem","margin-md":"2rem"},fontFamily:{"body-xl":["Noto Sans"],"headline-sm":["Inter"],"display-lg-mobile":["Inter"],"headline-lg-mobile":["Inter"],"label-sm":["Inter"],"body-md":["Noto Sans"],"display-lg":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"],"body-lg":["Noto Sans"]},fontSize:{"body-xl":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",fontWeight:"700"}],"headline-lg-mobile":["26px",{lineHeight:"34px",fontWeight:"700"}],"label-sm":["14px",{lineHeight:"18px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",fontWeight:"700"}],"label-md":["15px",{lineHeight:"20px",fontWeight:"600"}],"label-lg":["16px",{lineHeight:"24px",fontWeight:"600"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"700"}],"body-lg":["16px",{lineHeight:"26px",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-primary-container text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><div class="px-space-md py-space-lg flex items-center gap-space-xs bg-primary/20"><img alt="Brand logo. - Primary color: #14532d
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgoNBJy4t04MJXvSwYhlGfBjRKLF1WfkiBLnqK2qLOcCsKkCbcoYBZDkZ4cJUVtBBAVu5L3R5pi3KkQ6Of3NkddWrXxFq7XjXG38aJMnoJHMBANasi8OmxJEqjDMEvyzhwWGl3LXBWuK7Yd7VsVbuLFs_AUhmYKf_Rgmm-_e9u30GvqwKWuKQnbvYGR0SV87bqMIueTM5r5iSTHnRsSiyCs-_-FikOnsHkePchs-A8k3_BtiUCjdf42kJi"/><div class="flex flex-col leading-tight"><span class="font-label-lg text-label-lg tracking-wide text-on-primary font-bold">Rural Rise</span><span class="font-label-sm text-label-sm text-primary-fixed-dim text-xs">प्रशिक्षक पोर्टल / TRAINER PORTAL</span></div></div><nav class="flex flex-col gap-1 px-space-xs mt-space-md" data-active-classes="bg-primary-fixed text-on-primary-fixed font-bold shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl transition-all bg-primary-fixed text-on-primary-fixed font-bold shadow-sm" data-path="live-session" href="#"><span class="material-symbols-outlined text-primary-fixed">play_circle</span><span>My Sessions / माझी सत्रे</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-primary/80 hover:bg-primary hover:text-on-primary transition-all font-label-md text-label-md" data-path="attendance" href="#"><span class="material-symbols-outlined text-primary-fixed">fact_check</span><span>Attendance / उपस्थिती</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-primary/80 hover:bg-primary hover:text-on-primary transition-all font-label-md text-label-md" data-path="course-content" href="#"><span class="material-symbols-outlined text-primary-fixed">menu_book</span><span>Course Content / अभ्यासक्रम साहित्य</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-primary/80 hover:bg-primary hover:text-on-primary transition-all font-label-md text-label-md" data-path="assessments" href="#"><span class="material-symbols-outlined text-primary-fixed">quiz</span><span>Assessments / मूल्यांकन</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl text-on-primary/80 hover:bg-primary hover:text-on-primary transition-all font-label-md text-label-md" data-path="trainee-list" href="#"><span class="material-symbols-outlined text-primary-fixed">groups</span><span>Trainee List / प्रशिक्षणार्थी यादी</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm bg-primary/30"><div class="flex items-center gap-space-sm p-space-xs rounded-xl bg-primary/40"><div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold font-label-md text-label-md shrink-0">SD</div><div class="flex flex-col min-w-0 flex-1"><span class="font-label-md text-label-md text-on-primary font-semibold truncate">Er. Sunita Devi</span><span class="font-label-sm text-label-sm text-primary-fixed-dim text-xs truncate">Senior Master Trainer</span><div class="flex items-center gap-1 mt-0.5 text-on-primary/70 text-xs"><span class="material-symbols-outlined text-[14px]">location_on</span><span class="truncate">Nagpur Skilling Hub</span></div></div></div><div class="flex items-center justify-between pt-space-xs text-xs text-on-primary/80"><a class="flex items-center gap-1 hover:text-primary-fixed transition-colors font-label-sm text-label-sm" data-path="help-support" href="#"><span class="material-symbols-outlined text-[16px]">help</span><span>Help & Support</span></a><a class="flex items-center gap-1 hover:text-secondary-fixed transition-colors font-label-sm text-label-sm" data-path="login" href="#"><span class="material-symbols-outlined text-[16px]">logout</span><span>Logout</span></a></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter-lg"><div class="flex items-center gap-space-md"><img alt="Brand logo. - Primary color: #14532d
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgoNBJy4t04MJXvSwYhlGfBjRKLF1WfkiBLnqK2qLOcCsKkCbcoYBZDkZ4cJUVtBBAVu5L3R5pi3KkQ6Of3NkddWrXxFq7XjXG38aJMnoJHMBANasi8OmxJEqjDMEvyzhwWGl3LXBWuK7Yd7VsVbuLFs_AUhmYKf_Rgmm-_e9u30GvqwKWuKQnbvYGR0SV87bqMIueTM5r5iSTHnRsSiyCs-_-FikOnsHkePchs-A8k3_BtiUCjdf42kJi"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface">Live Session / थेट सत्र</span><span class="font-label-sm text-label-sm text-on-surface-variant">Basic Tailoring Skills, Session 3 (Batch #4)</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-full shadow-inner"><div class="flex items-center gap-1.5"><span class="inline-block w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-primary font-bold">Session Live / सत्र सुरू</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1 text-on-surface font-label-md text-label-md font-mono"><span class="material-symbols-outlined text-[18px] text-on-surface-variant">timer</span><span>01:24:10</span></div></div><div class="flex items-center bg-surface-container-high rounded-full p-1"><button class="px-3 py-1 rounded-full text-xs font-label-sm text-label-sm bg-primary text-on-primary font-bold" type="button">EN</button><button class="px-3 py-1 rounded-full text-xs font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">हिं</button><button class="px-3 py-1 rounded-full text-xs font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">मराठी</button></div><button class="flex items-center gap-1.5 px-space-md py-space-xs rounded-full bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors font-label-sm text-label-sm" type="button"><span class="material-symbols-outlined text-[18px]">volume_up</span><span>Audio Assist</span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="flex flex-col w-full">
+<div class="p-gutter-lg max-w-[1360px] mx-auto w-full space-y-space-xl">
+<!-- Breadcrumb & Top Meta Context -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md flex-wrap">
+<span class="hover:text-primary transition-colors">Programmes</span>
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="hover:text-primary transition-colors">Basic Tailoring Skills</span>
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="bg-surface-container px-2 py-0.5 rounded text-on-surface font-semibold">Batch #4</span>
+<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">Module 2: Machine Operation & Safety</span>
+</nav>
+<div class="flex items-center gap-space-sm mt-1">
+<h1 class="font-headline-md text-headline-md text-on-surface">Basic Tailoring Skills, Session 3</h1>
+<span class="text-on-surface-variant font-body-md text-body-md">(दुपारचे सत्र / Afternoon Practical)</span>
+</div>
+</div>
+<!-- Live Session Status Banner Pill -->
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex items-center gap-space-sm bg-primary/10 px-space-md py-2.5 rounded-full">
+<span class="relative flex h-3.5 w-3.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-primary"></span>
+</span>
+<span class="font-label-lg text-label-lg text-primary font-bold">Session Live / थेट सत्र सुरू</span>
+<span class="text-outline">|</span>
+<div class="flex items-center gap-1 font-label-lg text-label-lg font-mono text-primary font-bold">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span id="live-session-timer">01:24:10</span>
+</div>
+</div>
+<button class="h-12 px-space-md rounded-xl bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">videocam</span>
+<span>Room Cam / हॉल कॅमेरा</span>
+</button>
+</div>
+</div>
+<!-- Main Two-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start">
+<!-- ================= LEFT COLUMN (~40% on 12-col: 5 cols) ================= -->
+<div class="lg:col-span-5 flex flex-col gap-space-xl">
+<!-- 1. Large QR Attendance Kiosk Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">qr_code_scanner</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Dynamic Attendance QR</h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold">हजेरी क्यूआर कोड</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-2.5 py-1 rounded-full text-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[14px]">pin_drop</span>
+<span>Hall B Geofence</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Trainees scan this to mark attendance <br/>
+<span class="text-on-surface font-semibold">(प्रशिक्षणार्थींनी हजेरी नोंदवण्यासाठी हा क्यूआर स्कॅन करावा)</span>
+</p>
+<!-- Crisp Padded QR Code Frame with Scanner Overlay -->
+<div class="relative bg-surface-container-low p-6 rounded-xl flex flex-col items-center justify-center">
+<!-- Green Corner Brackets -->
+<div class="relative p-3 bg-surface-container-lowest rounded-xl shadow-sm">
+<!-- Top Left Corner -->
+<span class="absolute -top-2 -left-2 w-6 h-6 border-t-4 border-l-4 border-primary rounded-tl-lg"></span>
+<!-- Top Right Corner -->
+<span class="absolute -top-2 -right-2 w-6 h-6 border-t-4 border-r-4 border-primary rounded-tr-lg"></span>
+<!-- Bottom Left Corner -->
+<span class="absolute -bottom-2 -left-2 w-6 h-6 border-b-4 border-l-4 border-primary rounded-bl-lg"></span>
+<!-- Bottom Right Corner -->
+<span class="absolute -bottom-2 -right-2 w-6 h-6 border-b-4 border-r-4 border-primary rounded-br-lg"></span>
+<!-- Sharp SVG QR Vector -->
+<svg class="w-60 h-60 text-primary" fill="currentColor" viewbox="0 0 240 240">
+<!-- Outer Pos 1 -->
+<rect fill="currentColor" height="60" rx="8" width="60" x="10" y="10"></rect>
+<rect fill="#FFFFFF" height="36" rx="4" width="36" x="22" y="22"></rect>
+<rect fill="currentColor" height="20" rx="2" width="20" x="30" y="30"></rect>
+<!-- Outer Pos 2 -->
+<rect fill="currentColor" height="60" rx="8" width="60" x="170" y="10"></rect>
+<rect fill="#FFFFFF" height="36" rx="4" width="36" x="182" y="22"></rect>
+<rect fill="currentColor" height="20" rx="2" width="20" x="190" y="30"></rect>
+<!-- Outer Pos 3 -->
+<rect fill="currentColor" height="60" rx="8" width="60" x="10" y="170"></rect>
+<rect fill="#FFFFFF" height="36" rx="4" width="36" x="22" y="182"></rect>
+<rect fill="currentColor" height="20" rx="2" width="20" x="30" y="190"></rect>
+<!-- Data blocks matrix imitation -->
+<rect height="15" rx="2" width="15" x="85" y="15"></rect>
+<rect height="30" rx="2" width="15" x="110" y="15"></rect>
+<rect height="15" rx="2" width="20" x="135" y="25"></rect>
+<rect height="15" rx="2" width="35" x="85" y="45"></rect>
+<rect height="20" rx="2" width="25" x="130" y="55"></rect>
+<rect height="15" rx="2" width="25" x="15" y="85"></rect>
+<rect height="30" rx="2" width="20" x="50" y="85"></rect>
+<rect height="15" rx="2" width="40" x="15" y="115"></rect>
+<rect height="20" rx="2" width="15" x="15" y="140"></rect>
+<rect height="15" rx="2" width="30" x="40" y="140"></rect>
+<!-- Middle Data Blocks -->
+<rect height="20" rx="2" width="20" x="85" y="85"></rect>
+<rect height="15" rx="2" width="35" x="115" y="85"></rect>
+<rect height="20" rx="2" width="25" x="160" y="85"></rect>
+<rect height="15" rx="2" width="30" x="195" y="90"></rect>
+<rect height="25" rx="2" width="40" x="90" y="115"></rect>
+<rect height="40" rx="2" width="20" x="140" y="115"></rect>
+<rect height="15" rx="2" width="55" x="170" y="120"></rect>
+<rect height="20" rx="2" width="20" x="90" y="150"></rect>
+<rect height="15" rx="2" width="35" x="120" y="165"></rect>
+<!-- Bottom Right Region -->
+<rect height="30" rx="2" width="25" x="85" y="195"></rect>
+<rect height="15" rx="2" width="30" x="120" y="190"></rect>
+<rect height="35" rx="2" width="20" x="165" y="165"></rect>
+<rect height="25" rx="2" width="30" x="195" y="150"></rect>
+<rect height="15" rx="2" width="60" x="165" y="210"></rect>
+<rect height="15" rx="2" width="15" x="195" y="185"></rect>
+<!-- Central Verification Badge Emblem -->
+<circle cx="120" cy="120" fill="#FAF8FF" r="22"></circle>
+<circle cx="120" cy="120" fill="#14532D" r="18"></circle>
+<path d="M112 120 L118 126 L129 114" fill="none" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+</svg>
+<!-- Subtle Scanning Bar Light -->
+<div class="absolute inset-x-2 top-4 h-1 bg-gradient-to-r from-transparent via-secondary-container to-transparent opacity-80 animate-pulse"></div>
+</div>
+<!-- Trainee Device Hint -->
+<div class="mt-4 flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-primary">smartphone</span>
+<span>Rural Rise App • Auto-detects in 0.8s</span>
+</div>
+</div>
+<!-- Dynamic Countdown Timer Banner -->
+<div class="bg-surface-container p-space-sm rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface font-label-md text-label-md">
+<div class="flex items-center gap-1.5 font-bold text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px] text-secondary">update</span>
+<span>⏱ QR refreshes in <span class="font-mono text-on-surface" id="qr-countdown">00:45</span></span>
+</div>
+<span class="text-xs text-on-surface-variant font-label-sm text-label-sm">(४५ सेकंदात रीफ्रेश होईल)</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full bg-surface-variant h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full w-3/4 rounded-full transition-all duration-1000"></div>
+</div>
+</div>
+<!-- Action Buttons Side-by-Side (min 48px target) -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="min-h-[48px] px-space-md py-3 rounded-xl bg-surface-container hover:bg-surface-variant text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[22px] text-primary">sync</span>
+<span class="truncate">Refresh / रीफ्रेश</span>
+</button>
+<button class="min-h-[48px] px-space-md py-3 rounded-xl bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-[22px]">fullscreen</span>
+<span class="truncate">Fullscreen / पूर्ण स्क्रीन</span>
+</button>
+</div>
+<!-- Microcopy Geofencing -->
+<div class="flex items-center gap-2 pt-1 text-on-surface-variant text-xs font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline shrink-0">verified_user</span>
+<span>Anti-proxy geofenced QR code valid for <strong>Workshop Hall B</strong> only.</span>
+</div>
+</section>
+<!-- 2. Face Check-in Status Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">face</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Face Check-in</h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold">चेहरा पडताळणी किओस्क</span>
+</div>
+</div>
+<!-- Active ON Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-surface-container-lowest after:border-outline-variant after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Status Text -->
+<div class="flex items-center justify-between bg-surface-container p-space-sm rounded-xl">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary font-bold">Kiosk camera active / किओस्क कॅमेरा सुरू आहे</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FPS: 30</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Tablet kiosk at <strong>Workshop B Entrance</strong> running AI face match (99.2% confidence rate).
+          </p>
+<!-- Camera Stream Graphic Preview with Bounding Box -->
+<div class="relative w-full h-44 rounded-xl overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A brightly lit vocational training classroom in India with a female student in traditional attire walking toward a digital kiosk tablet mounted on a stand at the workshop entrance door." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIz-eUr2OL2swUyUhJ50Gami5X6GQsSwC9BFaVJBBeUIZj30SkErJ2axMHQnHRvFtoQdzaiJPZn_5dyRjeLd6yDSjvvOmsbE5UVpRRoxstkdd-uBbIf1V5jmj9jd29XnXXh_e2qViBTDFWgEy1Na1kBELE4I5WmF0y9P7cCk9ENek8XQXHUY3-tnVti2gewdDd1wgh7pDzmrkIv6gVaRnLAUZypPU6GF4cjd88h1ii_OiSYneCon7lHQ"/>
+<!-- Live Overlay Layer -->
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px] flex flex-col justify-between p-space-sm">
+<div class="flex items-center justify-between">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[14px]">videocam</span>
+                  Live Stream OK
+                </span>
+<span class="bg-surface-container-lowest/80 text-on-surface text-xs font-mono px-2 py-0.5 rounded">
+                  CAM_02_ENTRANCE
+                </span>
+</div>
+<!-- AI Face Detection Bounding Box Graphic -->
+<div class="self-center flex flex-col items-center">
+<div class="w-24 h-24 border-2 border-dashed border-secondary-container rounded-lg relative flex items-start justify-end p-1">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-1 rounded">MATCH: 99.4%</span>
+</div>
+<span class="text-xs bg-surface-container-lowest/90 px-2 py-0.5 rounded text-on-surface font-semibold mt-1">Pooja Rathod (RR-8898)</span>
+</div>
+<div class="flex items-center justify-between text-xs text-on-primary font-label-sm text-label-sm drop-shadow">
+<span>Auto-capture: Enabled</span>
+<span>Latency: 42ms</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- ================= RIGHT COLUMN (~60% on 12-col: 7 cols) ================= -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- 1. Attendance Summary KPI Cards (Row of 3 cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md">
+<!-- Card 1: Present -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-16 h-16 bg-primary-fixed/20 rounded-full"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Present / उपस्थित</span>
+<div class="w-10 h-10 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">how_to_reg</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">38</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ 47</span>
+</div>
+<div class="flex items-center gap-1.5 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>81% of batch marked</span>
+</div>
+</div>
+<!-- Card 2: Absent -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-16 h-16 bg-error-container/40 rounded-full"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Absent / गैरहजर</span>
+<div class="w-10 h-10 rounded-xl bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">person_off</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-error">06</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">unaccounted</span>
+</div>
+<div class="flex items-center gap-1.5 text-error font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">sms</span>
+<span>Action: SMS alert sent</span>
+</div>
+</div>
+<!-- Card 3: Late -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 w-16 h-16 bg-secondary-fixed/40 rounded-full"></div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Late / उशिरा</span>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">03</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">within grace</span>
+</div>
+<div class="flex items-center gap-1.5 text-secondary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">timelapse</span>
+<span>Grace window: +15m</span>
+</div>
+</div>
+</div>
+<!-- 2. Live Attendance List Table Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md">
+<!-- Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">list_alt</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Real-Time Trainee Log</h2>
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">थेट हजेरी यादी (स्वयं-अद्यतनित)</span>
+</div>
+</div>
+<!-- Export Button (Min 48px target, primary green) -->
+<button class="min-h-[48px] px-space-md py-2.5 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center gap-2 shadow-sm transition-all active:scale-[0.98] self-start sm:self-auto" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export Attendance (हजेरी एक्सेल डाउनलोड)</span>
+</button>
+</div>
+<!-- Controls Row: Search + Filter Pills -->
+<div class="flex flex-col sm:flex-row gap-space-sm items-stretch sm:items-center justify-between">
+<!-- Search Field (min 52px height) -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[22px]">search</span>
+<input class="w-full h-[52px] pl-11 pr-4 bg-surface-container-low rounded-xl text-on-surface font-body-md text-body-md placeholder:text-outline-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" placeholder="Search by trainee name or ID... (नाव किंवा आयडी शोधा)" type="text"/>
+</div>
+<!-- Segmented Filter Pills -->
+<div class="flex items-center bg-surface-container p-1 rounded-xl shrink-0">
+<button class="h-10 px-space-md rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-bold transition-colors" type="button">
+                All (41)
+              </button>
+<button class="h-10 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">qr_code</span>
+<span>QR (32)</span>
+</button>
+<button class="h-10 px-space-md rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">face</span>
+<span>Face (9)</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto -mx-space-lg px-space-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<th class="py-3.5 px-space-md rounded-l-xl">Trainee / प्रशिक्षणार्थी</th>
+<th class="py-3.5 px-space-md">Check-in Time</th>
+<th class="py-3.5 px-space-md">Method</th>
+<th class="py-3.5 px-space-md">Status</th>
+<th class="py-3.5 px-space-md rounded-r-xl text-right">Quick Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center justify-center shrink-0">
+                        RP
+                      </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Ramesh Patil</span>
+<span class="font-mono text-xs text-on-surface-variant">RR-2024-8841 • Desk #12</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-mono font-medium text-on-surface">
+                    09:02 AM
+                  </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span>QR Code</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Present / उपस्थित</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="h-10 px-3 rounded-lg text-primary hover:bg-primary-fixed/20 font-label-md text-label-md inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Verify</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold flex items-center justify-center shrink-0">
+                        SB
+                      </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Sunita Bai Borkar</span>
+<span class="font-mono text-xs text-on-surface-variant">RR-2024-8890 • Desk #04</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-mono font-medium text-on-surface">
+                    09:05 AM
+                  </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">face</span>
+<span>Face Kiosk</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Present / उपस्थित</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="h-10 px-3 rounded-lg text-primary hover:bg-primary-fixed/20 font-label-md text-label-md inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Verify</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 (Late) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-secondary-fixed/5">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface font-bold flex items-center justify-center shrink-0">
+                        AG
+                      </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Amit Rajesh Gawande</span>
+<span class="font-mono text-xs text-on-surface-variant">RR-2024-8895 • Desk #19</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-mono font-medium text-secondary">
+                    09:14 AM
+                  </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span>QR Code</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+<span>Late / उशिरा (+14m)</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="h-10 px-3 rounded-lg text-secondary hover:bg-secondary-fixed/30 font-label-md text-label-md inline-flex items-center gap-1 font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">notes</span>
+<span>Note Reason</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed font-bold flex items-center justify-center shrink-0">
+                        KS
+                      </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Kavita Dinesh Shinde</span>
+<span class="font-mono text-xs text-on-surface-variant">RR-2024-8902 • Desk #07</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-mono font-medium text-on-surface">
+                    09:01 AM
+                  </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">face</span>
+<span>Face Kiosk</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Present / उपस्थित</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="h-10 px-3 rounded-lg text-primary hover:bg-primary-fixed/20 font-label-md text-label-md inline-flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Verify</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 (Late) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-secondary-fixed/5">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface font-bold flex items-center justify-center shrink-0">
+                        MW
+                      </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Manoj V. Wankhede</span>
+<span class="font-mono text-xs text-on-surface-variant">RR-2024-8914 • Desk #22</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-mono font-medium text-secondary">
+                    09:22 AM
+                  </td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span>QR Code</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+<span>Late / उशिरा (+22m)</span>
+</span>
+</td>
+<td class="py-3.5 px-space-md text-right">
+<button class="h-10 px-3 rounded-lg text-secondary hover:bg-secondary-fixed/30 font-label-md text-label-md inline-flex items-center gap-1 font-semibold" type="button">
+<span class="material-symbols-outlined text-[18px]">notes</span>
+<span>Note Reason</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Pagination / Records -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs text-on-surface-variant font-label-md text-label-md">
+<span>Showing recent <strong>5 of 41</strong> checked-in trainees</span>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors disabled:opacity-50" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<span class="px-3 py-1 font-bold text-on-surface">Page 1 / 9</span>
+<button class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 3. Upload Content / अभ्यासक्रम साहित्य अपलोड Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">cloud_upload</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Session Materials & Handouts</h2>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">सत्राचे अभ्यास साहित्य अपलोड करा</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Share reference materials instantly to trainee mobile apps (विद्यार्थ्यांच्या मोबाईल ॲपवर त्वरित पाठवा).
+          </p>
+<!-- Large Drag and Drop Zone -->
+<div class="bg-surface-container-low rounded-xl p-space-xl flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-all group">
+<div class="w-16 h-16 rounded-full bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[32px]">upload_file</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Drag & drop files here, or click to browse</span>
+<span class="font-body-md text-body-md text-on-surface-variant mt-1">येथे फाईल ड्रॅग करा किंवा कॉम्प्युटरमधून निवडा</span>
+<!-- Format pills -->
+<div class="flex flex-wrap items-center justify-center gap-2 mt-space-md">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant text-xs font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[16px]">movie</span>
+<span>🎥 Video (.mp4, max 500MB)</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant text-xs font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-error text-[16px]">picture_as_pdf</span>
+<span>📄 PDF (.pdf, max 50MB)</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant text-xs font-label-sm text-label-sm shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]">slideshow</span>
+<span>📊 Slides (.pptx, max 100MB)</span>
+</span>
+</div>
+</div>
+<!-- Upload Action Bar with Input & Saffron CTA Button -->
+<div class="flex flex-col sm:flex-row gap-space-sm items-stretch sm:items-center">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-[20px]">title</span>
+<input class="w-full h-[52px] pl-11 pr-4 bg-surface-container-low rounded-xl text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-secondary-container transition-all" placeholder="e.g. Session 3 - Lockstitch Guide.pdf" type="text" value="Session 3 - Lockstitch Guide & Bobbin Tension.pdf"/>
+</div>
+<button class="min-h-[52px] px-space-xl rounded-xl bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.98] shrink-0" type="button">
+<span class="material-symbols-outlined text-[24px]">publish</span>
+<span>Upload / अपलोड करा</span>
+</button>
+</div>
+<!-- Already Uploaded Files List Item -->
+<div class="bg-surface-container-low p-space-sm rounded-xl flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-error flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Tailoring_Machine_Safety_Chart.pdf</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-xs">1.8 MB • Shared with 41 trainees • 09:10 AM</span>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="w-9 h-9 rounded-lg hover:bg-surface-variant text-on-surface-variant flex items-center justify-center transition-colors" title="View file" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+<button class="w-9 h-9 rounded-lg hover:bg-error-container text-error flex items-center justify-center transition-colors" title="Remove" type="button">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for dynamic QR countdown simulation
+  (function initTrainerSession() {
+    let timeLeft = 45;
+    const countdownEl = document.getElementById('qr-countdown');
+    if (!countdownEl) return;
+
+    setInterval(() => {
+      timeLeft = timeLeft <= 1 ? 45 : timeLeft - 1;
+      const formatted = timeLeft < 10 ? '00:0' + timeLeft : '00:' + timeLeft;
+      countdownEl.textContent = formatted;
+    }, 1000);
+  })();
+</script></main></div></body></html>

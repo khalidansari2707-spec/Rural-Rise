@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>My Learning Path — Adaptive AI Tutor — Rural Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/shared.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#003b1b",
+            "primary-container": "#14532d",
+            "primary-fixed": "#b1f2be",
+            "secondary": "#855300",
+            "secondary-container": "#fea619",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#404941",
+            "outline-variant": "#c0c9be"
+          },
+          fontFamily: {
+            sans: ["Inter", "Noto Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased flex flex-col min-h-screen">
+  <!-- Desktop Header -->
+  <header class="sticky top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <a href="/trainee" class="w-10 h-10 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Back to Trainee Hub">
+          <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+        </a>
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary-container text-white flex items-center justify-center font-bold shadow-sm">
+            <span class="material-symbols-outlined text-[24px]">agriculture</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-extrabold text-primary-container tracking-tight leading-none">Rural Rise</span>
+            <span class="text-xs font-semibold text-on-surface-variant leading-none mt-1" data-i18n="path.title">My Adaptive Learning Path</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold">
+        <a href="/" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.home">Home</a>
+        <a href="/trainee" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="/trainee/courses" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.courses">Courses</a>
+        <a href="/trainee/path" class="px-3.5 py-2 rounded-lg text-primary font-bold bg-primary-fixed/40 transition-colors" data-i18n="nav.path">Learning Path</a>
+        <a href="/trainee/attendance" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.attendance">Attendance</a>
+        <a href="/trainee/career" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.career">Career AI</a>
+        <a href="/verify" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.verify">Verify</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher (EN / हिं / मराठी) -->
+        <div class="flex items-center bg-surface-container-low p-1 rounded-full border border-outline-variant/40">
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold bg-primary text-white transition-colors" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('hi')">हिं</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('mr')">मराठी</button>
+        </div>
+        <div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30">
+          <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+            SS
+          </div>
+          <span class="text-xs font-bold hidden sm:inline">Sunita Sharma</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Network & Offline Status Banner -->
+  <div id="networkStatusBanner" class="bg-amber-50 border-b border-amber-200 px-6 py-2 text-xs text-amber-900 flex items-center justify-between max-w-7xl mx-auto w-full transition-all">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" id="netDot"></span>
+      <span id="netText">Network: 4G High Speed • Online</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <span id="autoLowDataHint" class="hidden text-amber-800 font-semibold text-[11px]">⚡ Slow connection detected: Lite mode recommended</span>
+      <span class="text-[11px] font-mono text-amber-800">PWA Cache Ready ✓</span>
+    </div>
+  </div>
+
+  <!-- Main Content Workspace -->
+  <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-8 space-y-8 pb-24 md:pb-12">
+    
+    <!-- Top Hero Banner with Live Adaptive Settings Bar -->
+    <section class="bg-primary-container text-white p-6 sm:p-8 rounded-3xl shadow-md space-y-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="px-3 py-1 rounded-full bg-emerald-900/70 text-emerald-200 text-xs font-bold flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-amber-400">psychology</span>
+              <span>AI Pedagogical Engine • PMKVY 4.0</span>
+            </span>
+            <span class="text-xs text-emerald-200 font-mono">Roll: RR-2026-004821</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-extrabold" data-i18n="path.title">My Adaptive Learning Path</h1>
+          <p class="text-xs sm:text-sm text-emerald-100 mt-1 max-w-2xl" data-i18n="path.subtitle">
+            AI-tailored lessons, skill gap diagnostics, and mentor support based on your continuous practical evaluations.
+          </p>
+        </div>
+
+        <!-- Right Quick Stats Pills -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="bg-emerald-950/70 border border-emerald-700/60 p-3 rounded-2xl text-center min-w-[100px]">
+            <div class="text-[11px] text-emerald-300 font-semibold uppercase">Difficulty</div>
+            <div id="statDifficulty" class="text-base font-extrabold text-amber-300">Medium</div>
+          </div>
+          <div class="bg-emerald-950/70 border border-emerald-700/60 p-3 rounded-2xl text-center min-w-[100px]">
+            <div class="text-[11px] text-emerald-300 font-semibold uppercase">Pace</div>
+            <div id="statPace" class="text-base font-extrabold text-white">Normal</div>
+          </div>
+          <div class="bg-emerald-950/70 border border-emerald-700/60 p-3 rounded-2xl text-center min-w-[100px]">
+            <div class="text-[11px] text-emerald-300 font-semibold uppercase">Data Saved</div>
+            <div id="statDataSaved" class="text-base font-extrabold text-emerald-300">0 MB</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Adaptive Settings Controls Bar -->
+      <div class="pt-4 border-t border-emerald-800/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+        <!-- Difficulty Control -->
+        <div class="bg-emerald-950/50 p-3 rounded-2xl flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-400 text-[20px]">speed</span>
+            <div>
+              <span class="block font-bold">Difficulty Level</span>
+              <span class="text-[10px] text-emerald-300" id="currentDiffLabel">Evaluated: Medium</span>
+            </div>
+          </div>
+          <select id="settingDifficulty" class="bg-emerald-900 border border-emerald-700 text-white rounded-lg px-2 py-1 font-bold text-xs focus:outline-none" onchange="handleManualSettingChange()">
+            <option value="Easy">Easy (आसान)</option>
+            <option value="Medium" selected>Medium (मध्यम)</option>
+            <option value="Hard">Hard (कठिन)</option>
+          </select>
+        </div>
+
+        <!-- Pace Control -->
+        <div class="bg-emerald-950/50 p-3 rounded-2xl flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400 text-[20px]">pace</span>
+            <div>
+              <span class="block font-bold">Learning Pace</span>
+              <span class="text-[10px] text-emerald-300" id="currentPaceLabel">Pacing: Normal</span>
+            </div>
+          </div>
+          <select id="settingPace" class="bg-emerald-900 border border-emerald-700 text-white rounded-lg px-2 py-1 font-bold text-xs focus:outline-none" onchange="handleManualSettingChange()">
+            <option value="Slow">Slow (संथ)</option>
+            <option value="Normal" selected>Normal (सामान्य)</option>
+            <option value="Fast">Fast (तेज़)</option>
+          </select>
+        </div>
+
+        <!-- Low Data Mode Toggle -->
+        <div class="bg-emerald-950/50 p-3 rounded-2xl flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-400 text-[20px]">signal_cellular_alt</span>
+            <div>
+              <span class="block font-bold">Low Data Mode</span>
+              <span class="text-[10px] text-emerald-300">Audio + Lite Notes</span>
+            </div>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="toggleLowData" class="sr-only peer" onchange="handleToggleLowData(this.checked)">
+            <div class="w-11 h-6 bg-emerald-900 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2-Column Main Workspace -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Recommended Lessons + Explainability + Career Path (8 Cols) -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <!-- FEATURE 1: "Why this for you?" Main Explainability Card -->
+        <section class="bg-white p-6 sm:p-7 rounded-3xl shadow-sm border border-outline-variant/30 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-secondary-container text-amber-950 flex items-center justify-center font-bold">
+                <span class="material-symbols-outlined text-[20px]">lightbulb</span>
+              </div>
+              <div>
+                <h2 class="font-extrabold text-base text-primary" data-i18n="path.why_this">Why this for you?</h2>
+                <p class="text-xs text-on-surface-variant">Transparent AI pedagogical reasoning for Sunita Sharma</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">
+              Explainable AI (XAI)
+            </span>
+          </div>
+
+          <!-- Bulleted Reason Explanations -->
+          <ul id="explainabilityList" class="space-y-2.5 text-xs text-on-surface">
+            <!-- Injected by AdaptiveEngine -->
+          </ul>
+        </section>
+
+        <!-- Recommended Next Lessons with Individual "Why?" Popover Links -->
+        <section class="space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="font-extrabold text-lg text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                <span>AI Recommended Lessons</span>
+              </h2>
+              <p class="text-xs text-on-surface-variant">Sequenced to bridge your weakest practical skills</p>
+            </div>
+            <a href="/trainee/courses" class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+              <span>View Full Course (५ पाठ)</span>
+              <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </a>
+          </div>
+
+          <div id="recommendedLessonsGrid" class="space-y-3">
+            <!-- Dynamically populated by JS from AdaptiveEngine -->
+          </div>
+        </section>
+
+        <!-- FEATURE 3: Tailored Career & Learning Roadmap (3 to 5 steps) -->
+        <section class="bg-white p-6 sm:p-7 rounded-3xl shadow-sm border border-outline-variant/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+            <div>
+              <h2 class="font-extrabold text-base text-primary flex items-center gap-2">
+                <span class="material-symbols-outlined text-[22px]">route</span>
+                <span data-i18n="path.career_milestones">Tailored Career & Learning Roadmap</span>
+              </h2>
+              <p class="text-xs text-on-surface-variant">Step-by-step path from rural apprentice to certified employment</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-primary-fixed text-primary font-bold text-xs">
+              5 Milestones
+            </span>
+          </div>
+
+          <!-- Milestones Timeline -->
+          <div id="milestonesTimeline" class="space-y-4 pt-2">
+            <!-- Populated dynamically from AdaptiveEngine.milestones -->
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: Demo Simulator + Skill Gap Analysis + Master Mentor Card (4 Cols) -->
+      <aside class="lg:col-span-4 space-y-8">
+        
+        <!-- FEATURE 1 DEMO CONTROLS: "Simulate" Panel -->
+        <div class="bg-gradient-to-br from-emerald-950 to-slate-900 text-white p-6 rounded-3xl shadow-xl border border-emerald-800/80 space-y-5">
+          <div class="flex items-center justify-between pb-2 border-b border-emerald-800/60">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-amber-400">tune</span>
+              <h3 class="font-extrabold text-sm" data-i18n="path.simulate">Simulate AI Inputs</h3>
+            </div>
+            <span class="px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[10px] font-bold">
+              Live Demo
+            </span>
+          </div>
+          <p class="text-[11px] text-emerald-200">
+            Change student score, network, or hardware to watch recommendations and rationales adapt instantly:
+          </p>
+
+          <div class="space-y-4 text-xs">
+            <!-- Quiz Score Slider -->
+            <div class="space-y-1.5">
+              <div class="flex items-center justify-between font-bold">
+                <label>Recent Quiz Score:</label>
+                <span id="sliderScoreLabel" class="text-amber-400 font-mono text-sm">68%</span>
+              </div>
+              <input type="range" id="simScore" min="20" max="100" value="68" step="2" class="w-full accent-amber-400 h-2 bg-emerald-900 rounded-lg cursor-pointer" oninput="handleSimulateInput()">
+              <div class="flex justify-between text-[10px] text-emerald-400/80">
+                <span>20% (Struggling)</span>
+                <span>65% (Avg)</span>
+                <span>100% (Advanced)</span>
+              </div>
+            </div>
+
+            <!-- Network Speed -->
+            <div class="space-y-1">
+              <label class="block font-bold">Network Bandwidth:</label>
+              <select id="simNetwork" class="w-full bg-emerald-900/90 border border-emerald-700 text-white rounded-xl px-3 py-2 text-xs focus:outline-none" onchange="handleSimulateInput()">
+                <option value="fast" selected>Fast (4G / Broadband)</option>
+                <option value="slow">Slow (2G / Rural Weak Signal)</option>
+              </select>
+            </div>
+
+            <!-- Hardware Device Profile -->
+            <div class="space-y-1">
+              <label class="block font-bold">Learner Hardware Device:</label>
+              <select id="simDevice" class="w-full bg-emerald-900/90 border border-emerald-700 text-white rounded-xl px-3 py-2 text-xs focus:outline-none" onchange="handleSimulateInput()">
+                <option value="smart" selected>Modern Smartphone / Tablet</option>
+                <option value="basic">Entry-Level Basic Phone (2GB RAM)</option>
+              </select>
+            </div>
+
+            <!-- Preferred Learning Style -->
+            <div class="space-y-1">
+              <label class="block font-bold">Learning Modality Style:</label>
+              <select id="simStyle" class="w-full bg-emerald-900/90 border border-emerald-700 text-white rounded-xl px-3 py-2 text-xs focus:outline-none" onchange="handleSimulateInput()">
+                <option value="video" selected>Video Demonstrations (वीडियो)</option>
+                <option value="audio">Voice & Audio Notes (ऑडियो)</option>
+                <option value="text">Visual Diagrams & Reading (टेक्स्ट)</option>
+              </select>
+            </div>
+
+            <button class="w-full py-2.5 rounded-xl bg-amber-400 text-amber-950 font-extrabold text-xs shadow hover:bg-amber-300 transition-colors flex items-center justify-center gap-1.5" onclick="resetSimulation()">
+              <span class="material-symbols-outlined text-[16px]">restart_alt</span>
+              <span>Reset to Sunita's Live Profile</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- FEATURE 3: Skill Gap Analysis Bar Chart -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-outline-variant/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+            <div>
+              <h3 class="font-extrabold text-base text-primary" data-i18n="path.skill_gap">Skill Gap Diagnostics</h3>
+              <p class="text-xs text-on-surface-variant">Current vs Industry Target Level</p>
+            </div>
+            <span class="material-symbols-outlined text-primary text-[22px]">bar_chart</span>
+          </div>
+
+          <!-- Weakest Skill Highlight Pill -->
+          <div id="weakestSkillBadge" class="bg-amber-50 border border-amber-300 p-3 rounded-2xl flex items-center gap-3">
+            <span class="material-symbols-outlined text-amber-600 text-[24px]">warning</span>
+            <div>
+              <span class="text-[10px] font-bold text-amber-900 uppercase block">Weakest Skill Focus</span>
+              <strong id="weakestSkillName" class="text-xs text-amber-950">Industrial Quality Inspection (Gap: 40%)</strong>
+            </div>
+          </div>
+
+          <!-- Skill Comparison Bars -->
+          <div id="skillBarsContainer" class="space-y-3 pt-1 text-xs">
+            <!-- Injected dynamically -->
+          </div>
+        </div>
+
+        <!-- FEATURE 3: Assigned Master Mentor Card & Session Booking Modal Trigger -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-outline-variant/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+            <h3 class="font-extrabold text-base text-primary" data-i18n="path.mentor_title">Assigned Master Mentor</h3>
+            <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Verified Trainer</span>
+          </div>
+
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-primary-container text-white flex items-center justify-center font-bold text-sm shadow">
+              SD
+            </div>
+            <div>
+              <h4 class="font-bold text-sm text-primary">Er. Sunita Devi</h4>
+              <p class="text-xs text-on-surface-variant">Senior Garment Master • 12+ Yrs Exp</p>
+              <div class="flex items-center gap-1 text-[11px] text-amber-600 font-bold mt-0.5">
+                <span class="material-symbols-outlined text-[14px]">star</span>
+                <span>4.9 / 5.0 (148 Trainees Guided)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-surface-container-low p-3 rounded-2xl text-xs space-y-1">
+            <div class="text-[11px] text-on-surface-variant">Specialization:</div>
+            <div class="font-medium text-on-surface">Lockstitch Tension Tuning & Industrial Quality Norms</div>
+          </div>
+
+          <button class="w-full py-3 rounded-2xl bg-secondary-container text-amber-950 hover:bg-amber-400 font-extrabold text-xs shadow hover:shadow-md transition-all flex items-center justify-center gap-2 active:scale-95" onclick="openMentorModal()">
+            <span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+            <span data-i18n="path.req_mentor">Request Mentoring Session</span>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Interactive Modal 1: Individual Lesson "Why?" Modal -->
+  <div id="lessonWhyModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-outline-variant/30 space-y-4 animate-fade-in">
+      <div class="flex items-start justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined text-[22px]">psychology</span>
+          </div>
+          <div>
+            <h3 class="font-extrabold text-base text-primary">Why this lesson was recommended?</h3>
+            <span class="text-xs text-on-surface-variant" id="whyModalLessonTitle">Lesson Details</span>
+          </div>
+        </div>
+        <button onclick="closeWhyModal()" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs bg-surface-container-low p-4 rounded-2xl">
+        <h4 class="font-bold text-primary">Diagnostic Evaluation Factors:</h4>
+        <ul id="whyModalReasonsList" class="space-y-2 list-disc list-inside text-on-surface">
+          <!-- Populated dynamically -->
+        </ul>
+      </div>
+
+      <div class="pt-2 flex justify-end">
+        <button onclick="closeWhyModal()" class="px-5 py-2 rounded-xl bg-primary text-white font-bold text-xs">
+          Got it
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Modal 2: Request Mentoring Session Modal -->
+  <div id="mentorRequestModal" class="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-outline-variant/30 space-y-5 animate-fade-in">
+      <div class="flex items-start justify-between">
+        <div>
+          <h3 class="font-extrabold text-lg text-primary">Schedule 1-on-1 Mentorship</h3>
+          <p class="text-xs text-on-surface-variant">Session with Er. Sunita Devi (Workshop Hall B)</p>
+        </div>
+        <button onclick="closeMentorModal()" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <form id="mentorForm" onsubmit="submitMentorSession(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold text-on-surface-variant mb-1">Preferred Date / दिनांक *</label>
+          <input type="date" id="mentorDate" required class="w-full h-11 px-3.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs focus:outline-none focus:border-primary">
+        </div>
+
+        <div>
+          <label class="block font-bold text-on-surface-variant mb-1">Discussion Topic / विषय *</label>
+          <select id="mentorTopic" required class="w-full h-11 px-3.5 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs focus:outline-none focus:border-primary">
+            <option value="Tension Tuning">Sewing Machine Thread Tension Tuning</option>
+            <option value="Quality Inspection" selected>Industrial Quality Inspection & Defect Fixing</option>
+            <option value="Pattern Drafting">Advanced Kurta Collar Pattern Drafting</option>
+            <option value="Job Interview">Career Interview Preparation with Mahati Textiles</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-bold text-on-surface-variant mb-1">Questions / Specific Problem *</label>
+          <textarea id="mentorNotes" rows="3" required placeholder="Describe what you want help with (e.g. stitching keeps puckering at the edges)..." class="w-full p-3 rounded-xl bg-surface-container-low border border-outline-variant/40 text-xs focus:outline-none focus:border-primary">I need hands-on help with eliminating seam puckering on fine cotton fabric.</textarea>
+        </div>
+
+        <div class="pt-2 flex items-center gap-3">
+          <button type="button" onclick="closeMentorModal()" class="flex-1 py-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-bold text-xs">
+            Cancel
+          </button>
+          <button type="submit" class="flex-1 py-3 rounded-xl bg-secondary-container hover:bg-amber-400 text-amber-950 font-bold text-xs shadow">
+            Confirm Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Responsive Bottom Tab Bar (Mobile / Real Phone Navigation) -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-xl border-t border-outline-variant/30 shadow-lg">
+    <div class="grid grid-cols-5 items-center h-16 px-1">
+      <a href="/trainee" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.home">Home</span>
+      </a>
+      <a href="/trainee/courses" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">school</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.courses">Courses</span>
+      </a>
+      <a href="/trainee/path" class="flex flex-col items-center justify-center py-1 text-primary font-bold bg-primary-fixed/40 rounded-xl">
+        <span class="material-symbols-outlined text-[20px]">route</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.path">Path</span>
+      </a>
+      <a href="/trainee/attendance" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.attendance">Attendance</span>
+      </a>
+      <a href="/trainee/career" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.career">Career AI</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Desktop Footer -->
+  <footer class="bg-white border-t border-outline-variant/30 py-8 px-6 mt-12 hidden md:block">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+        <span class="font-bold text-primary">Rural Rise • Adaptive AI Learning Ecosystem</span>
+        <span>• Explainable Pedagogical Engine</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="/trainee" class="hover:text-primary transition-colors">Trainee Hub</a>
+        <a href="/trainee/courses" class="hover:text-primary transition-colors">Course Player</a>
+        <a href="/trainee/attendance" class="hover:text-primary transition-colors">Attendance</a>
+        <a href="/trainee/career" class="hover:text-primary transition-colors">Career AI Chat</a>
+        <a href="/verify" class="hover:text-primary transition-colors">Verify Certificate</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/lib/ai/adaptive.js"></script>
+  <script src="/assets/shared.js"></script>
+  <script>
+    // Register Service Worker for Offline PWA support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(err => {
+          console.log('SW registration skipped:', err);
+        });
+      });
+    }
+
+    // Current State
+    let currentProfile = {
+      quizScore: 68,
+      learningStyle: 'video',
+      language: localStorage.getItem('rr_lang') || 'en',
+      network: 'fast',
+      device: 'smart',
+      lowDataMode: false,
+      skills: {
+        patternMaking: { current: 65, target: 90 },
+        fabricCutting: { current: 80, target: 85 },
+        machineThreading: { current: 55, target: 80 },
+        doubleStitching: { current: 70, target: 85 },
+        qualityInspection: { current: 40, target: 80 }
+      }
+    };
+
+    // Hardware and Network Auto-detection
+    function detectEnvironment() {
+      // Online/Offline detection
+      const isOnline = navigator.onLine !== false;
+      const netDot = document.getElementById('netDot');
+      const netText = document.getElementById('netText');
+      const lowDataHint = document.getElementById('autoLowDataHint');
+
+      // Network connection API (if supported)
+      const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      let effectiveType = conn ? conn.effectiveType : '4g';
+      let isSlow = !isOnline || effectiveType === '2g' || effectiveType === 'slow-2g' || (conn && conn.saveData);
+
+      if (!isOnline) {
+        netDot.className = 'w-2.5 h-2.5 rounded-full bg-red-500';
+        netText.textContent = 'Offline Mode Active • Cached Lessons Available';
+        currentProfile.network = 'slow';
+        lowDataHint.classList.remove('hidden');
+      } else if (isSlow) {
+        netDot.className = 'w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse';
+        netText.textContent = `Network: ${effectiveType.toUpperCase()} (Slow Rural) • Connected`;
+        currentProfile.network = 'slow';
+        lowDataHint.classList.remove('hidden');
+      } else {
+        netDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse';
+        netText.textContent = `Network: ${effectiveType.toUpperCase()} High Speed • Online`;
+        currentProfile.network = 'fast';
+        lowDataHint.classList.add('hidden');
+      }
+    }
+
+    window.addEventListener('online', detectEnvironment);
+    window.addEventListener('offline', detectEnvironment);
+    window.addEventListener('languageChanged', (e) => {
+      currentProfile.language = e.detail.lang;
+      renderAdaptiveDashboard();
+    });
+
+    // Core Render Function
+    function renderAdaptiveDashboard() {
+      if (!window.AdaptiveEngine) return;
+      const evalResult = window.AdaptiveEngine.evaluate(currentProfile);
+      const lang = currentProfile.language || 'en';
+
+      // Update Quick Stats
+      document.getElementById('statDifficulty').textContent = evalResult.difficulty;
+      document.getElementById('statPace').textContent = evalResult.pace;
+      document.getElementById('statDataSaved').textContent = evalResult.dataSavedMb + ' MB';
+      document.getElementById('currentDiffLabel').textContent = `Evaluated: ${evalResult.difficulty}`;
+      document.getElementById('currentPaceLabel').textContent = `Pacing: ${evalResult.pace}`;
+
+      // Update Top Settings Selects to reflect evaluation if not manually forced
+      document.getElementById('settingDifficulty').value = evalResult.difficulty;
+      document.getElementById('settingPace').value = evalResult.pace;
+      document.getElementById('toggleLowData').checked = currentProfile.lowDataMode;
+
+      // Update "Why this for you?" Main Explainability Card
+      const reasonsList = document.getElementById('explainabilityList');
+      reasonsList.innerHTML = '';
+      const localizedReasons = evalResult.explanations[lang] || evalResult.explanations.en;
+      localizedReasons.forEach(r => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2 leading-relaxed';
+        li.innerHTML = `
+          <span class="material-symbols-outlined text-emerald-600 text-[18px] shrink-0 mt-0.5">check_circle</span>
+          <span>${r}</span>
+        `;
+        reasonsList.appendChild(li);
+      });
+
+      // Update Recommended Next Lessons Grid
+      const lessonsGrid = document.getElementById('recommendedLessonsGrid');
+      lessonsGrid.innerHTML = '';
+      evalResult.recommendedLessons.forEach((lesson, index) => {
+        const card = document.createElement('div');
+        card.className = 'bg-white p-4 sm:p-5 rounded-2xl shadow-sm border border-outline-variant/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:border-primary transition-all';
+        
+        const titleText = lesson.title[lang] || lesson.title.en;
+        const formatBadge = currentProfile.lowDataMode || currentProfile.network === 'slow'
+          ? '<span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 font-bold text-[10px] flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">volume_up</span>Audio + Text (Lite)</span>'
+          : '<span class="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 font-bold text-[10px] flex items-center gap-1"><span class="material-symbols-outlined text-[13px]">videocam</span>HD Video</span>';
+
+        card.innerHTML = `
+          <div class="flex items-start gap-3.5">
+            <div class="w-10 h-10 rounded-2xl ${index === 0 ? 'bg-primary-container text-white' : 'bg-surface-container text-primary'} flex items-center justify-center font-bold text-sm shrink-0">
+              ${index + 1}
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-[11px] font-bold text-primary uppercase">Module ${lesson.module}</span>
+                <span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant text-[10px] font-semibold">${lesson.difficulty}</span>
+                ${formatBadge}
+              </div>
+              <h3 class="font-bold text-sm text-on-surface mt-1">${titleText}</h3>
+              <p class="text-xs text-on-surface-variant mt-0.5">${lesson.topics.join(' • ')} • ${lesson.standardDuration}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2.5 self-end sm:self-center shrink-0">
+            <button class="px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-bold text-xs flex items-center gap-1 transition-colors" onclick="openWhyModal('${lesson.id}', '${titleText.replace(/'/g, "\\'")}')">
+              <span class="material-symbols-outlined text-[16px]">help</span>
+              <span>Why?</span>
+            </button>
+            <a href="/trainee/courses" class="px-4 py-1.5 rounded-xl bg-secondary-container hover:bg-amber-400 text-amber-950 font-bold text-xs shadow-sm transition-all flex items-center gap-1">
+              <span>Start</span>
+              <span class="material-symbols-outlined text-[15px]">play_arrow</span>
+            </a>
+          </div>
+        `;
+        lessonsGrid.appendChild(card);
+      });
+
+      // Update Skill Gap Diagnostics Bars
+      const skillNames = {
+        patternMaking: { en: 'Pattern Making & Drafting', hi: 'पैटर्न निर्माण एवं ड्राफ्टिंग', mr: 'पॅटर्न मेकिंग व मोजमाप' },
+        fabricCutting: { en: 'Fabric Cutting & Grain Alignment', hi: 'फैब्रिक कटिंग एवं ग्रेन', mr: 'कापड कापणे व रचना' },
+        machineThreading: { en: 'Machine Threading & Tension Tuning', hi: 'सिलाई मशीन धागा व तनाव', mr: 'शिलाई मशीन धागा व ताण' },
+        doubleStitching: { en: 'Double Seam & Hem Finishing', hi: 'डबल सिलाई एवं हेम', mr: 'दुहेरी शिलाई व बॉर्डर्स' },
+        qualityInspection: { en: 'Industrial Quality Inspection', hi: 'औद्योगिक गुणवत्ता निरीक्षण', mr: 'औद्योगिक गुणवत्ता तपासणी' }
+      };
+
+      const barsContainer = document.getElementById('skillBarsContainer');
+      barsContainer.innerHTML = '';
+      Object.keys(currentProfile.skills).forEach(key => {
+        const item = currentProfile.skills[key];
+        const isWeakest = key === evalResult.weakestSkill.key;
+        const nameText = skillNames[key][lang] || skillNames[key].en;
+
+        const row = document.createElement('div');
+        row.className = 'space-y-1';
+        row.innerHTML = `
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-medium ${isWeakest ? 'text-amber-800 font-bold flex items-center gap-1' : 'text-on-surface'}">
+              ${isWeakest ? '<span class="material-symbols-outlined text-[14px]">flag</span>' : ''}
+              ${nameText}
+            </span>
+            <span class="font-mono text-[11px] text-on-surface-variant font-bold">
+              ${item.current}% / Target ${item.target}%
+            </span>
+          </div>
+          <div class="w-full bg-surface-container rounded-full h-2 overflow-hidden flex">
+            <div class="${isWeakest ? 'bg-amber-500' : 'bg-primary-container'} h-2 rounded-full transition-all duration-500" style="width: ${item.current}%"></div>
+          </div>
+        `;
+        barsContainer.appendChild(row);
+      });
+
+      // Update Weakest Skill Highlight Callout
+      const weakestName = evalResult.weakestSkill.name[lang] || evalResult.weakestSkill.name.en;
+      document.getElementById('weakestSkillName').textContent = `${weakestName} (Gap: ${evalResult.weakestSkill.gap}%)`;
+
+      // Update Milestones Roadmap
+      const timeline = document.getElementById('milestonesTimeline');
+      timeline.innerHTML = '';
+      evalResult.milestones.forEach(m => {
+        const stepTitle = m.title[lang] || m.title.en;
+        const stepDesc = m.desc[lang] || m.desc.en;
+
+        let icon = 'lock';
+        let badgeClass = 'bg-surface-container text-on-surface-variant';
+        let badgeText = 'Upcoming';
+        let circleClass = 'bg-surface-container text-on-surface-variant';
+
+        if (m.status === 'completed') {
+          icon = 'check';
+          badgeClass = 'bg-emerald-100 text-emerald-800 font-bold';
+          badgeText = 'Completed ✓';
+          circleClass = 'bg-emerald-600 text-white';
+        } else if (m.status === 'next_focus' || m.status === 'in_progress') {
+          icon = 'pending';
+          badgeClass = 'bg-amber-100 text-amber-900 font-bold animate-pulse';
+          badgeText = 'Active AI Priority';
+          circleClass = 'bg-secondary-container text-amber-950';
+        }
+
+        const mEl = document.createElement('div');
+        mEl.className = 'flex items-start gap-3.5 p-3.5 rounded-2xl bg-surface-container-low border border-outline-variant/20';
+        mEl.innerHTML = `
+          <div class="w-8 h-8 rounded-full ${circleClass} flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 shadow-sm">
+            <span class="material-symbols-outlined text-[16px]">${icon}</span>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between gap-2 flex-wrap">
+              <h4 class="font-bold text-xs text-on-surface">Step ${m.step}: ${stepTitle}</h4>
+              <span class="px-2 py-0.5 rounded-full text-[10px] ${badgeClass}">${badgeText}</span>
+            </div>
+            <p class="text-[11px] text-on-surface-variant mt-1 leading-relaxed">${stepDesc}</p>
+          </div>
+        `;
+        timeline.appendChild(mEl);
+      });
+    }
+
+    // Handlers for Demo Simulator Panel
+    function handleSimulateInput() {
+      const score = parseInt(document.getElementById('simScore').value, 10);
+      document.getElementById('sliderScoreLabel').textContent = score + '%';
+      currentProfile.quizScore = score;
+      currentProfile.network = document.getElementById('simNetwork').value;
+      currentProfile.device = document.getElementById('simDevice').value;
+      currentProfile.learningStyle = document.getElementById('simStyle').value;
+
+      renderAdaptiveDashboard();
+      showToast(`AI Simulation updated: Score ${score}%, ${currentProfile.network.toUpperCase()} Net`);
+    }
+
+    function resetSimulation() {
+      currentProfile.quizScore = 68;
+      currentProfile.network = 'fast';
+      currentProfile.device = 'smart';
+      currentProfile.learningStyle = 'video';
+      currentProfile.lowDataMode = false;
+
+      document.getElementById('simScore').value = 68;
+      document.getElementById('sliderScoreLabel').textContent = '68%';
+      document.getElementById('simNetwork').value = 'fast';
+      document.getElementById('simDevice').value = 'smart';
+      document.getElementById('simStyle').value = 'video';
+
+      renderAdaptiveDashboard();
+      showToast('Reset to Sunita Sharma baseline profile');
+    }
+
+    function handleToggleLowData(checked) {
+      currentProfile.lowDataMode = checked;
+      renderAdaptiveDashboard();
+      showToast(checked ? 'Low Data Mode ON: Saved ~44 MB per lesson' : 'Low Data Mode OFF: HD streaming restored');
+    }
+
+    function handleManualSettingChange() {
+      const diff = document.getElementById('settingDifficulty').value;
+      const pace = document.getElementById('settingPace').value;
+      if (diff === 'Easy') currentProfile.quizScore = 50;
+      else if (diff === 'Medium') currentProfile.quizScore = 70;
+      else currentProfile.quizScore = 90;
+
+      document.getElementById('simScore').value = currentProfile.quizScore;
+      document.getElementById('sliderScoreLabel').textContent = currentProfile.quizScore + '%';
+      renderAdaptiveDashboard();
+      showToast(`Manual override: ${diff} difficulty, ${pace} pace applied`);
+    }
+
+    // Why Modal Functions
+    function openWhyModal(lessonId, lessonTitle) {
+      const lang = currentProfile.language || 'en';
+      const expl = window.AdaptiveEngine.getLessonExplanation(lessonId, currentProfile, lang);
+      document.getElementById('whyModalLessonTitle').textContent = lessonTitle;
+
+      const list = document.getElementById('whyModalReasonsList');
+      list.innerHTML = '';
+      expl.specificReasons.forEach(r => {
+        const li = document.createElement('li');
+        li.className = 'font-semibold text-emerald-950 leading-relaxed';
+        li.textContent = r;
+        list.appendChild(li);
+      });
+      expl.generalReasons.slice(0, 2).forEach(r => {
+        const li = document.createElement('li');
+        li.className = 'text-on-surface-variant leading-relaxed';
+        li.textContent = r;
+        list.appendChild(li);
+      });
+
+      document.getElementById('lessonWhyModal').classList.remove('hidden');
+    }
+
+    function closeWhyModal() {
+      document.getElementById('lessonWhyModal').classList.add('hidden');
+    }
+
+    // Mentor Request Modal Functions
+    function openMentorModal() {
+      // Set default date to tomorrow
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      document.getElementById('mentorDate').value = tomorrow.toISOString().split('T')[0];
+      document.getElementById('mentorRequestModal').classList.remove('hidden');
+    }
+
+    function closeMentorModal() {
+      document.getElementById('mentorRequestModal').classList.add('hidden');
+    }
+
+    function submitMentorSession(event) {
+      event.preventDefault();
+      const date = document.getElementById('mentorDate').value;
+      const topic = document.getElementById('mentorTopic').value;
+      const notes = document.getElementById('mentorNotes').value;
+
+      const requestObj = {
+        id: 'REQ-' + Date.now(),
+        trainee: 'Sunita Sharma (RR-2026-004821)',
+        mentor: 'Er. Sunita Devi',
+        date: date,
+        topic: topic,
+        notes: notes,
+        status: 'Confirmed'
+      };
+
+      try {
+        const existing = JSON.parse(localStorage.getItem('rr_mentor_requests') || '[]');
+        existing.push(requestObj);
+        localStorage.setItem('rr_mentor_requests', JSON.stringify(existing));
+      } catch (e) {}
+
+      closeMentorModal();
+      showToast(`Mentorship session confirmed with Er. Sunita Devi for ${date}! ✓`);
+    }
+
+    // Initialize on load
+    document.addEventListener('DOMContentLoaded', () => {
+      detectEnvironment();
+      renderAdaptiveDashboard();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>LMS Video Player — Basic Tailoring Skills — Rural Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/shared.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#003b1b",
+            "primary-container": "#14532d",
+            "primary-fixed": "#b1f2be",
+            "secondary": "#855300",
+            "secondary-container": "#fea619",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#404941",
+            "outline-variant": "#c0c9be"
+          },
+          fontFamily: {
+            sans: ["Inter", "Noto Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased flex flex-col min-h-screen">
+  <!-- Desktop Navigation Header -->
+  <header class="sticky top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <a href="/trainee" class="w-10 h-10 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Back to Trainee Portal">
+          <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+        </a>
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary-container text-white flex items-center justify-center font-bold shadow-sm">
+            <span class="material-symbols-outlined text-[24px]">agriculture</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-extrabold text-primary-container tracking-tight leading-none">Rural Rise</span>
+            <span class="text-xs font-semibold text-on-surface-variant leading-none mt-1">LMS Learning Platform • बेसिक सिलाई कौशल्य</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold">
+        <a href="/" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.home">Home</a>
+        <a href="/trainee" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="/trainee/courses" class="px-3.5 py-2 rounded-lg text-primary font-bold bg-primary-fixed/40 transition-colors" data-i18n="nav.courses">My Courses</a>
+        <a href="/trainee/path" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.path">Learning Path</a>
+        <a href="/trainee/attendance" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.attendance">Attendance</a>
+        <a href="/trainee/career" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.career">Career AI</a>
+        <a href="/verify" class="px-3 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.verify">Verify</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher (EN / हिं / मराठी) -->
+        <div class="flex items-center bg-surface-container-low p-1 rounded-full border border-outline-variant/40">
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold bg-primary text-white transition-colors" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('hi')">हिं</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('mr')">मराठी</button>
+        </div>
+        <div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30">
+          <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+            SS
+          </div>
+          <span class="text-xs font-bold hidden sm:inline">Sunita Sharma</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Network & Low Data Suggestion Ribbon -->
+  <div id="courseNetBanner" class="bg-amber-50/80 border-b border-amber-200 px-6 py-2 text-xs text-amber-900 flex flex-wrap items-center justify-between gap-3 max-w-7xl mx-auto w-full">
+    <div class="flex items-center gap-2">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" id="cNetDot"></span>
+      <span id="cNetStatus">Network: 4G High Speed • Online</span>
+      <span id="cNetSuggestion" class="hidden text-amber-800 font-semibold text-[11px] ml-2">⚡ Slow network: Auto-suggesting Low Data mode</span>
+    </div>
+
+    <!-- Low Data Mode Toggle Switch -->
+    <div class="flex items-center gap-3">
+      <span class="font-bold text-xs">Low Data Mode (Lite)</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="courseLowDataToggle" class="sr-only peer" onchange="toggleCourseLowData(this.checked)">
+        <div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500"></div>
+      </label>
+      <span id="courseDataSavingsBadge" class="hidden text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">
+        Saved ~42 MB (85% data reduced)
+      </span>
+    </div>
+  </div>
+
+  <!-- FEATURE 1 LINK: Adaptive Learning Path Banner -->
+  <div class="max-w-7xl mx-auto w-full px-6 pt-6">
+    <div class="bg-gradient-to-r from-emerald-900 via-primary-container to-green-950 text-white p-4 sm:p-5 rounded-2xl shadow flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border border-emerald-700/60">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-400 text-amber-950 flex items-center justify-center font-bold shrink-0">
+          <span class="material-symbols-outlined text-[22px]">psychology</span>
+        </div>
+        <div>
+          <h2 class="font-bold text-sm sm:text-base">Targeted AI Learning Path is Ready for Sunita</h2>
+          <p class="text-xs text-emerald-100">Evaluated from your recent quiz (68%) and diagnostic skill gaps.</p>
+        </div>
+      </div>
+      <a href="/trainee/path" class="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-amber-950 font-extrabold text-xs shadow transition-all flex items-center gap-1.5 shrink-0">
+        <span>View My Learning Path</span>
+        <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Desktop Course Player Layout (Left 70% Player + Right 30% Playlist) -->
+  <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-6 pb-24 md:pb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Video Player / Lite Mode Player + Active Lesson Details (8 Cols) -->
+      <section class="lg:col-span-8 space-y-6">
+        
+        <!-- Video Player Window -->
+        <div class="relative w-full aspect-video bg-black rounded-3xl overflow-hidden shadow-xl border border-slate-800 flex items-center justify-center group">
+          <!-- Standard HD Video View -->
+          <div id="videoContainer" class="w-full h-full relative flex items-center justify-center">
+            <img id="playerPoster" class="w-full h-full object-cover opacity-85 transition-all duration-300 group-hover:scale-[1.01]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvYsYfLNLEEP_MzCJCOk_tEI51K5ymR6SLpfswPe8UCUOIhXud8rl0Edg3dtOhpggiHfv1KOiALQHejTrEjHN6yMMP_ZDvgxXfneuO4qAawsYG_Gd4dhW7fPr2ozXqjnMgdV1V-cJND8iW_I3OuSXRG1gDQ2fiMPpYy4ApuDGbTGN4VoycdKjKFgH0xhwQnz6HsMxE4evzyZ4_U_As1w23FFpJdJpDN1IyQwEmKlucQrGc_BqhgHHgZg" alt="Video tutorial">
+            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+              <button id="playBtn" class="w-20 h-20 rounded-full bg-secondary-container text-amber-950 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform" onclick="togglePlayVideo()">
+                <span class="material-symbols-outlined text-[42px]" id="playIcon">play_arrow</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- FEATURE 4: Lite Mode (Audio + Illustrated Cards View) -->
+          <div id="liteModeContainer" class="hidden w-full h-full bg-gradient-to-br from-slate-900 to-emerald-950 p-6 flex flex-col justify-between text-white">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-amber-400 text-amber-950 font-bold text-xs flex items-center gap-1.5 shadow">
+                <span class="material-symbols-outlined text-[16px]">bolt</span>
+                <span>Lite Mode (Low Data Audio & Text)</span>
+              </span>
+              <span class="text-xs text-emerald-300 font-mono">Stream: 24 kbps Voice Codec</span>
+            </div>
+
+            <div class="my-auto text-center space-y-2">
+              <div class="w-16 h-16 rounded-full bg-secondary-container text-amber-950 mx-auto flex items-center justify-center shadow-lg cursor-pointer hover:scale-105 active:scale-95 transition-transform" onclick="togglePlayVideo()">
+                <span class="material-symbols-outlined text-[36px]" id="litePlayIcon">play_arrow</span>
+              </div>
+              <h3 class="font-bold text-base text-white" id="liteLessonTitle">Lesson 3: Measuring Fabric & Seam Allowances</h3>
+              <p class="text-xs text-emerald-200 max-w-md mx-auto">Audio narrative in Hindi & Marathi • Step cards cached locally for buffer-free village learning.</p>
+            </div>
+
+            <div class="bg-black/40 backdrop-blur-md p-3 rounded-2xl border border-white/10 flex items-center justify-between text-xs">
+              <span class="text-emerald-300 font-bold">Saved: 42.4 MB on this session</span>
+              <button class="text-amber-300 underline font-bold" onclick="toggleCourseLowData(false)">Switch back to HD Video</button>
+            </div>
+          </div>
+
+          <!-- Top-Right "Lite mode" Chip on Video Area -->
+          <div id="playerLiteChip" class="hidden absolute top-4 right-4 z-20 px-3 py-1 rounded-full bg-amber-400 text-amber-950 font-bold text-xs shadow flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">bolt</span>
+            <span>Lite Mode Active</span>
+          </div>
+
+          <!-- Video Bottom Controls Bar -->
+          <div class="absolute bottom-4 inset-x-6 flex items-center justify-between text-xs text-white font-mono bg-black/70 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 z-20">
+            <div class="flex items-center gap-3">
+              <button class="hover:text-amber-400 transition-colors" onclick="togglePlayVideo()">
+                <span class="material-symbols-outlined text-[20px]" id="bottomPlayIcon">play_arrow</span>
+              </button>
+              <span id="playerTime">04:15 / 12:00</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <button class="flex items-center gap-1 hover:text-amber-400 text-xs font-sans" onclick="showToast('Subtitles toggled: Hindi / English')">
+                <span class="material-symbols-outlined text-[18px]">subtitles</span>
+                <span>CC (EN/हिं)</span>
+              </button>
+              <span id="playerQualityBadge" class="px-2 py-0.5 rounded bg-emerald-600/80 text-white font-bold text-[10px]">HD 720p</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Lesson Meta & Description Card -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-outline-variant/30 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold" id="currentModuleLabel">
+                पाठ ३ • Module 2
+              </span>
+              <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold">
+                Practical Workshop Demo
+              </span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button class="px-3.5 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-bold text-xs flex items-center gap-1.5 transition-colors" onclick="showToast('Playing audio explanation in Hindi...')">
+                <span class="material-symbols-outlined text-[16px]">volume_up</span>
+                <span>Listen Audio (हिन्दी)</span>
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <h1 class="text-xl sm:text-2xl font-extrabold text-on-surface" id="currentLessonTitle">
+              Lesson 3: Measuring Fabric & Seam Allowances
+            </h1>
+            <p class="text-sm text-on-surface-variant mt-2 leading-relaxed" id="currentLessonDesc">
+              Master measuring woven fabrics with a tailor's tape, marking seam allowances, and pattern calculation before cutting.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant/30 flex flex-wrap items-center justify-between gap-4 text-xs">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold">
+                SD
+              </div>
+              <div>
+                <div class="font-bold text-sm text-primary">Er. Sunita Devi</div>
+                <div class="text-on-surface-variant text-xs">Senior Master Trainer • 12+ Yrs Experience</div>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-3">
+              <button class="px-4 py-2 rounded-xl bg-secondary-container text-amber-950 font-bold text-xs shadow hover:bg-amber-400 transition-all flex items-center gap-1.5" onclick="showToast('Lesson saved for village offline study (24 MB)!')">
+                <span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+                <span>Download for Offline Study (24 MB)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Practical Workshop Notes & Key Takeaways -->
+        <div class="bg-surface-container-low p-6 rounded-3xl border border-outline-variant/30 space-y-3">
+          <h3 class="font-bold text-base text-primary flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]">assignment</span>
+            <span>Workshop Notes & Safety Tips / कार्यशाला निर्देश</span>
+          </h3>
+          <ul class="text-xs text-on-surface-variant space-y-2 list-disc list-inside">
+            <li>Always leave at least <strong>1.5 cm seam allowance</strong> for cotton kurta stitches.</li>
+            <li>Press woven fabric flat with iron before applying chalk markings to prevent shrinkage errors.</li>
+            <li>Maintain scissor blades sharp and cut on a firm, flat wooden cutting board.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Right Column: Course Lessons Playlist & Navigation (4 Cols) -->
+      <aside class="lg:col-span-4 space-y-6">
+        
+        <!-- Playlist Container -->
+        <div class="bg-white p-6 rounded-3xl shadow-sm border border-outline-variant/30 space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+            <div>
+              <h2 class="font-extrabold text-base text-primary">Course Lessons (५ पाठ)</h2>
+              <p class="text-xs text-on-surface-variant">Click any lesson to switch directly</p>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+              60% Done
+            </span>
+          </div>
+
+          <!-- Lessons List -->
+          <div class="space-y-3" id="lessonsList">
+            <!-- Lesson 1 -->
+            <div class="lesson-card bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between cursor-pointer hover:bg-surface-container transition-all" onclick="switchLesson(1)">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">check</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-on-surface">1. Introduction to Tailoring Tools</h4>
+                  <span class="text-[11px] text-on-surface-variant">14 mins • Completed</span>
+                </div>
+              </div>
+              <span class="text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full font-bold">Watched</span>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="lesson-card bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between cursor-pointer hover:bg-surface-container transition-all" onclick="switchLesson(2)">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">check</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-on-surface">2. Understanding Fabric Grain & Types</h4>
+                  <span class="text-[11px] text-on-surface-variant">18 mins • Completed</span>
+                </div>
+              </div>
+              <span class="text-[10px] text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full font-bold">Watched</span>
+            </div>
+
+            <!-- Lesson 3 (Active) -->
+            <div class="lesson-card bg-primary-container text-white p-3.5 rounded-2xl shadow-md border border-primary flex items-center justify-between cursor-pointer transition-all" onclick="switchLesson(3)" id="lessonItem3">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-secondary-container text-amber-950 flex items-center justify-center font-bold text-xs shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-white">3. Measuring Fabric & Seam Allowances</h4>
+                  <span class="text-[11px] text-primary-fixed">12 mins • Playing Now</span>
+                </div>
+              </div>
+              <span class="text-[10px] text-white bg-primary px-2.5 py-1 rounded-full font-bold">Current</span>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="lesson-card bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between cursor-pointer hover:bg-surface-container transition-all" onclick="switchLesson(4)">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-bold text-xs shrink-0">
+                  4
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-on-surface">4. Sewing Machine Threading & Tension</h4>
+                  <span class="text-[11px] text-on-surface-variant">20 mins • Ready</span>
+                </div>
+              </div>
+              <span class="text-[10px] text-on-surface-variant font-medium">Next</span>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="lesson-card bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between cursor-pointer hover:bg-surface-container transition-all" onclick="switchLesson(5)">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-bold text-xs shrink-0">
+                  5
+                </div>
+                <div>
+                  <h4 class="font-bold text-xs text-on-surface">5. Final Garment Assembly & Hemming</h4>
+                  <span class="text-[11px] text-on-surface-variant">25 mins • Practical</span>
+                </div>
+              </div>
+              <span class="text-[10px] text-on-surface-variant font-medium">Next</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Access Box -->
+        <div class="bg-gradient-to-br from-emerald-900 to-green-950 text-white p-6 rounded-3xl shadow-md space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-amber-400">smart_toy</span>
+            <h3 class="font-bold text-sm">Need help with stitching steps?</h3>
+          </div>
+          <p class="text-xs text-emerald-100">
+            Ask our AI Career & Skill Tutor in Hindi, Marathi, or English anytime you get stuck during practicals.
+          </p>
+          <a href="/trainee/career" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-400 text-amber-950 font-bold text-xs hover:bg-amber-300 transition-colors shadow">
+            <span>Open Career AI Tutor</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Mobile Bottom Tab Bar -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-xl border-t border-outline-variant/30 shadow-lg">
+    <div class="grid grid-cols-5 items-center h-16 px-1">
+      <a href="/trainee" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.home">Home</span>
+      </a>
+      <a href="/trainee/courses" class="flex flex-col items-center justify-center py-1 text-primary font-bold bg-primary-fixed/40 rounded-xl">
+        <span class="material-symbols-outlined text-[20px]">school</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.courses">Courses</span>
+      </a>
+      <a href="/trainee/path" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">route</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.path">Path</span>
+      </a>
+      <a href="/trainee/attendance" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.attendance">Attendance</span>
+      </a>
+      <a href="/trainee/career" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.career">Career AI</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Desktop Footer -->
+  <footer class="bg-white border-t border-outline-variant/30 py-8 px-6 mt-12 hidden md:block">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+        <span class="font-bold text-primary">Rural Rise • LMS Learning Ecosystem</span>
+        <span>• PMKVY 4.0 Skilling Initiative</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="/trainee" class="hover:text-primary transition-colors">Trainee Home</a>
+        <a href="/trainee/path" class="hover:text-primary transition-colors">Learning Path</a>
+        <a href="/trainee/attendance" class="hover:text-primary transition-colors">Attendance Portal</a>
+        <a href="/trainee/career" class="hover:text-primary transition-colors">Career AI Chat</a>
+        <a href="/verify" class="hover:text-primary transition-colors">Verify Credential</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/shared.js"></script>
+  <script>
+    const lessonsData = {
+      1: {
+        module: 'पाठ १ • Module 1',
+        title: 'Lesson 1: Introduction to Tailoring Tools',
+        desc: 'Understand the basic instruments: shears, measuring tape, tailor chalk, bobbin case and sewing needles.',
+        time: '00:00 / 14:00'
+      },
+      2: {
+        module: 'पाठ २ • Module 1',
+        title: 'Lesson 2: Understanding Fabric Grain & Types',
+        desc: 'Learn warp, weft, bias cutting, and how different cotton and polyester fabrics behave under tension.',
+        time: '00:00 / 18:00'
+      },
+      3: {
+        module: 'पाठ ३ • Module 2',
+        title: 'Lesson 3: Measuring Fabric & Seam Allowances',
+        desc: 'Master measuring woven fabrics with tailor tape, marking seam allowances and pattern calculation.',
+        time: '04:15 / 12:00'
+      },
+      4: {
+        module: 'पाठ ४ • Module 2',
+        title: 'Lesson 4: Sewing Machine Threading & Tension',
+        desc: 'Step-by-step setup of single-needle lockstitch machines, upper and bobbin thread balance.',
+        time: '00:00 / 20:00'
+      },
+      5: {
+        module: 'पाठ ५ • Module 3',
+        title: 'Lesson 5: Final Garment Assembly & Hemming',
+        desc: 'Joining sleeves, stitching collars, edge hemming and final buttonhole finishing.',
+        time: '00:00 / 25:00'
+      }
+    };
+
+    let isPlaying = false;
+    let isLowData = false;
+
+    function togglePlayVideo() {
+      isPlaying = !isPlaying;
+      const playIcon = document.getElementById('playIcon');
+      const litePlayIcon = document.getElementById('litePlayIcon');
+      const bottomPlayIcon = document.getElementById('bottomPlayIcon');
+
+      const iconName = isPlaying ? 'pause' : 'play_arrow';
+      if (playIcon) playIcon.textContent = iconName;
+      if (litePlayIcon) litePlayIcon.textContent = iconName;
+      if (bottomPlayIcon) bottomPlayIcon.textContent = iconName;
+
+      showToast(isPlaying ? (isLowData ? 'Streaming audio narration...' : 'Playing HD video lesson...') : 'Playback paused');
+    }
+
+    // Low Data Mode Toggle (Feature 4)
+    function toggleCourseLowData(enabled) {
+      isLowData = enabled;
+      const videoContainer = document.getElementById('videoContainer');
+      const liteContainer = document.getElementById('liteModeContainer');
+      const liteChip = document.getElementById('playerLiteChip');
+      const dataBadge = document.getElementById('courseDataSavingsBadge');
+      const qualityBadge = document.getElementById('playerQualityBadge');
+      const toggle = document.getElementById('courseLowDataToggle');
+
+      toggle.checked = enabled;
+
+      if (enabled) {
+        videoContainer.classList.add('hidden');
+        liteContainer.classList.remove('hidden');
+        liteChip.classList.remove('hidden');
+        dataBadge.classList.remove('hidden');
+        qualityBadge.textContent = 'Audio 24kbps';
+        qualityBadge.className = 'px-2 py-0.5 rounded bg-amber-600 text-white font-bold text-[10px]';
+        showToast('Low Data Mode ON: Saved ~42 MB (85% data reduced) ✓');
+      } else {
+        videoContainer.classList.remove('hidden');
+        liteContainer.classList.add('hidden');
+        liteChip.classList.add('hidden');
+        dataBadge.classList.add('hidden');
+        qualityBadge.textContent = 'HD 720p';
+        qualityBadge.className = 'px-2 py-0.5 rounded bg-emerald-600/80 text-white font-bold text-[10px]';
+        showToast('Restored High Definition 720p video streaming');
+      }
+    }
+
+    // Network Status Auto-detection
+    function checkCourseNetwork() {
+      const isOnline = navigator.onLine !== false;
+      const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      let effectiveType = conn ? conn.effectiveType : '4g';
+      let isSlow = !isOnline || effectiveType === '2g' || effectiveType === 'slow-2g' || (conn && conn.saveData);
+
+      const netDot = document.getElementById('cNetDot');
+      const netStatus = document.getElementById('cNetStatus');
+      const netSuggestion = document.getElementById('cNetSuggestion');
+
+      if (!isOnline) {
+        netDot.className = 'w-2.5 h-2.5 rounded-full bg-red-500';
+        netStatus.textContent = 'Offline • Cached Lessons Active';
+        netSuggestion.classList.remove('hidden');
+        toggleCourseLowData(true);
+      } else if (isSlow) {
+        netDot.className = 'w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse';
+        netStatus.textContent = `Network: ${effectiveType.toUpperCase()} (Slow) • Online`;
+        netSuggestion.classList.remove('hidden');
+        toggleCourseLowData(true);
+      } else {
+        netDot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse';
+        netStatus.textContent = `Network: ${effectiveType.toUpperCase()} High Speed • Online`;
+        netSuggestion.classList.add('hidden');
+      }
+    }
+
+    window.addEventListener('online', checkCourseNetwork);
+    window.addEventListener('offline', checkCourseNetwork);
+
+    function switchLesson(id) {
+      const data = lessonsData[id];
+      if (!data) return;
+
+      document.getElementById('currentModuleLabel').textContent = data.module;
+      document.getElementById('currentLessonTitle').textContent = data.title;
+      document.getElementById('liteLessonTitle').textContent = data.title;
+      document.getElementById('currentLessonDesc').textContent = data.desc;
+      document.getElementById('playerTime').textContent = data.time;
+
+      // Update active highlight on cards
+      document.querySelectorAll('.lesson-card').forEach((card, idx) => {
+        const cardId = idx + 1;
+        if (cardId === id) {
+          card.className = 'lesson-card bg-primary-container text-white p-3.5 rounded-2xl shadow-md border border-primary flex items-center justify-between cursor-pointer transition-all';
+          card.querySelector('h4').className = 'font-bold text-xs text-white';
+          const sub = card.querySelectorAll('span')[1] || card.querySelector('span');
+          if (sub) sub.className = 'text-[11px] text-primary-fixed';
+        } else {
+          card.className = 'lesson-card bg-surface-container-lowest p-3.5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between cursor-pointer hover:bg-surface-container transition-all';
+          card.querySelector('h4').className = 'font-bold text-xs text-on-surface';
+          const sub = card.querySelectorAll('span')[1] || card.querySelector('span');
+          if (sub) sub.className = 'text-[11px] text-on-surface-variant';
+        }
+      });
+
+      showToast(`Switched to ${data.title} (No Quiz Required)`);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      checkCourseNetwork();
+    });
+  </script>
+</body>
+</html>

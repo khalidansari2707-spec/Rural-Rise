@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Career Counselling AI Chatbot — Rural Rise</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/shared.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#003b1b",
+            "primary-container": "#14532d",
+            "primary-fixed": "#b1f2be",
+            "secondary": "#855300",
+            "secondary-container": "#fea619",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#404941",
+            "outline-variant": "#c0c9be"
+          },
+          fontFamily: {
+            sans: ["Inter", "Noto Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased flex flex-col min-h-screen">
+  <!-- Desktop Navigation Header -->
+  <header class="sticky top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <a href="/trainee" class="w-10 h-10 rounded-xl bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Back to Trainee Portal">
+          <span class="material-symbols-outlined text-[24px]">arrow_back</span>
+        </a>
+        <a href="/" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary-container text-white flex items-center justify-center font-bold shadow-sm">
+            <span class="material-symbols-outlined text-[24px]">agriculture</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-extrabold text-primary-container tracking-tight leading-none">Rural Rise</span>
+            <span class="text-xs font-semibold text-on-surface-variant leading-none mt-1">Career AI Mentor • करिअर एवं आजीविका परामर्श</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold">
+        <a href="/" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.home">Home</a>
+        <a href="/trainee" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="/trainee/courses" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.courses">Courses</a>
+        <a href="/trainee/path" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.path">Learning Path</a>
+        <a href="/trainee/attendance" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.attendance">Attendance</a>
+        <a href="/trainee/career" class="px-3.5 py-2 rounded-lg text-primary font-bold bg-primary-fixed/40 transition-colors" data-i18n="nav.career">Career AI</a>
+        <a href="/verify" class="px-3.5 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" data-i18n="nav.verify">Verify</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <!-- Language Switcher (EN / हिं / मराठी) -->
+        <div class="flex items-center bg-surface-container-low p-1 rounded-full border border-outline-variant/40">
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold bg-primary text-white transition-colors" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('hi')">हिं</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('mr')">मराठी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-Width Desktop Workspace -->
+  <main class="flex-1 max-w-7xl mx-auto w-full px-6 py-6 pb-24 md:pb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Sidebar: Trainee Meta & Suggested Questions (4 Cols) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <!-- Trainee Profile Card -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-outline-variant/30 space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg">
+              SS
+            </div>
+            <div>
+              <h3 class="font-bold text-base text-on-surface">Sunita Sharma (सुनीता शर्मा)</h3>
+              <span class="text-xs text-on-surface-variant font-mono">Trainee ID: <a href="/verify" class="text-primary underline font-bold">RR-2026-004821</a></span>
+            </div>
+          </div>
+          <div class="bg-surface-container-low p-3 rounded-xl space-y-1 text-xs">
+            <div class="flex justify-between"><span class="text-on-surface-variant">Course:</span><strong class="text-primary">Basic Tailoring & Apparel</strong></div>
+            <div class="flex justify-between"><span class="text-on-surface-variant">Assessment:</span><strong class="text-emerald-700">92% Practical Score</strong></div>
+            <div class="flex justify-between"><span class="text-on-surface-variant">Attendance:</span><strong class="text-emerald-700">94% Biometric Verified</strong></div>
+          </div>
+        </div>
+
+        <!-- Quick Question Chips -->
+        <div class="bg-white p-5 rounded-2xl shadow-sm border border-outline-variant/30 space-y-3 flex-1">
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-sm text-on-surface flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-primary text-[18px]">lightbulb</span>
+              Suggested Career Inquiries
+            </h4>
+            <span class="text-[10px] text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-bold">1-Click</span>
+          </div>
+
+          <div class="space-y-2 text-xs">
+            <button class="w-full text-left p-3 rounded-xl bg-surface-container-low hover:bg-emerald-50 hover:border-emerald-200 border border-outline-variant/30 transition-all font-medium text-on-surface active:scale-98 flex items-center justify-between group" onclick="sendQuickPrompt('Mahati Agro Textiles me sample maker interview ke liye profile match dikhayein?')">
+              <span>🏢 Mahati Textiles जॉब मैच व स्कोर?</span>
+              <span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">arrow_forward</span>
+            </button>
+
+            <button class="w-full text-left p-3 rounded-xl bg-surface-container-low hover:bg-emerald-50 hover:border-emerald-200 border border-outline-variant/30 transition-all font-medium text-on-surface active:scale-98 flex items-center justify-between group" onclick="sendQuickPrompt('Vidarbha Khadi cooperative me silai job match dikhayein?')">
+              <span>🌿 विदर्भ खादी ग्रामोद्योग जॉब मैच?</span>
+              <span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">arrow_forward</span>
+            </button>
+
+            <button class="w-full text-left p-3 rounded-xl bg-surface-container-low hover:bg-emerald-50 hover:border-emerald-200 border border-outline-variant/30 transition-all font-medium text-on-surface active:scale-98 flex items-center justify-between group" onclick="sendQuickPrompt('Apna boutique shuru karne ke liye Mudra loan kaise milega?')">
+              <span>🏪 अपना बुटीक शुरू करने हेतु मुद्रा लोन?</span>
+              <span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">arrow_forward</span>
+            </button>
+
+            <button class="w-full text-left p-3 rounded-xl bg-surface-container-low hover:bg-emerald-50 hover:border-emerald-200 border border-outline-variant/30 transition-all font-medium text-on-surface active:scale-98 flex items-center justify-between group" onclick="sendQuickPrompt('Mera digital certificate verify kaise hoga aur employer ko kaise dikhayein?')">
+              <span>📜 डिजिटल प्रमाणपत्र सत्यापन व पास?</span>
+              <span class="material-symbols-outlined text-[16px] text-on-surface-variant group-hover:text-primary">arrow_forward</span>
+            </button>
+          </div>
+
+          <div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-xs text-on-surface-variant">
+            <span>Model: Rural Rise XAI Matching</span>
+            <span class="text-emerald-700 font-bold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>Online</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right Panel: Desktop Chat Conversation Area (8 Cols) -->
+      <section class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-outline-variant/30 flex flex-col overflow-hidden min-h-[600px]">
+        <!-- Chat Header Bar -->
+        <div class="px-6 py-4 border-b border-outline-variant/20 flex items-center justify-between bg-surface-container-low/50">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold">
+              <span class="material-symbols-outlined text-[22px]">smart_toy</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="font-bold text-base text-on-surface">Rural Rise Career Mentor (करिअर सहायक)</h2>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Evidence-Based Matching</span>
+              </div>
+              <p class="text-xs text-on-surface-variant">Instant transparent evidence matching for jobs, apprenticeships & village enterprise</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-bold text-xs flex items-center gap-1" onclick="showToast('Playing voice summary in Hindi...')">
+              <span class="material-symbols-outlined text-[16px] text-secondary">volume_up</span>
+              <span>Listen / सुनें</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Scrollable Messages Area -->
+        <div class="flex-1 p-6 overflow-y-auto space-y-5" id="chatArea">
+          <div class="flex items-center justify-center my-1">
+            <span class="text-[11px] text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">
+              Session Live • AI Evidence Matching Active
+            </span>
+          </div>
+
+          <div class="space-y-5" id="messagesList">
+            <!-- Bot Initial Message with Recommendation Card & "Why this match?" Expandable Section -->
+            <div class="flex items-start gap-3 max-w-3xl">
+              <div class="w-9 h-9 rounded-full bg-primary-container text-white flex items-center justify-center shrink-0 mt-0.5">
+                <span class="material-symbols-outlined text-[20px]">psychology</span>
+              </div>
+              <div class="bg-surface-container-low border border-outline-variant/30 rounded-2xl rounded-tl-sm p-5 text-xs leading-relaxed space-y-4 flex-1">
+                <div class="flex items-center justify-between text-primary font-bold">
+                  <span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-[16px]">verified</span> Rural Rise Career Mentor</span>
+                  <span class="text-[11px] text-on-surface-variant font-normal">Just now</span>
+                </div>
+                
+                <p class="text-on-surface text-sm">
+                  नमस्ते सुनीता जी! 🙏 आपके कौशल्य, परीक्षा स्कोर (92%) और 94% उपस्थिति के आधार पर हमारे AI Matching Engine ने आपके लिए शीर्ष रोज़गार अवसर खोजा है:
+                </p>
+
+                <!-- Recommendation Card 1: Mahati Textiles -->
+                <div class="bg-white rounded-2xl p-4 border border-outline-variant/40 shadow-sm space-y-3">
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                      <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full uppercase">Top AI Recommendation</span>
+                      <h4 class="font-extrabold text-sm text-primary mt-1">Junior Quality Tailor / Sample Maker</h4>
+                      <p class="text-xs text-on-surface-variant">Mahati Textiles Pvt Ltd • Nagpur Hub (12 km away)</p>
+                    </div>
+                    <div class="text-right sm:text-right">
+                      <div class="text-xs font-bold text-amber-700 font-mono">₹15,500 - ₹18,000 / mo</div>
+                      <div class="inline-flex items-center gap-1 text-xs font-black text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full mt-1 border border-emerald-200">
+                        <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                        <span>94% Match</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- FEATURE 2: "Why this match?" Expandable Section -->
+                  <div class="border-t border-outline-variant/20 pt-2.5">
+                    <button class="w-full flex items-center justify-between text-xs font-bold text-primary hover:text-emerald-800 transition-colors py-1" onclick="toggleWhyMatch('matchEvidence1', this)">
+                      <span class="flex items-center gap-1.5">
+                        <span class="material-symbols-outlined text-[18px] text-amber-500">fact_check</span>
+                        <span data-i18n="match.why">Why this match? (मिलान प्रमाण देखें)</span>
+                      </span>
+                      <span class="material-symbols-outlined text-[18px] transition-transform duration-200" id="matchChevron1">expand_more</span>
+                    </button>
+
+                    <!-- Expandable Evidence Panel -->
+                    <div id="matchEvidence1" class="hidden mt-3 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-3">
+                      <!-- Match breakdown summary weights -->
+                      <div>
+                        <div class="flex justify-between text-[11px] font-bold text-on-surface mb-1">
+                          <span>Deterministic Match Breakdown (100% Total)</span>
+                          <span class="font-mono text-emerald-800">94 / 100 Pts</span>
+                        </div>
+                        <div class="grid grid-cols-4 gap-1.5 text-center text-[10px]">
+                          <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                            <span class="text-on-surface-variant block">Skills (40%)</span>
+                            <strong class="text-emerald-700 font-mono">38/40</strong>
+                          </div>
+                          <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                            <span class="text-on-surface-variant block">Cert (30%)</span>
+                            <strong class="text-emerald-700 font-mono">30/30</strong>
+                          </div>
+                          <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                            <span class="text-on-surface-variant block">Score (20%)</span>
+                            <strong class="text-emerald-700 font-mono">18/20</strong>
+                          </div>
+                          <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                            <span class="text-on-surface-variant block">Attnd (10%)</span>
+                            <strong class="text-emerald-700 font-mono">8/10</strong>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Evidence Details List -->
+                      <ul class="space-y-1.5 text-[11px] text-on-surface border-t border-outline-variant/20 pt-2">
+                        <li class="flex items-start gap-1.5">
+                          <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0 mt-0.5">check_circle</span>
+                          <span><strong>Matched Skills:</strong> Woven Fabric Cutting, Lockstitch Sewing, Seam Gauge Precision.</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                          <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0 mt-0.5">verified</span>
+                          <span><strong>Verified Certificate:</strong> PMKVY 4.0 Basic Tailoring (<a href="/verify" class="text-primary font-bold underline font-mono hover:text-emerald-700">RR-2026-004821</a>) authenticated on State Registry.</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                          <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0 mt-0.5">grade</span>
+                          <span><strong>Assessment Score:</strong> 92% Practical Exam Result (>80% requirement passed).</span>
+                        </li>
+                        <li class="flex items-start gap-1.5">
+                          <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0 mt-0.5">calendar_today</span>
+                          <span><strong>Biometric Attendance:</strong> 94% Classroom Presence recorded with geofencing.</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <!-- Action Buttons -->
+                  <div class="flex items-center justify-between pt-1">
+                    <span class="text-[11px] text-emerald-800 font-medium">Free transport from Katol center</span>
+                    <button class="px-4 py-1.5 rounded-xl bg-secondary-container text-amber-950 font-bold text-xs hover:bg-amber-400 active:scale-95 shadow-sm transition-all" onclick="showToast('Interview application submitted to Mahati Textiles! ✓')">
+                      Apply with 1-Click
+                    </button>
+                  </div>
+                </div>
+
+                <p class="text-on-surface-variant">
+                  आप नीचे किसी भी प्रश्न को टाइप करके या माइक्रोफ़ोन दबाकर पूछ सकती हैं।
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="p-4 border-t border-outline-variant/20 bg-white">
+          <form class="flex items-center gap-3" onsubmit="event.preventDefault(); sendMessage();">
+            <button type="button" class="w-11 h-11 rounded-xl bg-surface-container text-primary flex items-center justify-center shrink-0 hover:bg-surface-container-high transition-colors" onclick="showToast('Voice microphone recording activated. Speak your query!')" title="Voice Search">
+              <span class="material-symbols-outlined text-[22px]">mic</span>
+            </button>
+            <input type="text" id="chatInput" class="flex-1 h-12 px-4 rounded-xl bg-surface-container-low text-sm border border-outline-variant/50 focus:outline-none focus:border-primary focus:bg-white transition-all placeholder:text-on-surface-variant/50" placeholder="Type your career or loan question here... (उदा. बुटीक खोलने के लिए लोन कैसे लें?)">
+            <button type="submit" class="h-12 px-6 rounded-xl bg-primary-container hover:bg-primary text-white font-bold text-sm flex items-center gap-2 shadow-md active:scale-95 transition-all">
+              <span>Send</span>
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Mobile Bottom Tab Bar -->
+  <nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-xl border-t border-outline-variant/30 shadow-lg">
+    <div class="grid grid-cols-5 items-center h-16 px-1">
+      <a href="/trainee" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">home</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.home">Home</span>
+      </a>
+      <a href="/trainee/courses" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">school</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.courses">Courses</span>
+      </a>
+      <a href="/trainee/path" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">route</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.path">Path</span>
+      </a>
+      <a href="/trainee/attendance" class="flex flex-col items-center justify-center py-1 text-on-surface-variant hover:text-primary transition-colors">
+        <span class="material-symbols-outlined text-[20px]">fact_check</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.attendance">Attendance</span>
+      </a>
+      <a href="/trainee/career" class="flex flex-col items-center justify-center py-1 text-primary font-bold bg-primary-fixed/40 rounded-xl">
+        <span class="material-symbols-outlined text-[20px]">smart_toy</span>
+        <span class="text-[10px] leading-tight mt-0.5" data-i18n="tab.career">Career AI</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Desktop Footer -->
+  <footer class="bg-white border-t border-outline-variant/30 py-8 px-6 mt-12 hidden md:block">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+        <span class="font-bold text-primary">Rural Rise • Career AI Matching Mentor</span>
+        <span>• Transparent Evidence Logic</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="/trainee" class="hover:text-primary transition-colors">Trainee Hub</a>
+        <a href="/trainee/courses" class="hover:text-primary transition-colors">Course Player</a>
+        <a href="/trainee/path" class="hover:text-primary transition-colors">Learning Path</a>
+        <a href="/verify" class="hover:text-primary transition-colors">Verify Certificate</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/lib/ai/matching.js"></script>
+  <script src="/assets/shared.js"></script>
+  <script>
+    // Expandable Why Match Toggle
+    function toggleWhyMatch(elementId, btn) {
+      const panel = document.getElementById(elementId);
+      const isHidden = panel.classList.contains('hidden');
+      if (isHidden) {
+        panel.classList.remove('hidden');
+        if (btn) {
+          const chevron = btn.querySelector('.material-symbols-outlined:last-child');
+          if (chevron) chevron.textContent = 'expand_less';
+        }
+      } else {
+        panel.classList.add('hidden');
+        if (btn) {
+          const chevron = btn.querySelector('.material-symbols-outlined:last-child');
+          if (chevron) chevron.textContent = 'expand_more';
+        }
+      }
+    }
+
+    const aiResponses = {
+      'job': 'Aapke NCVT certificate ke aadhar par Mahati Agro Textiles me Junior Sample Maker (₹15,500 - ₹18,000/mo) ka 94% Match hai! Neeche diye gaye "Why this match?" button se aap exact skill, score aur certificate verify evidence dekh sakti hain.',
+      'loan': 'Pradhan Mantri Mudra Yojana (Shishu Loan) ke antargat bina kisi collateral ke ₹50,000 tak ka loan 7-8% interest par milta hai silai machine aur fabric kharidne ke liye. Katol District Coordinator office se direct form mil jayega.',
+      'interview': 'Mahati Textiles ke liye aapka evidence match score 94/100 hai! Unka recruitment team Katol ITI Center me aayega. Aapka Digital Certificate pass (/verify) lekar zaroor pahunchein.',
+      'certificate': 'Aapka certificate blockchain-backed QR code ke sath verify portal (/verify) par available hai. Koi bhi recruiter ID "RR-2026-004821" enter karke aapke marks aur verified credentials dekh sakta hai.'
+    };
+
+    function sendQuickPrompt(promptText) {
+      document.getElementById('chatInput').value = promptText;
+      sendMessage();
+    }
+
+    let matchCounter = 2;
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      const list = document.getElementById('messagesList');
+
+      // User Message Bubble
+      const userBubble = document.createElement('div');
+      userBubble.className = 'flex items-start justify-end gap-3 max-w-2xl ml-auto';
+      userBubble.innerHTML = `
+        <div class="bg-primary text-white rounded-2xl rounded-tr-sm p-4 text-xs shadow-md">
+          <p class="text-sm font-medium">${text}</p>
+        </div>
+        <div class="w-9 h-9 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+          SS
+        </div>
+      `;
+      list.appendChild(userBubble);
+      input.value = '';
+
+      const chatArea = document.getElementById('chatArea');
+      chatArea.scrollTop = chatArea.scrollHeight;
+
+      let replyText = 'Aapka sawal bohot mahatvapurna hai! Aapke NCVT certificate ke aadhar par aap local self-help group (SHG) ke sath judkar apna silai kendra shuru kar sakti hain, ya Sidha Mahati Textiles me apply kar sakti hain.';
+      const lower = text.toLowerCase();
+      let includeMatchCard = false;
+      let cardTitle = 'Junior Quality Tailor';
+      let cardComp = 'Mahati Textiles Pvt Ltd';
+      let cardSal = '₹15,500 - ₹18,000 / mo';
+      let cardPct = 94;
+
+      if (lower.includes('job') || lower.includes('vetan') || lower.includes('salary') || lower.includes('mahati') || lower.includes('khadi')) {
+        replyText = aiResponses.job;
+        includeMatchCard = true;
+        if (lower.includes('khadi')) {
+          cardTitle = 'Village Apparel Production Associate';
+          cardComp = 'Vidarbha Khadi & Livelihood Cooperative';
+          cardSal = '₹14,000 - ₹16,500 / mo + Hostel';
+          cardPct = 91;
+        }
+      } else if (lower.includes('loan') || lower.includes('boutique') || lower.includes('mudra')) {
+        replyText = aiResponses.loan;
+      } else if (lower.includes('interview')) {
+        replyText = aiResponses.interview;
+        includeMatchCard = true;
+      } else if (lower.includes('certificate') || lower.includes('pramanpatra') || lower.includes('verify')) {
+        replyText = aiResponses.certificate;
+      }
+
+      setTimeout(() => {
+        const curId = 'matchEvidence' + (matchCounter++);
+        const botBubble = document.createElement('div');
+        botBubble.className = 'flex items-start gap-3 max-w-3xl';
+
+        let matchCardHtml = '';
+        if (includeMatchCard) {
+          matchCardHtml = `
+            <div class="bg-white rounded-2xl p-4 border border-outline-variant/40 shadow-sm space-y-3 mt-2">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                  <span class="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full uppercase">Evidence Match Report</span>
+                  <h4 class="font-extrabold text-sm text-primary mt-1">${cardTitle}</h4>
+                  <p class="text-xs text-on-surface-variant">${cardComp}</p>
+                </div>
+                <div class="text-right">
+                  <div class="text-xs font-bold text-amber-700 font-mono">${cardSal}</div>
+                  <div class="inline-flex items-center gap-1 text-xs font-black text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full mt-1 border border-emerald-200">
+                    <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                    <span>${cardPct}% Match</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="border-t border-outline-variant/20 pt-2.5">
+                <button class="w-full flex items-center justify-between text-xs font-bold text-primary hover:text-emerald-800 transition-colors py-1" onclick="toggleWhyMatch('${curId}', this)">
+                  <span class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-[18px] text-amber-500">fact_check</span>
+                    <span>Why this match? (मिलान प्रमाण देखें)</span>
+                  </span>
+                  <span class="material-symbols-outlined text-[18px] transition-transform duration-200">expand_more</span>
+                </button>
+
+                <div id="${curId}" class="hidden mt-3 p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/30 space-y-3">
+                  <div>
+                    <div class="flex justify-between text-[11px] font-bold text-on-surface mb-1">
+                      <span>Multi-Factor Evidence Score</span>
+                      <span class="font-mono text-emerald-800">${cardPct} / 100 Pts</span>
+                    </div>
+                    <div class="grid grid-cols-4 gap-1.5 text-center text-[10px]">
+                      <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                        <span class="text-on-surface-variant block">Skills (40%)</span>
+                        <strong class="text-emerald-700 font-mono">${cardPct > 92 ? '38/40' : '36/40'}</strong>
+                      </div>
+                      <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                        <span class="text-on-surface-variant block">Cert (30%)</span>
+                        <strong class="text-emerald-700 font-mono">30/30</strong>
+                      </div>
+                      <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                        <span class="text-on-surface-variant block">Score (20%)</span>
+                        <strong class="text-emerald-700 font-mono">18/20</strong>
+                      </div>
+                      <div class="bg-white p-2 rounded-lg border border-outline-variant/20">
+                        <span class="text-on-surface-variant block">Attnd (10%)</span>
+                        <strong class="text-emerald-700 font-mono">8/10</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <ul class="space-y-1.5 text-[11px] text-on-surface border-t border-outline-variant/20 pt-2">
+                    <li class="flex items-start gap-1.5">
+                      <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0 mt-0.5">check_circle</span>
+                      <span><strong>Matched Skills:</strong> Lockstitch Sewing, Precision Hemming, Pattern Construction.</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                      <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0 mt-0.5">verified</span>
+                      <span><strong>Certificate Verified:</strong> PMKVY 4.0 (<a href="/verify" class="text-primary font-bold underline font-mono">RR-2026-004821</a>).</span>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                      <span class="material-symbols-outlined text-emerald-600 text-[16px] shrink-0 mt-0.5">grade</span>
+                      <span><strong>Practical Score:</strong> 92% assessment verified score.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-1">
+                <span class="text-[11px] text-emerald-800 font-medium">Verified by Central ERP</span>
+                <button class="px-4 py-1.5 rounded-xl bg-secondary-container text-amber-950 font-bold text-xs hover:bg-amber-400 active:scale-95 shadow-sm transition-all" onclick="showToast('Interview application submitted! ✓')">
+                  Apply Now
+                </button>
+              </div>
+            </div>
+          `;
+        }
+
+        botBubble.innerHTML = `
+          <div class="w-9 h-9 rounded-full bg-primary-container text-white flex items-center justify-center shrink-0 mt-0.5">
+            <span class="material-symbols-outlined text-[20px]">psychology</span>
+          </div>
+          <div class="bg-surface-container-low border border-outline-variant/30 rounded-2xl rounded-tl-sm p-4 text-xs leading-relaxed space-y-2 flex-1">
+            <div class="flex items-center justify-between text-primary font-bold">
+              <span class="flex items-center gap-1 text-sm"><span class="material-symbols-outlined text-[16px]">verified</span> Rural Rise AI Mentor</span>
+              <span class="text-[11px] text-on-surface-variant font-normal">Just now</span>
+            </div>
+            <p class="text-on-surface text-sm">${replyText}</p>
+            ${matchCardHtml}
+          </div>
+        `;
+        list.appendChild(botBubble);
+        chatArea.scrollTop = chatArea.scrollHeight;
+        showToast('AI Mentor generated evidence match');
+      }, 400);
+    }
+  </script>
+</body>
+</html>

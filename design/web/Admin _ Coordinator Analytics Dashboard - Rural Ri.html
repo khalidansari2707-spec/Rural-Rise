@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"primary-fixed":"#b1f2be","surface-container-high":"#e2e7ff","on-error":"#ffffff","on-primary-fixed-variant":"#12512c","inverse-primary":"#96d5a3","surface-tint":"#2e6a41","surface-container-highest":"#dae2fd","surface-container-lowest":"#ffffff","error":"#ba1a1a","surface-variant":"#dae2fd","on-secondary":"#ffffff","tertiary-fixed":"#9cf2e8","on-primary-fixed":"#00210d","error-container":"#ffdad6","outline-variant":"#c0c9be","secondary-fixed-dim":"#ffb95f","primary-container":"#14532d","inverse-on-surface":"#eef0ff","surface-bright":"#faf8ff","on-secondary-fixed":"#2a1700","on-surface-variant":"#404941","outline":"#717970","tertiary":"#003935","primary":"#003b1b","on-tertiary-fixed":"#00201d","on-tertiary-container":"#71c6bd","on-tertiary-fixed-variant":"#00504a","tertiary-container":"#00524c","inverse-surface":"#283044","background":"#faf8ff","on-secondary-fixed-variant":"#653e00","surface-container":"#eaedff","on-surface":"#131b2e","surface-dim":"#d2d9f4","on-secondary-container":"#684000","on-error-container":"#93000a","tertiary-fixed-dim":"#80d5cb","secondary-fixed":"#ffddb8","surface":"#faf8ff","primary-fixed-dim":"#96d5a3","on-primary-container":"#87c695","on-background":"#131b2e","surface-container-low":"#f2f3ff","on-primary":"#ffffff","on-tertiary":"#ffffff","secondary-container":"#fea619","secondary":"#855300"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.75rem","gutter":"1rem","space-xs":"0.5rem","margin-lg":"3rem","space-xl":"2rem","margin":"1rem","margin-md":"2rem","gutter-lg":"2rem","gutter-md":"1.5rem","space-2xl":"3rem","space-lg":"1.5rem","space-md":"1rem"},"fontFamily":{"headline-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"body-md":["Noto Sans"],"label-sm":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"display-lg-mobile":["Inter"],"display-lg":["Inter"],"body-lg":["Noto Sans"],"headline-sm":["Inter"],"body-xl":["Noto Sans"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-sm":["14px",{"lineHeight":"18px","fontWeight":"600"}],"label-md":["15px",{"lineHeight":"20px","fontWeight":"600"}],"label-lg":["16px",{"lineHeight":"24px","fontWeight":"600"}],"display-lg-mobile":["30px",{"lineHeight":"38px","fontWeight":"700"}],"display-lg":["40px",{"lineHeight":"48px","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-xl":["18px",{"lineHeight":"28px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-primary-container text-on-primary z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><div class="flex flex-col"><div class="p-space-lg flex items-start gap-space-sm bg-primary/40"><img alt="Brand logo. - Primary color: #14532d
+- Font: inter
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VgoNBJy4t04MJXvSwYhlGfBjRKLF1WfkiBLnqK2qLOcCsKkCbcoYBZDkZ4cJUVtBBAVu5L3R5pi3KkQ6Of3NkddWrXxFq7XjXG38aJMnoJHMBANasi8OmxJEqjDMEvyzhwWGl3LXBWuK7Yd7VsVbuLFs_AUhmYKf_Rgmm-_e9u30GvqwKWuKQnbvYGR0SV87bqMIueTM5r5iSTHnRsSiyCs-_-FikOnsHkePchs-A8k3_BtiUCjdf42kJi"/><div class="flex flex-col"><span class="font-label-lg text-label-lg text-on-primary leading-tight">Rural Rise</span><span class="font-label-sm text-label-sm text-primary-fixed opacity-90 leading-tight mt-0.5">ग्रामीण कौशल्य पोर्टल</span><span class="font-label-sm text-[11px] uppercase tracking-wider text-primary-fixed-dim font-bold mt-1">Admin Portal</span></div></div><nav class="flex flex-col gap-1 px-space-sm py-space-md" data-active-classes="bg-primary text-primary-fixed font-label-md font-bold shadow-[0_2px_4px_-1px_rgba(0,0,0,0.2)]"><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg transition-all bg-primary text-primary-fixed font-label-md font-bold shadow-[0_2px_4px_-1px_rgba(0,0,0,0.2)]" data-path="analytics-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="programmes" href="#"><span class="material-symbols-outlined text-[20px]">school</span><span class="font-label-md text-label-md">Programmes</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="nominations" href="#"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span class="font-label-md text-label-md">Nominations</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="participants" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-label-md text-label-md">Participants</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="timetable-and-hostel" href="#"><span class="material-symbols-outlined text-[20px]">hotel</span><span class="font-label-md text-label-md">Timetable &amp; Hostel</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="attendance" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-label-md text-label-md">Attendance</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="certificates" href="#"><span class="material-symbols-outlined text-[20px]">workspace_premium</span><span class="font-label-md text-label-md">Certificates</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="employers" href="#"><span class="material-symbols-outlined text-[20px]">apartment</span><span class="font-label-md text-label-md">Employers</span></a><a class="flex items-center gap-space-sm px-space-md py-space-xs rounded-lg text-on-primary/80 hover:bg-primary/50 hover:text-on-primary transition-all" data-path="reports" href="#"><span class="material-symbols-outlined text-[20px]">analytics</span><span class="font-label-md text-label-md">Reports</span></a></nav></div><div class="p-space-md m-space-sm rounded-xl bg-primary/60 flex flex-col gap-space-xs"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center"><span class="material-symbols-outlined text-on-primary-fixed text-[18px]">badge</span></div><div class="flex flex-col min-w-0"><span class="font-label-sm text-label-sm text-on-primary truncate font-bold">District Coordinator</span><span class="font-body-md text-[13px] text-primary-fixed truncate">Nagpur Jurisdiction</span></div></div><div class="flex items-center justify-between pt-space-xs mt-space-xs"><a class="font-label-sm text-label-sm text-primary-fixed hover:text-on-primary transition-colors flex items-center gap-1" data-path="help" href="#"><span class="material-symbols-outlined text-[16px]">help</span>Help</a><a class="font-label-sm text-label-sm text-error-container hover:text-on-error transition-colors flex items-center gap-1" data-path="login" href="#"><span class="material-symbols-outlined text-[16px]">logout</span>Logout</a></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 z-40 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">filter_alt</span><span class="font-label-sm text-label-sm">Programme: All</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">calendar_today</span><span class="font-label-sm text-label-sm">This Quarter (Q3)</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1.5 rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">location_on</span><span class="font-label-sm text-label-sm">Nagpur Urban &amp; Rural</span><span class="material-symbols-outlined text-[16px]">expand_more</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center bg-surface-container-low p-1 rounded-full"><button class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm" type="button">EN</button><button class="px-3 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface" type="button">हिं</button><button class="px-3 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm hover:text-on-surface" type="button">मराठी</button></div><button aria-label="Voice Assist Help" class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">volume_up</span></button><button aria-label="Notifications" class="w-10 h-10 rounded-full bg-surface-container-low text-on-surface flex items-center justify-center hover:bg-surface-container transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary-container"></span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface leading-tight font-bold">Dr. S. Patil</span><span class="font-body-md text-[12px] text-on-surface-variant leading-tight">Admin Lead</span></div></div></div></div></header><main class="relative pt-20 bg-surface min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full gap-space-xl">
+<!-- Top Bar: Telemetry Header & Actions -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          Live Monitoring
+        </span>
+<span class="font-body-md text-label-sm text-on-surface-variant font-medium">District Coordinator Control Deck</span>
+</div>
+<p class="font-body-md text-on-surface-variant mt-1 max-w-3xl">
+        Real-time rural skilling telemetry, cohort progress, and institutional metrics across districts. 
+        <span class="text-on-surface-variant/70 text-sm font-normal">ग्रामीण कौशल्य प्रगती व मूल्यमापन डॅशबोर्ड</span>
+</p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap shrink-0">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm px-space-sm py-2 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>Updated 10 mins ago • 14 Nov 2024</span>
+</div>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">sync</span>
+<span>Live Refresh</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span>Export Report (PDF/XLS)</span>
+</button>
+</div>
+</section>
+<!-- 5 Key Performance Indicators -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Card 1: Total Enrolments -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Total Enrolments</span>
+<span class="font-body-md text-[13px] text-on-surface-variant/80">एकूण नोंदणी</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">1,248</div>
+<div class="font-body-md text-[13px] text-on-surface-variant mt-0.5">Trainees enrolled across batches</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed w-fit font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12.4% vs last month</span>
+</div>
+</div>
+<!-- Card 2: Attendance % -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Attendance Rate</span>
+<span class="font-body-md text-[13px] text-on-surface-variant/80">सरासरी उपस्थिती</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-tertiary-container/20 text-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">event_available</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">87%</div>
+<div class="font-body-md text-[13px] text-on-surface-variant mt-0.5">Average daily attendance</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed w-fit font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+3.2% vs target (85%)</span>
+</div>
+</div>
+<!-- Card 3: Course Completion -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Course Completion</span>
+<span class="font-body-md text-[13px] text-on-surface-variant/80">अभ्यासक्रम पूर्णता</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-secondary-fixed/50 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">72%</div>
+<div class="font-body-md text-[13px] text-on-surface-variant mt-0.5">Cohort completion index</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed w-fit font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+5.8% this quarter</span>
+</div>
+</div>
+<!-- Card 4: Pass Rate -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Assessment Pass</span>
+<span class="font-body-md text-[13px] text-on-surface-variant/80">मूल्यांकन उत्तीर्ण</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">81%</div>
+<div class="font-body-md text-[13px] text-on-surface-variant mt-0.5">Clearing Sector Skill specs</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed w-fit font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+2.1% (14 batches)</span>
+</div>
+</div>
+<!-- Card 5: Placements -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Rural Placements</span>
+<span class="font-body-md text-[13px] text-on-surface-variant/80">रोजगार व स्वयंरोजगार</span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-secondary-container/20 text-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">work</span>
+</div>
+</div>
+<div>
+<div class="font-headline-lg text-headline-lg text-on-surface tracking-tight">214</div>
+<div class="font-body-md text-[13px] text-on-surface-variant mt-0.5">Placed / Micro-enterprise set</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed w-fit font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>+18 this month</span>
+</div>
+</div>
+</section>
+<!-- Charts Row 1: Enrolment Trend + Attendance by Programme -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Chart 1: Enrolment over time -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">show_chart</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Enrolment Over Time (Monthly)</h2>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant">मासिक नामांकन कल आणि प्रगती निर्देशांक</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-semibold">Target: 1,500 by Year End</span>
+</div>
+</div>
+<!-- Area Chart SVG -->
+<div class="w-full h-72 relative flex flex-col justify-end pt-6">
+<svg aria-label="Monthly Enrolment Line Graph" class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 650 240">
+<defs>
+<lineargradient id="areaGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#14532D" stop-opacity="0.25"></stop>
+<stop offset="100%" stop-color="#14532D" stop-opacity="0.00"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal reference lines -->
+<line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="630" y1="30" y2="30"></line>
+<line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="630" y1="75" y2="75"></line>
+<line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="630" y1="120" y2="120"></line>
+<line stroke="#dae2fd" stroke-dasharray="3 3" stroke-width="1" x1="40" x2="630" y1="165" y2="165"></line>
+<line stroke="#dae2fd" stroke-width="1.5" x1="40" x2="630" y1="210" y2="210"></line>
+<!-- Y-Axis Labels -->
+<text fill="#717970" font-family="Inter" font-size="11" text-anchor="end" x="32" y="34">1,200</text>
+<text fill="#717970" font-family="Inter" font-size="11" text-anchor="end" x="32" y="79">900</text>
+<text fill="#717970" font-family="Inter" font-size="11" text-anchor="end" x="32" y="124">600</text>
+<text fill="#717970" font-family="Inter" font-size="11" text-anchor="end" x="32" y="169">300</text>
+<text fill="#717970" font-family="Inter" font-size="11" text-anchor="end" x="32" y="213">0</text>
+<!-- Area Shape -->
+<!-- Points scaled: May(520)->(80,132), Jun(680)->(180,108), Jul(810)->(280,88), Aug(940)->(380,69), Sep(1090)->(480,46), Oct(1248)->(580,23) -->
+<path d="M 80 132 L 180 108 L 280 88 L 380 69 L 480 46 L 580 23 L 580 210 L 80 210 Z" fill="url(#areaGrad)"></path>
+<!-- Target Benchmark Curve -->
+<path d="M 80 150 Q 330 90 580 15" fill="none" stroke="#fea619" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- Line Graph -->
+<path d="M 80 132 L 180 108 L 280 88 L 380 69 L 480 46 L 580 23" fill="none" stroke="#14532D" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
+<!-- Data Points -->
+<circle cx="80" cy="132" fill="#faf8ff" r="5" stroke="#14532D" stroke-width="2.5"></circle>
+<circle cx="180" cy="108" fill="#faf8ff" r="5" stroke="#14532D" stroke-width="2.5"></circle>
+<circle cx="280" cy="88" fill="#faf8ff" r="5" stroke="#14532D" stroke-width="2.5"></circle>
+<circle cx="380" cy="69" fill="#faf8ff" r="5" stroke="#14532D" stroke-width="2.5"></circle>
+<circle cx="480" cy="46" fill="#faf8ff" r="5" stroke="#14532D" stroke-width="2.5"></circle>
+<circle cx="580" cy="23" fill="#14532D" r="6" stroke="#b1f2be" stroke-width="3"></circle>
+<!-- Peak Callout Tooltip -->
+<g transform="translate(500, -10)">
+<rect fill="#14532D" height="34" rx="6" width="115"></rect>
+<path d="M 80 34 L 80 38 L 74 34 Z" fill="#14532D"></path>
+<text fill="#ffffff" font-family="Inter" font-size="11" font-weight="700" text-anchor="middle" x="57" y="16">Oct Peak: 1,248</text>
+<text fill="#96d5a3" font-family="Inter" font-size="9" text-anchor="middle" x="57" y="28">+14.5% MoM</text>
+</g>
+<!-- X-Axis Labels -->
+<text fill="#404941" font-family="Inter" font-size="12" font-weight="500" text-anchor="middle" x="80" y="230">May</text>
+<text fill="#404941" font-family="Inter" font-size="12" font-weight="500" text-anchor="middle" x="180" y="230">Jun</text>
+<text fill="#404941" font-family="Inter" font-size="12" font-weight="500" text-anchor="middle" x="280" y="230">Jul</text>
+<text fill="#404941" font-family="Inter" font-size="12" font-weight="500" text-anchor="middle" x="380" y="230">Aug</text>
+<text fill="#404941" font-family="Inter" font-size="12" font-weight="500" text-anchor="middle" x="480" y="230">Sep</text>
+<text fill="#14532D" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="580" y="230">Oct (Now)</text>
+</svg>
+</div>
+<div class="flex items-center justify-between pt-2 border-t-0 text-xs text-on-surface-variant flex-wrap gap-2">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Registered Trainees</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-0.5 bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Annual Capacity Path</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Next Batch Onboarding: 01 Dec 2024</span>
+</div>
+</div>
+<!-- Chart 2: Attendance by Programme -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Attendance by Programme</h2>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant">कार्यक्रम अनुसार उपस्थिती तुलना</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">flag</span> Target 85%
+        </span>
+</div>
+<!-- High-fidelity Vertical Bar Chart SVG -->
+<div class="w-full h-72 relative flex flex-col justify-end">
+<svg aria-label="Attendance by Programme Vertical Bar Chart" class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 420 220">
+<!-- Threshold reference line at 85% (y = 50) -->
+<line stroke="#fea619" stroke-dasharray="4 3" stroke-width="1.5" x1="30" x2="410" y1="50" y2="50"></line>
+<text fill="#855300" font-family="Inter" font-size="10" font-weight="700" text-anchor="end" x="408" y="44">85% Benchmark</text>
+<!-- Baseline -->
+<line stroke="#dae2fd" stroke-width="1.5" x1="30" x2="410" y1="180" y2="180"></line>
+<!-- Bar 1: Solar (91%) -> Height 150px -> y = 30 -->
+<rect fill="#14532D" height="142" rx="5" width="46" x="52" y="38"></rect>
+<text fill="#14532D" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="75" y="30">91%</text>
+<!-- Bar 2: Tailoring (88%) -> Height 145px -> y = 43 -->
+<rect fill="#2e6a41" height="137" rx="5" width="46" x="126" y="43"></rect>
+<text fill="#2e6a41" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="149" y="35">88%</text>
+<!-- Bar 3: Agri-Drone (85%) -> Height 140px -> y = 50 -->
+<rect fill="#fea619" height="130" rx="5" width="46" x="200" y="50"></rect>
+<text fill="#855300" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="223" y="42">85%</text>
+<!-- Bar 4: Dairy (82%) -> Height 135px -> y = 58 -->
+<rect fill="#ffb95f" height="122" rx="5" width="46" x="274" y="58"></rect>
+<text fill="#855300" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="297" y="50">82%</text>
+<!-- Bar 5: Electrician (89%) -> Height 147px -> y = 41 -->
+<rect fill="#14532D" height="139" rx="5" width="46" x="348" y="41"></rect>
+<text fill="#14532D" font-family="Inter" font-size="12" font-weight="700" text-anchor="middle" x="371" y="33">89%</text>
+<!-- Programme Sub-Labels -->
+<text fill="#404941" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="75" y="196">Solar</text>
+<text fill="#404941" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="149" y="196">Apparel</text>
+<text fill="#404941" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="223" y="196">Drone</text>
+<text fill="#404941" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="297" y="196">Dairy</text>
+<text fill="#404941" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle" x="371" y="196">Wiring</text>
+</svg>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<span class="font-body-md text-xs text-on-surface">Dairy batch attendance alerted for biometric re-sync.</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline shrink-0" href="#">Audit Logs</a>
+</div>
+</div>
+</section>
+<!-- Charts Row 2: District-wise Trainees + Certificates Issued Donut -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Chart 3: District-wise Trainees -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">District-Wise Trainees</h2>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant">जिल्हा निहाय सक्रिय प्रशिक्षणार्थी संख्या</span>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">18 Skilling Centers</span>
+</div>
+<!-- District breakdown bars -->
+<div class="flex flex-col gap-space-md my-auto">
+<!-- Nagpur -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+              Nagpur (नागपूर)
+            </span>
+<span class="text-primary font-bold">480 <span class="text-xs text-on-surface-variant font-normal">/ 520 (92% Quota)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 92%"></div>
+</div>
+<span class="font-body-md text-[11px] text-on-surface-variant">7 active centers • Hingna, Ramtek, Saoner, Katol</span>
+</div>
+<!-- Wardha -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-tint"></span>
+              Wardha (वर्धा)
+            </span>
+<span class="text-primary font-bold">310 <span class="text-xs text-on-surface-variant font-normal">/ 400 (78% Quota)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-surface-tint rounded-full" style="width: 78%"></div>
+</div>
+<span class="font-body-md text-[11px] text-on-surface-variant">4 active centers • Deoli, Arvi, Seloo</span>
+</div>
+<!-- Amravati -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+              Amravati (अमरावती)
+            </span>
+<span class="text-secondary font-bold">260 <span class="text-xs text-on-surface-variant font-normal">/ 400 (65% Quota)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 65%"></div>
+</div>
+<span class="font-body-md text-[11px] text-on-surface-variant">4 active centers • Achalpur, Morshi, Chandur</span>
+</div>
+<!-- Chandrapur -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+              Chandrapur (चंद्रपूर)
+            </span>
+<span class="text-tertiary-container font-bold">198 <span class="text-xs text-on-surface-variant font-normal">/ 400 (50% Quota)</span></span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 50%"></div>
+</div>
+<span class="font-body-md text-[11px] text-on-surface-variant">3 active centers • Warora, Rajura, Ballarpur</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-xs text-on-surface-variant">
+<span>Capacity Target: 1,720 Seats</span>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline flex items-center gap-1" href="#">
+<span>Center Locator</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+</div>
+<!-- Chart 4: Certificates Issued Donut -->
+<div class="lg:col-span-6 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between flex-wrap gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">workspace_premium</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Certificates Issued by Skill</h2>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant">कौशल्य प्रकारानुसार जारी प्रमाणपत्रे</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed/70 text-on-primary-fixed font-label-sm text-label-sm font-semibold">QR Verified</span>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-around gap-space-md my-auto">
+<!-- Donut SVG -->
+<div class="relative w-48 h-48 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 160 160">
+<!-- Background ring -->
+<circle cx="80" cy="80" fill="transparent" r="62" stroke="#eaedff" stroke-width="20"></circle>
+<!-- Solar: 38% -> dasharray = 0.38 * 389.5 = 148, gap = 241.5 -->
+<circle cx="80" cy="80" fill="transparent" r="62" stroke="#14532D" stroke-dasharray="148 241.5" stroke-dashoffset="0" stroke-width="20"></circle>
+<!-- Garment: 27% -> dasharray = 0.27 * 389.5 = 105.1 -->
+<circle cx="80" cy="80" fill="transparent" r="62" stroke="#2e6a41" stroke-dasharray="105.1 284.4" stroke-dashoffset="-148" stroke-width="20"></circle>
+<!-- Agri Tech: 20% -> dasharray = 0.20 * 389.5 = 77.9 -->
+<circle cx="80" cy="80" fill="transparent" r="62" stroke="#fea619" stroke-dasharray="77.9 311.6" stroke-dashoffset="-253.1" stroke-width="20"></circle>
+<!-- Electrical: 15% -> dasharray = 0.15 * 389.5 = 58.4 -->
+<circle cx="80" cy="80" fill="transparent" r="62" stroke="#00524c" stroke-dasharray="58.4 331.1" stroke-dashoffset="-331" stroke-width="20"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
+<span class="font-headline-md text-headline-md text-on-surface leading-tight font-bold">896</span>
+<span class="font-label-sm text-[12px] text-on-surface-variant font-medium">Issued / सत्यापित</span>
+</div>
+</div>
+<!-- Donut Legend Details -->
+<div class="flex flex-col gap-space-sm w-full max-w-xs">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Solar Technology</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-on-surface">340</span>
+<span class="text-xs text-on-surface-variant ml-1">(38%)</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-tint"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Garment &amp; Apparel</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-on-surface">242</span>
+<span class="text-xs text-on-surface-variant ml-1">(27%)</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Agriculture Tech</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-on-surface">180</span>
+<span class="text-xs text-on-surface-variant ml-1">(20%)</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Electrical Trades</span>
+</div>
+<div class="text-right">
+<span class="font-label-md text-label-md font-bold text-on-surface">134</span>
+<span class="text-xs text-on-surface-variant ml-1">(15%)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs text-xs text-on-surface-variant">
+<span>Accreditation: Skill India &amp; NCVET compliant</span>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline flex items-center gap-1" type="button">
+<span>Batch Issue Registry</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Recent Nominations Table Card -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Controls -->
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-low/50">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">how_to_reg</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Recent Nominations</h2>
+</div>
+<span class="font-body-md text-sm text-on-surface-variant">ग्रामपंचायत व संस्थांकडून प्राप्त अलीकडील अर्ज व स्थिती</span>
+</div>
+<!-- Filters & Search -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="relative min-w-[220px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg bg-surface-container-lowest text-on-surface text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Search candidate / ID..." type="text"/>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-2 rounded-lg text-sm text-on-surface shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">tune</span>
+<select class="bg-transparent text-on-surface focus:outline-none font-label-sm text-label-sm cursor-pointer pr-2">
+<option>All Statuses</option>
+<option>Approved / स्वीकृत</option>
+<option>Pending / विचाराधीन</option>
+<option>Rejected / अस्वीकृत</option>
+</select>
+</div>
+<a class="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary transition-colors" href="#">
+<span>View All (48)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Responsive Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-space-lg">Candidate Name</th>
+<th class="py-3 px-space-md">Sponsoring Institution / Panchayat</th>
+<th class="py-3 px-space-md">Programme</th>
+<th class="py-3 px-space-md">Submitted Date</th>
+<th class="py-3 px-space-md">Status</th>
+<th class="py-3 px-space-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface font-body-md text-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs shrink-0">RP</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Ramesh Patil</span>
+<span class="text-xs text-on-surface-variant">RR-2024-8841</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface">Gram Panchayat Hingna</span>
+<span class="block text-xs text-on-surface-variant">Nagpur Rural Jurisdiction</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">solar_power</span>
+                Solar Pump &amp; Micro-Grid
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-medium">Today, 09:30 AM</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Approved / स्वीकृत
+              </span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-xs font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                View
+              </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors bg-surface-container-lowest">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs shrink-0">SB</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Sunita Bai Borkar</span>
+<span class="text-xs text-on-surface-variant">RR-2024-8890</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface">Vidarbha Mahila Mandal</span>
+<span class="block text-xs text-on-surface-variant">SHG Federation Wardha</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">styler</span>
+                Basic Tailoring &amp; Apparel
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-medium">Yesterday, 04:15 PM</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+                Pending / विचाराधीन
+              </span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-xs font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                View
+              </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs shrink-0">AG</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Amit Rajesh Gawande</span>
+<span class="text-xs text-on-surface-variant">RR-2024-8895</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface">ITI Nagpur Rural</span>
+<span class="block text-xs text-on-surface-variant">Vocational Wing Saoner</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">flight</span>
+                Agri-Drone Operations
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-medium">12 Nov 2024</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Approved / स्वीकृत
+              </span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-xs font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                View
+              </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-bold text-xs shrink-0">KS</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Kavita Dinesh Shinde</span>
+<span class="text-xs text-on-surface-variant">RR-2024-8902</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface">DDU-GKY Mobilization Cell</span>
+<span class="block text-xs text-on-surface-variant">Amravati Block 2</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">solar_power</span>
+                Solar Pump &amp; Micro-Grid
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-medium">11 Nov 2024</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                Rejected / अस्वीकृत
+              </span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-xs font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                View
+              </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-xs shrink-0">MW</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Manoj V. Wankhede</span>
+<span class="text-xs text-on-surface-variant">RR-2024-8914</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="font-medium text-on-surface">Umred Vocational Center</span>
+<span class="block text-xs text-on-surface-variant">Chandrapur Border Cluster</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[16px]">electrical_services</span>
+                Rural Electrician &amp; Wiring
+              </span>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant font-medium">10 Nov 2024</td>
+<td class="py-3.5 px-space-md">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Approved / स्वीकृत
+              </span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-md bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-xs font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                View
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Footer -->
+<div class="p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm bg-surface-container-low/40">
+<span class="font-body-md text-xs text-on-surface-variant">
+        Showing <span class="font-semibold text-on-surface">1 - 5</span> of <span class="font-semibold text-on-surface">48</span> nominations registered this cycle
+      </span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface/50 font-label-sm text-label-sm flex items-center gap-1 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<span>Previous</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center justify-center font-bold" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm flex items-center justify-center" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm flex items-center justify-center" type="button">3</button>
+<span class="text-on-surface-variant text-xs px-1">…</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-sm text-label-sm flex items-center justify-center" type="button">10</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Interactive Client-side Script -->
+<script>
+    (function initDashboardTelemetry() {
+      // Add subtle ripple / interactive visual feedback on quick-action buttons
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(btn => {
+        btn.addEventListener('mousedown', function() {
+          this.style.transform = 'scale(0.98)';
+        });
+        btn.addEventListener('mouseup', function() {
+          this.style.transform = 'scale(1)';
+        });
+        btn.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+        });
+      });
+    })();
+  </script>
+</div></main></div></body></html>

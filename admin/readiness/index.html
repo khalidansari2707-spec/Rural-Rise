@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>AI Implementation Readiness Dashboard — Rural Rise Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/shared.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#003b1b",
+            "primary-container": "#14532d",
+            "primary-fixed": "#b1f2be",
+            "secondary": "#855300",
+            "secondary-container": "#fea619",
+            "surface": "#faf8ff",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "surface-container": "#eaedff",
+            "surface-container-high": "#e2e7ff",
+            "on-surface": "#131b2e",
+            "on-surface-variant": "#404941",
+            "outline-variant": "#c0c9be"
+          },
+          fontFamily: {
+            sans: ["Inter", "Noto Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-sans antialiased min-h-screen">
+  
+  <!-- Shared Admin Sidebar with "AI Readiness" highlighted -->
+  <aside class="fixed left-0 top-0 h-full w-72 bg-primary-container text-white z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.08)]">
+    <div class="flex flex-col">
+      <div class="p-6 flex items-start gap-3 bg-primary/40">
+        <div class="w-10 h-10 rounded-xl bg-primary-fixed text-primary flex items-center justify-center font-bold shadow-sm">
+          <span class="material-symbols-outlined text-[24px]">agriculture</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-extrabold text-white tracking-tight leading-none" data-i18n="brand.title">Rural Rise</span>
+          <span class="text-xs font-semibold text-primary-fixed opacity-90 leading-tight mt-1" data-i18n="brand.subtitle">ग्रामीण कौशल्य पोर्टल</span>
+          <span class="text-[10px] uppercase tracking-wider text-primary-fixed font-bold mt-1">Admin Portal</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex flex-col gap-1 px-4 py-6">
+        <a class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/admin">
+          <span class="material-symbols-outlined text-[20px]">dashboard</span>
+          <span data-i18n="nav.dashboard">Dashboard</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/admin/timetable">
+          <span class="material-symbols-outlined text-[20px]">hotel</span>
+          <span data-i18n="nav.timetable">Timetable & Hostel</span>
+        </a>
+        <!-- ACTIVE: AI Readiness -->
+        <a aria-current="page" class="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-primary text-primary-fixed font-bold shadow-sm transition-all text-sm" href="/admin/readiness">
+          <span class="material-symbols-outlined text-[20px]">insights</span>
+          <span data-i18n="nav.readiness">AI Readiness</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/verify">
+          <span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+          <span data-i18n="nav.verify">Verify Certificate</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/employer">
+          <span class="material-symbols-outlined text-[20px]">apartment</span>
+          <span data-i18n="nav.employers">Employers Portal</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/trainer/session">
+          <span class="material-symbols-outlined text-[20px]">co_present</span>
+          <span data-i18n="nav.sessions">Trainer Live Session</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/trainee">
+          <span class="material-symbols-outlined text-[20px]">person_celebrate</span>
+          <span>Trainee Portal</span>
+        </a>
+        <a class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-white/80 hover:bg-primary/50 hover:text-white transition-all text-sm font-semibold" href="/">
+          <span class="material-symbols-outlined text-[20px]">home</span>
+          <span>Home / Landing</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Coordinator Profile Block -->
+    <div class="p-4 m-4 rounded-2xl bg-primary/60 flex flex-col gap-2">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary text-xs">
+          DP
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="text-xs text-white truncate font-bold">Dr. S. Patil</span>
+          <span class="text-[11px] text-primary-fixed truncate">District Coordinator • Nagpur</span>
+        </div>
+      </div>
+      <div class="flex items-center justify-between pt-2 border-t border-white/20 text-xs">
+        <a class="text-primary-fixed hover:text-white flex items-center gap-1" href="/"><span class="material-symbols-outlined text-[14px]">home</span>Home</a>
+        <a class="text-rose-200 hover:text-white flex items-center gap-1" href="/" onclick="showToast('Logged out of Admin Portal')"><span class="material-symbols-outlined text-[14px]">logout</span>Exit</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper (offset by sidebar width 72) -->
+  <div class="pl-72">
+    <!-- Top Nav Header -->
+    <header class="fixed top-0 left-72 right-0 z-40 bg-white/95 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm h-20 px-8 flex items-center justify-between">
+      <div>
+        <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+          <span class="material-symbols-outlined text-[16px] text-primary">insights</span>
+          <span>System Telemetry • Central ERP Integration</span>
+        </div>
+        <h1 class="text-xl font-extrabold text-primary" data-i18n="readiness.title">AI Implementation Readiness</h1>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <!-- Language Switcher (EN / हिं / मराठी) -->
+        <div class="flex items-center bg-surface-container-low p-1 rounded-full border border-outline-variant/40">
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-bold bg-primary text-white transition-colors" onclick="setLanguage('en')">EN</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('hi')">हिं</button>
+          <button class="lang-btn px-2.5 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-colors" onclick="setLanguage('mr')">मराठी</button>
+        </div>
+        <button class="px-3.5 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-bold text-xs flex items-center gap-1.5 transition-colors" onclick="resetReadinessDemo()">
+          <span class="material-symbols-outlined text-[16px]">refresh</span>
+          <span>Reset Demo</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="pt-24 px-8 pb-16 space-y-8 max-w-7xl">
+      
+      <!-- Top Deployment Readiness Score Gauge + Overview -->
+      <section class="bg-gradient-to-br from-emerald-950 to-green-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-emerald-800/80 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-3 max-w-xl">
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full bg-emerald-900 text-emerald-200 text-xs font-bold flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Live Model Validation
+            </span>
+            <span class="text-xs text-emerald-300 font-mono">Vidarbha Jurisdiction</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold" data-i18n="readiness.gauge">Deployment Readiness Score</h2>
+          <p class="text-xs sm:text-sm text-emerald-100 leading-relaxed">
+            Composite index calculating regional readiness for AI adaptive learning, biometric attendance, and evidence career matching across 5 district training nodes.
+          </p>
+          <div class="flex items-center gap-4 pt-1 text-xs">
+            <span class="text-emerald-300">Target Threshold: <strong>80/100 (Full Production)</strong></span>
+          </div>
+        </div>
+
+        <!-- Circular Readiness Gauge Widget -->
+        <div class="relative w-44 h-44 shrink-0 flex items-center justify-center bg-emerald-900/60 rounded-full border-4 border-emerald-700/60 p-4 shadow-inner">
+          <div class="text-center">
+            <div id="readinessScoreVal" class="text-5xl font-black text-amber-300 font-mono tracking-tight">74</div>
+            <div class="text-[11px] uppercase font-bold text-emerald-300 tracking-wider">out of 100</div>
+            <div id="readinessStatusBadge" class="mt-1 px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[10px] font-bold">
+              Saffron (Moderate)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Checklist Cards (Connectivity, Devices, Language, Trainers, Data Quality) -->
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg font-extrabold text-primary">Weighted Readiness Checklist (५ घटक)</h3>
+            <p class="text-xs text-on-surface-variant">Continuous automated audits across village training complexes</p>
+          </div>
+          <span class="text-xs font-semibold text-on-surface-variant">Green: ≥80% • Saffron: 60-79% • Red: <60%</span>
+        </div>
+
+        <div id="checklistGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <!-- Injected dynamically from AIReadinessEngine -->
+        </div>
+      </section>
+
+      <!-- Outcomes Row: Learning Gain %, Skill Gap Closed %, Placement Rate + District Chart -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: 3 Outcomes Metric Cards (5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <h3 class="text-base font-extrabold text-primary">Measured AI Learning Outcomes</h3>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
+            <!-- Outcome 1 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-on-surface-variant uppercase font-bold">Learning Gain</span>
+                <div class="text-2xl font-black text-emerald-700 mt-1">+34.2%</div>
+                <p class="text-[11px] text-on-surface-variant mt-0.5">vs traditional lecture-only batches</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                <span class="material-symbols-outlined text-[26px]">trending_up</span>
+              </div>
+            </div>
+
+            <!-- Outcome 2 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-on-surface-variant uppercase font-bold">Skill Gap Closed</span>
+                <div class="text-2xl font-black text-primary mt-1">68.4%</div>
+                <p class="text-[11px] text-on-surface-variant mt-0.5">Average deficiency resolved in 30 days</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-primary-fixed text-primary flex items-center justify-center font-bold">
+                <span class="material-symbols-outlined text-[26px]">flaky</span>
+              </div>
+            </div>
+
+            <!-- Outcome 3 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-outline-variant/30 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-on-surface-variant uppercase font-bold">Verified Placement Rate</span>
+                <div class="text-2xl font-black text-amber-700 mt-1">82.0%</div>
+                <p class="text-[11px] text-on-surface-variant mt-0.5">Direct hiring through Employer Hub</p>
+              </div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                <span class="material-symbols-outlined text-[26px]">verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: District-wise Readiness Bar Chart (7 Cols) -->
+        <div class="lg:col-span-7 bg-white p-6 sm:p-7 rounded-3xl shadow-sm border border-outline-variant/30 space-y-4">
+          <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+            <div>
+              <h3 class="text-base font-extrabold text-primary">District-wise Readiness Index</h3>
+              <p class="text-xs text-on-surface-variant">Infrastructure & training maturity comparison</p>
+            </div>
+            <span class="text-xs font-bold text-primary">5 District Clusters</span>
+          </div>
+
+          <div id="districtBarsContainer" class="space-y-4 pt-1 text-xs">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURE 5: "Real-time Guidance" Panel with "Act" Action Cards -->
+      <section class="bg-white p-6 sm:p-7 rounded-3xl shadow-sm border border-outline-variant/30 space-y-5">
+        <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-2xl bg-secondary-container text-amber-950 flex items-center justify-center font-bold">
+              <span class="material-symbols-outlined text-[22px]">smart_toy</span>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-base text-primary" data-i18n="readiness.actions">Real-time Guidance Interventions</h3>
+              <p class="text-xs text-on-surface-variant">Rule-generated prescriptive interventions to unlock 80%+ readiness score</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold">
+            Interactive Actions
+          </span>
+        </div>
+
+        <div id="actionCardsContainer" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <!-- Populated dynamically with "Act" buttons -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/lib/ai/readiness.js"></script>
+  <script src="/assets/shared.js"></script>
+  <script>
+    function renderReadinessView() {
+      if (!window.AIReadinessEngine) return;
+      const state = window.AIReadinessEngine.getState();
+      const lang = localStorage.getItem('rr_lang') || 'en';
+
+      // Update Gauge
+      const scoreEl = document.getElementById('readinessScoreVal');
+      scoreEl.textContent = state.overallScore;
+
+      const badge = document.getElementById('readinessStatusBadge');
+      if (state.overallStatus === 'green') {
+        badge.className = 'mt-1 px-2.5 py-0.5 rounded-full bg-emerald-400/20 text-emerald-300 text-[10px] font-bold';
+        badge.textContent = 'Green (High Readiness)';
+      } else if (state.overallStatus === 'saffron') {
+        badge.className = 'mt-1 px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 text-[10px] font-bold';
+        badge.textContent = 'Saffron (Action Needed)';
+      } else {
+        badge.className = 'mt-1 px-2.5 py-0.5 rounded-full bg-rose-400/20 text-rose-300 text-[10px] font-bold';
+        badge.textContent = 'Red (Critical Bottlenecks)';
+      }
+
+      // Render Checklist Cards
+      const checklistGrid = document.getElementById('checklistGrid');
+      checklistGrid.innerHTML = '';
+      state.checklistItems.forEach(item => {
+        const titleText = item.title[lang] || item.title.en;
+        const descText = item.desc[lang] || item.desc.en;
+
+        let badgeHtml = '';
+        let borderClass = 'border-outline-variant/30';
+        if (item.status === 'green') {
+          badgeHtml = '<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">Green • Ready</span>';
+        } else if (item.status === 'saffron') {
+          badgeHtml = '<span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[10px] font-bold">Saffron • In Progress</span>';
+          borderClass = 'border-amber-200';
+        } else {
+          badgeHtml = '<span class="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[10px] font-bold">Red • Lagging</span>';
+          borderClass = 'border-rose-200';
+        }
+
+        const card = document.createElement('div');
+        card.className = `bg-white p-5 rounded-2xl shadow-sm border ${borderClass} flex flex-col justify-between space-y-3`;
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2 text-primary font-bold">
+                <span class="material-symbols-outlined text-[20px]">${item.icon}</span>
+                <span class="text-xs uppercase tracking-wider text-on-surface-variant font-mono">Weight: ${item.weight}%</span>
+              </div>
+              ${badgeHtml}
+            </div>
+            <h4 class="font-extrabold text-sm text-on-surface mt-2">${titleText}</h4>
+            <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">${descText}</p>
+          </div>
+
+          <div class="pt-2 border-t border-outline-variant/20 flex items-center justify-between text-xs font-bold">
+            <span class="text-on-surface-variant">${item.metric}</span>
+            <span class="text-sm font-mono text-primary">${item.score}%</span>
+          </div>
+        `;
+        checklistGrid.appendChild(card);
+      });
+
+      // Render District Bars
+      const distContainer = document.getElementById('districtBarsContainer');
+      distContainer.innerHTML = '';
+      state.districts.forEach(d => {
+        const dName = lang === 'hi' ? d.nameHi : lang === 'mr' ? d.nameMr : d.name;
+        let colorClass = 'bg-primary-container';
+        if (d.status === 'saffron') colorClass = 'bg-amber-500';
+        else if (d.status === 'red') colorClass = 'bg-rose-600';
+
+        const row = document.createElement('div');
+        row.className = 'space-y-1.5';
+        row.innerHTML = `
+          <div class="flex justify-between text-xs font-semibold">
+            <span class="text-on-surface">${dName} District Center</span>
+            <span class="font-mono text-on-surface-variant font-bold">${d.score}%</span>
+          </div>
+          <div class="w-full bg-surface-container rounded-full h-2.5 overflow-hidden">
+            <div class="${colorClass} h-2.5 rounded-full transition-all duration-500" style="width: ${d.score}%"></div>
+          </div>
+        `;
+        distContainer.appendChild(row);
+      });
+
+      // Render Action Cards with "Act" buttons
+      const actionContainer = document.getElementById('actionCardsContainer');
+      actionContainer.innerHTML = '';
+      state.actionCards.forEach(act => {
+        const titleText = act.title[lang] || act.title.en;
+        const isDone = act.status === 'completed';
+
+        const card = document.createElement('div');
+        card.className = `p-4 rounded-2xl border ${isDone ? 'bg-emerald-50/80 border-emerald-300' : 'bg-surface-container-low border-outline-variant/30'} flex flex-col justify-between space-y-3`;
+        card.innerHTML = `
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold ${isDone ? 'text-emerald-800' : 'text-amber-800'} uppercase font-mono">
+                ${act.id} • ${act.category.toUpperCase()}
+              </span>
+              ${isDone ? '<span class="px-2 py-0.5 rounded-full bg-emerald-200 text-emerald-900 text-[10px] font-bold">Executed ✓</span>' : '<span class="px-2 py-0.5 rounded-full bg-amber-200 text-amber-900 text-[10px] font-bold">Pending Intervention</span>'}
+            </div>
+            <h4 class="font-bold text-xs text-on-surface leading-snug">${titleText}</h4>
+            <p class="text-[11px] text-emerald-800 font-semibold">${act.impactDescription}</p>
+          </div>
+
+          <div class="pt-2 border-t border-outline-variant/20">
+            <button class="w-full py-2 rounded-xl text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1 ${isDone ? 'bg-emerald-700 text-white cursor-default' : 'bg-secondary-container hover:bg-amber-400 text-amber-950 active:scale-95'}" ${isDone ? 'disabled' : `onclick="triggerAction('${act.id}')"`}>
+              <span class="material-symbols-outlined text-[16px]">${isDone ? 'check' : 'flash_on'}</span>
+              <span>${isDone ? 'Resolved ✓' : 'Act (लागू करें)'}</span>
+            </button>
+          </div>
+        `;
+        actionContainer.appendChild(card);
+      });
+    }
+
+    function triggerAction(actionId) {
+      if (!window.AIReadinessEngine) return;
+      window.AIReadinessEngine.executeAction(actionId);
+      renderReadinessView();
+      showToast(`Action ${actionId} executed! Readiness Score updated live ✓`);
+    }
+
+    function resetReadinessDemo() {
+      if (!window.AIReadinessEngine) return;
+      window.AIReadinessEngine.resetActions();
+      renderReadinessView();
+      showToast('Readiness demo actions reset to baseline.');
+    }
+
+    window.addEventListener('languageChanged', renderReadinessView);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderReadinessView();
+    });
+  </script>
+</body>
+</html>
